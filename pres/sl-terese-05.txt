@@ -1,0 +1,13 @@
+  Semantic labelling is a transformational method for proving termination of TRSs. It is well-known 
+for many years but, up till now, in all tools proving termination automatically if it is used it is 
+used with booleans (or finite sets) as labels. For many interesting examples this is not sufficient 
+while using natural numbers for labels is. One of the problems with labelling using natural numbers 
+is that transformed TRSs are infinite thus this method was believed not to be suitable for automatic 
+termination provers.
+
+  In this talk I will try to refute this opinion by presenting how semantic labelling with natural 
+numbers was successfully implemented in TPA (Termination Proved Automatically, http://www.win.tue.nl/tpa), 
+a tool for proving termination automatically of my authorship. I will explain how other techniques 
+(polynomial orderings and recursive path ordering in particular) have been adapted in order to be used 
+in combination with semantic labelling with natural numbers. I will also try to give a general overview 
+of TPA.

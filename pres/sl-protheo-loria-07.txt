@@ -1,0 +1,16 @@
+Title: Semantic labeling for proving termination of term rewriting
+Abstract:
+  Semantic labeling was invented in 1995 by Zantema. It is a
+technique for proving termination of term rewriting by attaching
+semantics to function symbols, deriving labels from it and using
+this additional information in termination proofs. At the beginning
+it was implemented in automatic termination tools only for finite
+domains. Later on this approach was extended (Koprowski, Zantema) to
+infinite models in the termination prover TPA, which, most notably,
+allowed to prove termination of the difficult SUBST system. In a
+recent line of research the technique has been improved, giving rise
+to predictive labeling (Hirokawa, Middeldorp) which was generalized
+to dependency pairs setting (Koprowski, Middeldorp) and to innermost
+termination (Thiemann, Middeldorp). In this talk I will try to give
+an overview of those developments with a special emphasis on
+automation for use in automatic termination provers.

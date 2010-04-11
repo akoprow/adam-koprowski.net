@@ -1,0 +1,20 @@
+Title: Certification of Arctic Termination
+
+Abstract:
+ Termination is an important concept in term rewriting. Recently the
+emphasis in this field is on automation. To stimulate progress in
+this area an annual termination competition is organized, where
+tools compete on a set of termination problems. However, as they,
+and the methods used by them, are becoming more and more complex
+reliability of the results starts to be a critical issue.
+
+ In the first part of my talk I will give an overview of the CoLoR
+project (http://color.loria.fr) - a project that tries to address
+this issue by transforming proof candidates produced by termination
+tools to formal proofs that can be verified by the proof assistant
+Coq.
+
+ In the second part of the talk I will briefly introduce the
+termination method of arctic matrix interpretations, which extends
+the method of matrix interpretations and which was formalized in
+CoLoR.

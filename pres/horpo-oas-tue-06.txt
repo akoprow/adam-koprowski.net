@@ -1,0 +1,16 @@
+Title: Certified Higher-Order Recursive Path Ordering.
+Abstract: 
+  Recursive path ordering (RPO) is a well-known reduction ordering (Dershowitz, 1982) 
+for proving termination of (first order) term rewriting systems (TRSs). Jouannaud and 
+Rubio (in 1999) generalized this ordering to higher-order case thus creating the 
+higher-order recursive path ordering (HORPO). They proved that this is a higher-order 
+reduction ordering which essentially comes down to proving well-foundedness of the 
+union of HORPO and beta-reduction relation of simply typed lambda calculus. The work 
+described in this talk involves formalization of this proof in theorem prover Coq.
+
+  In the first part of the talk I will give a very brief introduction to simply typed 
+lambda calculus, RPO, higher-order rewriting and HORPO. Then I will present a general 
+overview of the formalization. Finally I will present one particular problem encountered 
+in the course of this work: dealing with equivalence of terms extending the idea of 
+alpha-conversion to free variables. I will also present the solution to this problem 
+that has been employed in this development.

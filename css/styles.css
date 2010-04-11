@@ -1,0 +1,52 @@
+DIV.paper {
+	text-indent: 0pt;
+	border: 1px dotted #EEEEEE;
+	background-color: #666666;
+	padding: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 7px;
+}
+DIV.talk {
+	background-image: url('../images/talk.gif');
+	background-position: center left;
+	background-repeat: no-repeat;
+	margin: 5px;
+	padding-left: 20px;
+}
+A.download:link, A.download:visited {
+	color: #FFFFFF;
+}
+A.download:hover {
+	color: #AAAAAA;
+	background-color: #235a89;
+	border-bottom: 2px solid #006600;
+}
+
+
+/* content */
+.text-header { font-weight: bold; font-size: 12pt; font-family: Arial Narrow, sans-serif; color: #272A32;}
+.pageContent { font-size: 8pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
+ .pageContent a { font-size: 8pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
+
+/* top elements */
+.company { font-weight: bold; font-size: 18pt; font-family: Arial Narrow, sans-serif; color: #ffffff; }
+.slogan { font-size: 7pt; font-family: Tahoma, sans-serif; color: #C7C6CA; text-transform: uppercase; }
+
+/*main menu*/
+.menu { font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
+.amenu { font-weight: bold; font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
+
+/*submenu*/
+.submenu { font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
+.asubmenu { font-weight: bold; font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
+
+/*bottom menu*/
+.bmenu { font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
+.abmenu { font-weight: bold; font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
+
+/*copyright*/
+.footer { font-size: 8pt; font-family: Tahoma, sans-serif; color: #9D9AA0; }
+
+/*backgrounds*/
+.main-bg { background-color: #828691; }

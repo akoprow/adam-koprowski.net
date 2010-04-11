@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <item title="Home" link="home.html"/>
+  <item title="About me" link="aboutme.html"/>
+  <item title="Publications" link="publications.html">
+    <item title="All publications" link="pub_all.html"/>
+    <item title="Publications in Journals" link="pub_journals.html"/>
+    <item title="Publications in Conference proceedings" link="pub_conferences.html"/>
+    <item title="Other types of publications" link="pub_other.html"/>
+  </item>
+  <item title="Presentations" link="presentations.html"/>
+  <item title="Projects" link="projects.html"/>
+</menu>

@@ -1,0 +1,11 @@
+  Liveness is roughly defined as "something will eventually happen" and it is often remarked that 
+"termination is a particular case of liveness". But conversely liveness can be seen as termination 
+of a modified relation. Since various techniques for proving termination (also fully automatically) 
+exist and are being developed it is of interest to further investigate this relation.
+
+  In this talk I will present the transformation from liveness problems to problems of termination of 
+term rewrite systems (TRSs). Its advantage over techniques like model checking is that it can easily 
+deal with infinite state space models. Further, I will illustrate it on a toy-example and discuss its 
+relation with similar transformation invented by Jurgen Giesl and Hans Zantema in 2003. Time 
+permitting; I will also present the proof of soundness and sketch the proof of completeness of 
+presented transformation.

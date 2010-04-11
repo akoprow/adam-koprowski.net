@@ -1,0 +1,10 @@
+  Termination is an important concept in term rewriting. The idea of my PhD project 
+is to use it for verification purposes, in particular for verification of liveness 
+properties.
+
+  In the first part of the talk I will give an overview of the work that has been done 
+so far and I will discuss its different aspects. In the second part I will present 
+our recent development (joint work with Hans Zantema) of a new termination technique: 
+adaptation of recursive path ordering (termination technique due to Dershowitz) to 
+infinite systems obtained by semantic labelling (termination technique due to Zantema) 
+with natural numbers.
