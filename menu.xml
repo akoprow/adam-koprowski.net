@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<menu>
+  <entry>
+    <text>Home</text>
+    <url>home.html</url>
+  </entry>
+  <entry>
+    <text>About me</text>
+    <url>aboutme.html</url>
+  </entry>
+  <entry>
+    <text>Publications</text>
+    <url>publications.html</url>
+    <subentry>
+      <text>All</text>
+      <url>publications_all.html</url>
+    </subentry>
+    <subentry>
+      <text>Journal articles</text>
+      <url>publications_journal.html</url>
+    </subentry>
+    <subentry>
+      <text>Conference proceedings</text>
+      <url>publications_conf.html</url>
+    </subentry>
+    <subentry>
+      <text>Other publications</text>
+      <url>publications_other.html</url>
+    </subentry>
+  </entry>
+  <entry>
+    <text>Presentations</text>
+    <url>talks.html</url>
+  </entry>
+  <entry>
+    <text>Projects</text>
+    <url>projects.html</url>
+  </entry>
+</menu>
