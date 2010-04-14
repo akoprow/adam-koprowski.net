@@ -3,11 +3,11 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+	<xsl:variable name="menu-selection" select="/page/@menu" />
+	<xsl:variable name="menu-subselection" select="/page/@submenu" />
+
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
-
-	<xsl:variable name="menu-selection" select="/page/id" />
-	<xsl:variable name="menu-subselection" select="/page/subid" />
 
 	<xsl:template match="page">
 		<html>
@@ -28,14 +28,14 @@
 	<xsl:template match="entry">
 		<li>
 			<xsl:choose>
-				<xsl:when test="./id = $menu-selection">
+				<xsl:when test="@urlid = $menu-selection">
 					<xsl:value-of select="text" />
 					<ul>
 						<xsl:apply-templates select="subentry" />
 					</ul>
 				</xsl:when>
 				<xsl:otherwise>
-					<A href="{id}.html">
+					<A href="{@urlid}.html">
 						<xsl:value-of select="text" />
 					</A>
 				</xsl:otherwise>
@@ -46,11 +46,11 @@
 	<xsl:template match="subentry">
 		<li>
 			<xsl:choose>
-				<xsl:when test="./id = $menu-subselection">
+				<xsl:when test="@urlid = $menu-subselection">
 					<xsl:value-of select="text" />
 				</xsl:when>
 				<xsl:otherwise>
-					<A href="{id}.html">
+					<A href="{@urlid}.html">
 						<xsl:value-of select="text" />
 					</A>
 				</xsl:otherwise>

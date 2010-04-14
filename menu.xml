@@ -1,40 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <menu>
-	<entry>
+	<entry urlid="home">
 		<text>Home</text>
-		<id>home</id>
 	</entry>
-	<entry>
+	<entry urlid="aboutme">
 		<text>About me</text>
-		<id>aboutme</id>
 	</entry>
-	<entry>
+	<entry urlid="publications">
 		<text>Publications</text>
-		<id>publications</id>
-		<subentry>
+		<subentry urlid="publications">
 			<text>All</text>
-			<id>publications</id>
 		</subentry>
-		<subentry>
+		<subentry urlid="publications_journal">
 			<text>Journal articles</text>
-			<id>publications_journal</id>
 		</subentry>
-		<subentry>
+		<subentry urlid="publications_conf">
 			<text>Conference proceedings</text>
-			<id>publications_conf</id>
 		</subentry>
-		<subentry>
+		<subentry urlid="publications_other">
 			<text>Other publications</text>
-			<id>publications_other</id>
 		</subentry>
 	</entry>
-	<entry>
+	<entry urlid="talks">
 		<text>Presentations</text>
-		<id>talks</id>
 	</entry>
-	<entry>
+	<entry urlid="projects">
 		<text>Projects</text>
-		<id>projects</id>
 	</entry>
 </menu>

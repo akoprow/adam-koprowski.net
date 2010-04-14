@@ -2,7 +2,7 @@
 
 .PHONY: clean all
 
-HTML := $(shell grep -e '<id>.*</id>' menu.xml | sed -e 's/.*<id>\(.*\)<\/id>.*/\1/')
+HTML := $(shell grep -e 'urlid=".*"' menu.xml | sed -e 's/.*urlid="\(.*\)".*/\1/')
 HTML_FILES := $(HTML:%=output/%.html)
 
 all: $(HTML_FILES)

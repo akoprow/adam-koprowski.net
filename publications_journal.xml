@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<page>
-	<id>publications</id>
-	<subid>publications_journal</subid>
+<page menu="publications" submenu="publications_journal">
+
 </page>
