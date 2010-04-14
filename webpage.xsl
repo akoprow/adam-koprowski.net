@@ -6,12 +6,12 @@
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
 
+	<xsl:variable name="menu-selection" select="/page/id" />
+
 	<xsl:template match="page">
 		<html>
 			<body>
-				<xsl:apply-templates select="document('menu.xml')">
-					<xsl:with-param name="selected" select="id" />
-				</xsl:apply-templates>
+				<xsl:apply-templates select="document('menu.xml')" />
 				<xsl:value-of select="content" disable-output-escaping="yes" />
 			</body>
 		</html>
@@ -20,30 +20,25 @@
 	<xsl:template match="menu">
 		<h2>Menu</h2>
 		<ul>
-			<xsl:apply-templates select="entry" mode="selected" />
+			<xsl:apply-templates select="entry" />
 		</ul>
 	</xsl:template>
 
-	<xsl:template match="entry" mode="selected">
+	<xsl:template match="entry">
 		<li>
-			<xsl:variable name="id">
-				<xsl:value-of select="id" />
-			</xsl:variable>
-			<xsl:value-of select="text" />
-			<ul>
-				<xsl:apply-templates select="subentry" />
-			</ul>
-		</li>
-	</xsl:template>
-
-	<xsl:template match="entry" mode="unselected">
-		<li>
-			<xsl:variable name="id">
-				<xsl:value-of select="id" />
-			</xsl:variable>
-			<A href="{$id}.html">
-				<xsl:value-of select="text" />
-			</A>
+			<xsl:choose>
+				<xsl:when test="./id = $menu-selection">
+					<xsl:value-of select="text" />
+					<ul>
+						<xsl:apply-templates select="subentry" />
+					</ul>
+				</xsl:when>
+				<xsl:otherwise>
+					<A href="{id}.html">
+						<xsl:value-of select="text" />
+					</A>
+				</xsl:otherwise>
+			</xsl:choose>
 		</li>
 	</xsl:template>
 
