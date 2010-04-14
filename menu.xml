@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <menu>
-  <entry>
-    <text>Home</text>
-    <id>home</id>
-  </entry>
-  <entry>
-    <text>About me</text>
-    <id>aboutme</id>
-  </entry>
-  <entry>
-    <text>Publications</text>
-    <id>publications</id>
-    <subentry>
-      <text>All</text>
-      <id>publications</id>
-    </subentry>
-    <subentry>
-      <text>Journal articles</text>
-      <id>publications_journal</id>
-    </subentry>
-    <subentry>
-      <text>Conference proceedings</text>
-      <id>publications_conf</id>
-    </subentry>
-    <subentry>
-      <text>Other publications</text>
-      <id>publications_other</id>
-    </subentry>
-  </entry>
-  <entry>
-    <text>Presentations</text>
-    <id>talks</id>
-  </entry>
-  <entry>
-    <text>Projects</text>
-    <id>projects</id>
-  </entry>
+	<entry>
+		<text>Home</text>
+		<id>home</id>
+	</entry>
+	<entry>
+		<text>About me</text>
+		<id>aboutme</id>
+	</entry>
+	<entry>
+		<text>Publications</text>
+		<id>publications</id>
+		<subentry>
+			<text>All</text>
+			<id>publications</id>
+		</subentry>
+		<subentry>
+			<text>Journal articles</text>
+			<id>publications_journal</id>
+		</subentry>
+		<subentry>
+			<text>Conference proceedings</text>
+			<id>publications_conf</id>
+		</subentry>
+		<subentry>
+			<text>Other publications</text>
+			<id>publications_other</id>
+		</subentry>
+	</entry>
+	<entry>
+		<text>Presentations</text>
+		<id>talks</id>
+	</entry>
+	<entry>
+		<text>Projects</text>
+		<id>projects</id>
+	</entry>
 </menu>
