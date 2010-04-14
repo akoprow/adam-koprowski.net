@@ -10,5 +10,5 @@ all: $(HTML_FILES)
 clean:
 	rm -f output/*.html
 
-output/%.html: webpage.xsl
+output/%.html: webpage.xsl %.xml
 	xsltproc -o $@ webpage.xsl $*.xml

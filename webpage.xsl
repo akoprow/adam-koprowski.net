@@ -7,6 +7,7 @@
 	<xsl:strip-space elements="*" />
 
 	<xsl:variable name="menu-selection" select="/page/id" />
+	<xsl:variable name="menu-subselection" select="/page/subid" />
 
 	<xsl:template match="page">
 		<html>
@@ -44,12 +45,16 @@
 
 	<xsl:template match="subentry">
 		<li>
-			<xsl:variable name="id">
-				<xsl:value-of select="id" />
-			</xsl:variable>
-			<A href="{$id}.html">
-				<xsl:value-of select="text" />
-			</A>
+			<xsl:choose>
+				<xsl:when test="./id = $menu-subselection">
+					<xsl:value-of select="text" />
+				</xsl:when>
+				<xsl:otherwise>
+					<A href="{id}.html">
+						<xsl:value-of select="text" />
+					</A>
+				</xsl:otherwise>
+			</xsl:choose>
 		</li>
 	</xsl:template>
 
