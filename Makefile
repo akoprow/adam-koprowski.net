@@ -11,4 +11,4 @@ clean:
 	rm -f output/*.html
 
 output/%.html: webpage.xsl
-	xsltproc -o $@ webpage.xsl menu.xml
+	xsltproc -o $@ webpage.xsl $*.xml

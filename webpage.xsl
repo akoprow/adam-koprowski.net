@@ -5,13 +5,14 @@
   <xsl:output method="html" indent="yes" encoding="ISO-8859-1"/> 
   <xsl:strip-space elements="*"/>
 
-  <xsl:template match="/">
+  <xsl:template match="page">
     <html>
       <body>
 	<h2>Menu</h2>
 	<ul>
-	  <xsl:apply-templates select="menu" />
+	  <xsl:apply-templates select="document('menu.xml')" />
 	</ul>
+	<xsl:value-of select="content" disable-output-escaping="yes" />	
       </body>
     </html>
   </xsl:template>

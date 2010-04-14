@@ -14,7 +14,7 @@
     <id>publications</id>
     <subentry>
       <text>All</text>
-      <id>publications.html</id>
+      <id>publications</id>
     </subentry>
     <subentry>
       <text>Journal articles</text>
@@ -31,10 +31,10 @@
   </entry>
   <entry>
     <text>Presentations</text>
-    <id>talks.html</id>
+    <id>talks</id>
   </entry>
   <entry>
     <text>Projects</text>
-    <id>projects.html</id>
+    <id>projects</id>
   </entry>
 </menu>
