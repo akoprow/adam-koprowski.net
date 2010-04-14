@@ -18,10 +18,10 @@
   
   <xsl:template match="entry">
     <li>
-      <xsl:variable name="url">
-	<xsl:value-of select="url"/>
+      <xsl:variable name="id">
+	<xsl:value-of select="id"/>
       </xsl:variable>
-      <A href="{$url}">
+      <A href="{$id}.html">
 	<xsl:value-of select="text" />
       </A>
       <ul>
@@ -32,10 +32,10 @@
 
   <xsl:template match="subentry">
     <li>
-      <xsl:variable name="url">
-	<xsl:value-of select="url"/>
+      <xsl:variable name="id">
+	<xsl:value-of select="id"/>
       </xsl:variable>
-      <A href="{$url}">
+      <A href="{$id}.html">
 	<xsl:value-of select="text" />
       </A>
     </li>

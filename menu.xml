@@ -3,38 +3,38 @@
 <menu>
   <entry>
     <text>Home</text>
-    <url>home.html</url>
+    <id>home</id>
   </entry>
   <entry>
     <text>About me</text>
-    <url>aboutme.html</url>
+    <id>aboutme</id>
   </entry>
   <entry>
     <text>Publications</text>
-    <url>publications.html</url>
+    <id>publications</id>
     <subentry>
       <text>All</text>
-      <url>publications_all.html</url>
+      <id>publications.html</id>
     </subentry>
     <subentry>
       <text>Journal articles</text>
-      <url>publications_journal.html</url>
+      <id>publications_journal</id>
     </subentry>
     <subentry>
       <text>Conference proceedings</text>
-      <url>publications_conf.html</url>
+      <id>publications_conf</id>
     </subentry>
     <subentry>
       <text>Other publications</text>
-      <url>publications_other.html</url>
+      <id>publications_other</id>
     </subentry>
   </entry>
   <entry>
     <text>Presentations</text>
-    <url>talks.html</url>
+    <id>talks.html</id>
   </entry>
   <entry>
     <text>Projects</text>
-    <url>projects.html</url>
+    <id>projects.html</id>
   </entry>
 </menu>
