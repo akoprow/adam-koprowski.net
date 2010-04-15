@@ -30,34 +30,38 @@
 
 	<xsl:template match="entry" mode="top">
 		<td align="center">
-			<a href="index.html" class="amenu">	
+			<a href="{@urlid}.html" class="amenu">	
 				<img src="images/bullet.gif" border="0" alt="" style="margin-bottom: 3px;" />
 				<br/>
 				<xsl:value-of select="text" />
 			</a>
 		</td>
-		<td width="10">
-			<div style="width: 5px; height: 0px;"><span /></div>
-		</td>
-		<td>
-			<img src="images/separator.gif" border="0" alt="" />
-		</td>
-		<td width="10">
-			<div style="width: 5px; height: 0px;"><span /></div>
-		</td>
+		<xsl:if test="not (position()=last())"> 
+			<td width="10">
+				<div style="width: 5px; height: 0px;"><span /></div>
+			</td>
+			<td>
+				<img src="images/separator.gif" border="0" alt="" />
+			</td>
+			<td width="10">
+				<div style="width: 5px; height: 0px;"><span /></div>
+			</td>
+		</xsl:if>
 	</xsl:template>
 	
 	<xsl:template match="entry" mode="bottom">
 		<td>
-			<a href="index.html" class="abmenu" id="abmenu">
+			<a href="{@urlid}.html" class="abmenu" id="abmenu">
 				<xsl:value-of select="text" />
 			</a>
 		</td>
-		<td width="5" />
-		<td>
-			<img src="images/bmenu_separator.gif" alt="" style="margin: 0px 5px 0px 5px;" />
-		</td>
-		<td width="5" />
+		<xsl:if test="not (position()=last())"> 
+			<td width="5" />
+			<td>
+				<img src="images/bmenu_separator.gif" alt="" style="margin: 0px 5px 0px 5px;" />
+			</td>
+			<td width="5" />
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="header">
