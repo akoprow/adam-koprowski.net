@@ -24,11 +24,7 @@
 	<xsl:template match="page">
 		<HTML>
 			<xsl:call-template name="html-header" />
-			<xsl:call-template name="html-main-box">
-				<xsl:with-param name="content">
-					<xsl:value-of select="content" disable-output-escaping="yes" />
-				</xsl:with-param>
-			</xsl:call-template>
+			<xsl:call-template name="html-main-box" />
 		</HTML>
 	</xsl:template>
 
@@ -37,10 +33,10 @@
 	<!--*************************************************************************************************-->
 
 	<xsl:template name="show-menu-top">
-		<xsl:apply-templates select="document('data/menu.xml')" mode="top" />
+		<xsl:apply-templates select="document('data/menu.xml')" mode="menu-top" />
 	</xsl:template>
 	
-	<xsl:template match="entry" mode="top">
+	<xsl:template match="entry" mode="menu-top">
 		<xsl:variable name="class">
 			<xsl:choose>
 				<xsl:when test="@urlid = $menu-selection">
@@ -72,10 +68,10 @@
 	</xsl:template>
 		
 	<xsl:template name="show-menu-bottom">
-		<xsl:apply-templates select="document('data/menu.xml')" mode="bottom" />
+		<xsl:apply-templates select="document('data/menu.xml')" mode="menu-bottom" />
 	</xsl:template>	
 	
-	<xsl:template match="entry" mode="bottom">
+	<xsl:template match="entry" mode="menu-bottom">
 		<xsl:variable name="class">
 			<xsl:choose>
 				<xsl:when test="@urlid = $menu-selection">
@@ -98,6 +94,20 @@
 			</td>
 			<td width="5" />
 		</xsl:if>
+	</xsl:template>
+
+	<!--*************************************************************************************************-->
+	<!--***************************************** Presentations *****************************************-->
+	<!--*************************************************************************************************-->
+
+	<xsl:template match="talks">
+		<xsl:apply-templates select="document('data/talks.xml')" mode="talks" />	
+	</xsl:template>
+
+	<xsl:template match="group" mode="talks">
+		<H2>
+			<xsl:value-of select="@id" />
+		</H2>	
 	</xsl:template>
 
 	<!--*************************************************************************************************-->
@@ -136,8 +146,56 @@
 		</table>
 	</xsl:template>
 
+	<xsl:template name="html-content">
+		<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" style="width: 100%; height: 100%;">
+			<TR>
+				<TD height="169" valign="bottom" style="padding: 0 370px 20px 60px;">
+					<xsl:call-template name="html-page-head" />
+				</TD>
+			</TR>
+			<TR>
+				<TD height="45" style="padding: 7px 290px 0 70px;">
+					<table cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td width="30">
+								<div style="width: 5px; height: 0px;"><span /></div>
+							</td>
+							<xsl:call-template name="show-menu-top" />
+						</tr>
+					</table>
+				</TD>
+			</TR>
+			<TR>
+				<TD height="100%" name="SB_stretch" valign="top">
+					<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 440px;">
+						<tr valign="top">
+							<td width="100%" class="pageContent" style="padding: 20px 20px 10px 90px;">
+								<xsl:apply-templates select="content" />																				
+							</td>
+						</tr>
+					</table>
+				</TD>
+			</TR>
+			<TR>
+				<TD height="130" valign="top" style="padding-top: 30px;">
+					<table cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td width="30">
+								<div style="width: 5px; height: 0px;"><span/></div>
+							</td>
+							<xsl:apply-templates select="document('data/menu.xml')" mode="bottom" />
+						</tr>
+					</table>
+					<div style="width: 0px; height: 10px;"><span /></div>
+					<div align="center" class="footer">
+						<xsl:value-of select="$page-footer" />
+					</div>
+				</TD>
+			</TR>
+		</TABLE>
+	</xsl:template>
+
 	<xsl:template name="html-main-box">
-		<xsl:param name="content" />
 		<BODY MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" LEFTMARGIN="0">
 			<table cellpadding="0" cellspacing="0" border="0" class="main-bg" style="width: 100%; height: 100%; background-image: url('images/tbg.jpg'); background-repeat: repeat-x;">
 				<tr>
@@ -151,52 +209,7 @@
 												<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/bbg_l.jpg'); background-position: bottom left; background-repeat: no-repeat;">
 													<tr>
 														<td style="background-image: url('images/bbg_r.jpg'); background-position: bottom right; background-repeat: no-repeat;">
-															<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" style="width: 100%; height: 100%;">
-																<TR>
-																	<TD height="169" valign="bottom" style="padding: 0 370px 20px 60px;">
-																		<xsl:call-template name="html-page-head" />
-																	</TD>
-																</TR>
-																<TR>
-																	<TD height="45" style="padding: 7px 290px 0 70px;">
-																		<table cellpadding="0" cellspacing="0" align="center">
-																			<tr>
-																				<td width="30">
-																					<div style="width: 5px; height: 0px;"><span></span></div>
-																				</td>
-																				<xsl:call-template name="show-menu-top" />
-																			</tr>
-																		</table>
-																	</TD>
-																</TR>
-																<TR>
-																	<TD height="100%" name="SB_stretch" valign="top">
-																		<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 440px;">
-																			<tr valign="top">
-																				<td width="100%" class="pageContent" style="padding: 20px 20px 10px 90px;">
-																					<xsl:value-of select="$content" disable-output-escaping="yes" />																				
-																				</td>
-																			</tr>
-																		</table>
-																	</TD>
-																</TR>
-																<TR>
-																	<TD height="130" valign="top" style="padding-top: 30px;">
-																		<table cellpadding="0" cellspacing="0" align="center">
-																			<tr>
-																				<td width="30">
-																					<div style="width: 5px; height: 0px;"><span></span></div>
-																				</td>
-																				<xsl:apply-templates select="document('data/menu.xml')" mode="bottom" />
-																			</tr>
-																		</table>
-																		<div style="width: 0px; height: 10px;"><span></span></div>
-																		<div align="center" class="footer">
-																			<xsl:value-of select="$page-footer" />
-																		</div>
-																	</TD>
-																</TR>
-															</TABLE>
+															<xsl:call-template name="html-content" />
 														</td>
 													</tr>
 												</table>
@@ -211,5 +224,19 @@
 			</table>
 		</BODY>
 	</xsl:template>
+
+	<xsl:template match="heading">
+		<table cellpadding="0" cellspacing="0" border="0"> 
+			<tr> 
+				<td class="text-header">
+					<xsl:value-of select="." />
+				</td> 
+				<td style="padding-left: 5px;">
+					<img src="images/txtheader_bullet.gif" border="0" alt="" />
+				</td> 
+			</tr> 
+		</table>
+		<div style="width: 0px; height: 15px;"><span /></div> 
+	</xsl:template> 
 	
 </xsl:stylesheet>

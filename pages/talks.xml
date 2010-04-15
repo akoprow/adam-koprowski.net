@@ -4,6 +4,9 @@
 <page menu="talks">
 	<title>Adam Koprowski :: Presentations</title>
 	<content>
+		<heading>
+			Presentations that I have given:
+		</heading>
 		<talks />
 	</content>
 </page>
