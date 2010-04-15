@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <page menu="home">
-	<content>
-    <![CDATA[
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tr>
-	<td class="text-header">Home</td>
-	<td style="padding-left: 5px;">
-	  <img src="images/txtheader_bullet.gif" border="0" />
-	</td>
-      </tr>
-    </table>
-    <div style="width: 0px; height: 15px;"><span/></div>
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tr>
-	<td class="text-header">My travel plans</td>
-	<td style="padding-left: 5px;">
-	  <img src="images/txtheader_bullet.gif" border="0" />
-	</td>
-      </tr>
-    </table>
-    <div style="width: 0px; height: 15px;"><span/></div>
-    <div id="tripit-badge">
-      <script type="text/javascript" src="http://www.tripit.com/account/badge/id/89F900BB98D75AE6E4A1E8E36B92A80F/div_id/tripit-badge/badge.js" />
-      <noscript>
-	<a href="http://www.tripit.com/">TripIt - Organize your travel</a>
-      </noscript>
-    </div>
-    <div style="width: 185px; height: 0px;"><span/></div>
-    ]]>
-	</content>
+	<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td class="text-header">Home</td>
+			<td style="padding-left: 5px;">
+				<img src="images/txtheader_bullet.gif" border="0" />
+			</td>
+		</tr>
+	</table>
+	<div style="width: 0px; height: 15px;">
+		<span />
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td class="text-header">My travel plans</td>
+			<td style="padding-left: 5px;">
+				<img src="images/txtheader_bullet.gif" border="0" />
+			</td>
+		</tr>
+	</table>
+	<div style="width: 0px; height: 15px;">
+		<span />
+	</div>
+	<div id="tripit-badge">
+		<script type="text/javascript"
+			src="http://www.tripit.com/account/badge/id/89F900BB98D75AE6E4A1E8E36B92A80F/div_id/tripit-badge/badge.js" />
+		<noscript>
+			<a href="http://www.tripit.com/">TripIt - Organize your travel</a>
+		</noscript>
+	</div>
+	<div style="width: 185px; height: 0px;">
+		<span />
+	</div>
 </page>
