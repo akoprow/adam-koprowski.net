@@ -11,216 +11,11 @@
 
 	<xsl:template match="/">
 		<HTML>
-			<head>
-				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-				<title>Adam Koprowski - Home</title> <!-- TODO -->
-				<meta name="DESCRIPTION" content="" />
-				<meta name="KEYWORDS" content="" />
-				<link href="css/styles.css"	rel="stylesheet" type="text/css" />
-			</head>
+			<xsl:call-template name="header" />
+			<xsl:call-template name="mainBox">
 
-				<BODY MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" LEFTMARGIN="0">
-					<table cellpadding="0" cellspacing="0" border="0" class="main-bg" style="width: 100%; height: 100%; background-image: url('images/tbg.jpg'); background-repeat: repeat-x;">
-						<tr>
-							<td style="background-image: url('images/bbg.jpg'); background-position: bottom; background-repeat: repeat-x;">
-								<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/lbg.jpg'); background-repeat: repeat-y;">
-									<tr>
-										<td style="background-image: url('images/rbg.jpg'); background-position: right; background-repeat: repeat-y;">
-											<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/tbg_l.jpg'); background-repeat: no-repeat;">
-												<tr>
-													<td style="background-image: url('images/header.jpg'); background-position: top right; background-repeat: no-repeat;">
-														<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/bbg_l.jpg'); background-position: bottom left; background-repeat: no-repeat;">
-															<tr>
-																<td style="background-image: url('images/bbg_r.jpg'); background-position: bottom right; background-repeat: no-repeat;">
-																	<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" style="width: 100%; height: 100%;">
-																		<TR>
-																			<TD height="169" valign="bottom" style="padding: 0 370px 20px 60px;">
-																				<table cellpadding="0" cellspacing="0">
-																					<tr>
-																						<td rowspan="2">	
-																							<a href="./">
-																								<img src="images/logo.gif" alt="" border="0" style="margin-right: 5px;" />
-																							</a>
-																						</td>
-																						<td class="company" valign="bottom">
-																							Adam Koprowski
-																						</td>
-																					</tr>
-																					<tr>
-																						<td class="slogan" valign="top">
-																							personal homepage
-																						</td>
-											</tr>
-										</table>
-										</TD>
-									</TR>
-									<TR>
-										<TD height="45" style="padding: 7px 290px 0 70px;">
-										<table cellpadding="0" cellspacing="0" align="center">
-											<tr>
-												<td width="30">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td align="center"><a href="index.html" class="amenu"><img
-													src="images/bullet.gif"
-													border="0" alt="" style="margin-bottom: 3px;" /><br/>
-												Home</a></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td><img
-													src="images/separator.gif"
-													border="0" alt=""/></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td align="center"><a href="aboutme.html" class="menu"><img
-													src="images/bullet.gif"
-													border="0" alt="" style="margin-bottom: 3px;"/><br/>
-												About me</a></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td><img
-													src="images/separator.gif"
-													border="0" alt=""/></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td align="center"><a href="publications.html"
-													class="menu"><img
-													src="images/bullet.gif"
-													border="0" alt="" style="margin-bottom: 3px;"/><br/>
-												Publications</a></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td><img
-													src="images/separator.gif"
-													border="0" alt=""/></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td align="center"><a href="presentations.html"
-													class="menu"><img
-													src="images/bullet.gif"
-													border="0" alt="" style="margin-bottom: 3px;"/><br/>
-												Presentations</a></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td><img
-													src="images/separator.gif"
-													border="0" alt=""/></td>
-												<td width="10">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td align="center"><a href="projects.html" class="menu"><img
-													src="images/bullet.gif"
-													border="0" alt="" style="margin-bottom: 3px;"/><br/>
-												Projects</a></td>
-												<td width="30">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-											</tr>
-										</table>
-										</TD>
-									</TR>
-									<TR>
-										<TD height="100%" name="SB_stretch" valign="top">
-										<table cellpadding="0" cellspacing="0" border="0"
-											style="width: 100%; height: 440px;">
-											<tr valign="top">
-												<td width="100%" class="pageContent"
-													style="padding: 20px 20px 10px 90px;">
-												<table cellpadding="0" cellspacing="0" border="0">
-													<tr>
-														<td class="text-header">Home</td>
-														<td style="padding-left: 5px;"><img
-															src="images/txtheader_bullet.gif"
-															border="0" alt=""/></td>
-													</tr>
-												</table>
-												<div style="width: 0px; height: 15px;"><span></span></div>
-
-												<table cellpadding="0" cellspacing="0" border="0">
-													<tr>
-														<td class="text-header">My travel plans</td>
-														<td style="padding-left: 5px;"><img
-															src="images/txtheader_bullet.gif"
-															border="0" alt=""/></td>
-													</tr>
-												</table>
-												<div style="width: 0px; height: 15px;"><span></span></div>
-
-<div id="tripit-badge"><script type="text/javascript" src="http://www.tripit.com/account/badge/id/89F900BB98D75AE6E4A1E8E36B92A80F/div_id/tripit-badge/badge.js"></script><noscript><a href="http://www.tripit.com/">TripIt - Organize your travel</a></noscript></div>
-
-												<div style="width: 185px; height: 0px;"><span></span></div>
-												</td>
-											</tr>
-										</table>
-										</TD>
-									</TR>
-									<TR>
-										<TD height="130" valign="top" style="padding-top: 30px;">
-										<table cellpadding="0" cellspacing="0" align="center">
-											<tr>
-												<td width="30">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-												<td><a href="index.html" class="abmenu" id="abmenu">Home</a></td>
-												<td width="5"></td>
-												<td><img
-													src="images/bmenu_separator.gif"
-													alt="" style="margin: 0px 5px 0px 5px;"/></td>
-												<td width="5"></td>
-												<td><a href="aboutme.html" class="bmenu" id="bmenu2">About
-												me</a></td>
-												<td width="5"></td>
-												<td><img
-													src="images/bmenu_separator.gif"
-													alt="" style="margin: 0px 5px 0px 5px;"/></td>
-												<td width="5"></td>
-												<td><a href="publications.html" class="bmenu"
-													id="bmenu3">Publications</a></td>
-												<td width="5"></td>
-												<td><img
-													src="images/bmenu_separator.gif"
-													alt="" style="margin: 0px 5px 0px 5px;"/></td>
-												<td width="5"></td>
-												<td><a href="presentations.html" class="bmenu"
-													id="bmenu4">Presentations</a></td>
-												<td width="5"></td>
-												<td><img
-													src="images/bmenu_separator.gif"
-													alt="" style="margin: 0px 5px 0px 5px;"/></td>
-												<td width="5"></td>
-												<td><a href="projects.html" class="bmenu" id="bmenu5">Projects</a></td>
-												<td width="30">
-												<div style="width: 5px; height: 0px;"><span></span></div>
-												</td>
-											</tr>
-										</table>
-										<div style="width: 0px; height: 10px;"><span></span></div>
-										<div align="center" class="footer">(C) 2010 Adam
-										Koprowski</div>
-										</TD>
-									</TR>
-								</TABLE>
-								</td>
-							</tr>
-						</table>
-						</td>
-					</tr>
-				</table>
-				</td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-</BODY>
-</HTML>
+			</xsl:call-template>
+		</HTML>
 	</xsl:template>
 
 <!--
@@ -273,4 +68,133 @@
 		</li>
 	</xsl:template>
 -->
+
+	<xsl:template name="header">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title>Adam Koprowski - Home</title> <!-- TODO -->
+			<meta name="DESCRIPTION" content="" />
+			<meta name="KEYWORDS" content="" />
+			<link href="css/styles.css"	rel="stylesheet" type="text/css" />
+		</head>	
+	</xsl:template>
+
+	<xsl:template name="page-head">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td rowspan="2">	
+					<a href="/">
+						<img src="images/logo.gif" alt="" border="0" style="margin-right: 5px;" />
+					</a>
+				</td>
+				<td class="company" valign="bottom">
+					Adam Koprowski
+				</td>
+			</tr>
+			<tr>
+				<td class="slogan" valign="top">
+					personal homepage
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+
+	<xsl:template name="mainBox">
+		<BODY MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" LEFTMARGIN="0">
+			<table cellpadding="0" cellspacing="0" border="0" class="main-bg" style="width: 100%; height: 100%; background-image: url('images/tbg.jpg'); background-repeat: repeat-x;">
+				<tr>
+					<td style="background-image: url('images/bbg.jpg'); background-position: bottom; background-repeat: repeat-x;">
+						<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/lbg.jpg'); background-repeat: repeat-y;">
+							<tr>
+								<td style="background-image: url('images/rbg.jpg'); background-position: right; background-repeat: repeat-y;">
+									<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/tbg_l.jpg'); background-repeat: no-repeat;">
+										<tr>
+											<td style="background-image: url('images/header.jpg'); background-position: top right; background-repeat: no-repeat;">
+												<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background-image: url('images/bbg_l.jpg'); background-position: bottom left; background-repeat: no-repeat;">
+													<tr>
+														<td style="background-image: url('images/bbg_r.jpg'); background-position: bottom right; background-repeat: no-repeat;">
+															<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" style="width: 100%; height: 100%;">
+																<TR>
+																	<TD height="169" valign="bottom" style="padding: 0 370px 20px 60px;">
+																		<xsl:call-template name="page-head" />
+																	</TD>
+																</TR>
+																<TR>
+																	<TD height="45" style="padding: 7px 290px 0 70px;">
+																		<table cellpadding="0" cellspacing="0" align="center">
+																			<tr>
+																				<td width="30">
+																					<div style="width: 5px; height: 0px;"><span></span></div>
+																				</td>
+																				
+																				<td align="center">
+																					<a href="index.html" class="amenu">
+																						<img src="images/bullet.gif" border="0" alt="" style="margin-bottom: 3px;" />
+																						<br/>
+																						Home
+																					</a>
+																				</td>
+																				<td width="10">
+																					<div style="width: 5px; height: 0px;"><span></span></div>
+																				</td>
+																				<td>
+																					<img src="images/separator.gif" border="0" alt=""/>
+																				</td>
+																				<td width="10">
+																					<div style="width: 5px; height: 0px;"><span></span></div>
+																				</td>
+																			</tr>
+																		</table>
+																	</TD>
+																</TR>
+																<TR>
+																	<TD height="100%" name="SB_stretch" valign="top">
+																		<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 440px;">
+																			<tr valign="top">
+																				<td width="100%" class="pageContent" style="padding: 20px 20px 10px 90px;">
+																					CONTENT
+																				</td>
+																			</tr>
+																		</table>
+																	</TD>
+																</TR>
+																<TR>
+																	<TD height="130" valign="top" style="padding-top: 30px;">
+																		<table cellpadding="0" cellspacing="0" align="center">
+																			<tr>
+																				<td width="30">
+																					<div style="width: 5px; height: 0px;"><span></span></div>
+																				</td>
+																				<td>	
+																					<a href="index.html" class="abmenu" id="abmenu">Home</a>
+																				</td>
+																				<td width="5" />
+																				<td>
+																					<img src="images/bmenu_separator.gif" alt="" style="margin: 0px 5px 0px 5px;"/>
+																				</td>
+																				<td width="5"></td>
+																			</tr>
+																		</table>
+																		<div style="width: 0px; height: 10px;"><span></span></div>
+																		<div align="center" class="footer">
+																			(C) 2010 Adam Koprowski
+																		</div>
+																	</TD>
+																</TR>
+															</TABLE>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</BODY>
+	</xsl:template>
+	
 </xsl:stylesheet>
