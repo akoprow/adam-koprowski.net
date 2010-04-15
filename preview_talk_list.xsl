@@ -9,23 +9,25 @@
 		<html>
 			<body>
 				<h1>Talks:</h1>
-				<xsl:apply-templates select="talks" />
+				<table border="1" cellpadding="5">
+					<tr>
+						<th>Title</th>
+						<th>Events</th>
+						<th>Downloads</th>
+					</tr>
+					<xsl:apply-templates select="talks" />
+				</table>
 			</body>
 		</html>
 	</xsl:template>
 
 	<xsl:template match="year">
-		<h2>
-			<xsl:value-of select="@id" />
-		</h2>
-		<table border="1" cellpadding="6">
-			<tr>
-				<th>Title</th>
-				<th>Events</th>
-				<th>Downloads</th>
-			</tr>
-			<xsl:apply-templates />			
-		</table>
+		<tr>
+			<th colspan="3">
+				<xsl:value-of select="@id" />
+			</th>
+		</tr>
+		<xsl:apply-templates />			
 	</xsl:template>
 	
 	<xsl:template match="talk">
@@ -34,36 +36,39 @@
 				<xsl:value-of select="title" />				
 			</td>
 			<td>
-				<ul>
-					<xsl:apply-templates select="./pres" />
-				</ul>
+				<xsl:apply-templates select="./pres" />
 			</td>
 			<td>
-				<ul>
-					<xsl:apply-templates select="./download" />			
-				</ul>
+				<xsl:apply-templates select="./download" />			
 			</td>
 		</tr>	
 	</xsl:template>
 	
 	<xsl:template match="pres">
-		<li>
+		<div>
 			<xsl:value-of select="date" /> 
 			/ 
-			<A href="{url}">
-				<xsl:value-of select="event" /> 
-			</A>
+			<xsl:choose>
+				<xsl:when test="./url">
+					<A href="{url}">
+						<xsl:value-of select="event" /> 
+					</A>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="event" /> 				
+				</xsl:otherwise>
+			</xsl:choose>
 			/							
 			<xsl:value-of select="location" />
-		</li>
+		</div>
 	</xsl:template>
 
 	<xsl:template match="download">
-		<li>
+		<div>
 			<A href="{url}">
 				<xsl:value-of select="text" /> 
 			</A>
-		</li>
+		</div>
 	</xsl:template>
 	
 </xsl:stylesheet>

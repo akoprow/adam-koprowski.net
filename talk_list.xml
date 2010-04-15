@@ -11,7 +11,7 @@
 			</pres>
 			<download>
 				<text>PDF</text>
-				<url>pres/trx-esop-10.pdf</url>
+				<url>trx-esop-10.pdf</url>
 			</download>
 		</talk>
 	</year>
@@ -27,95 +27,175 @@
 			</pres>
 			<download>
 				<text>PDF</text>
-				<url>pres/color-icis-08.pdf</url>
+				<url>color-icis-08.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Termination of Rewriting and Its Certification</title>
+			<pres>
+				<date>25.09.2008</date>
+				<event>PhD defence ceremony</event>
+				<location>Eidhoven University of Technology, Eindhoven, The Netherlands</location>
+			</pres>
+			<download>
+				<text>PDF</text>
+				<url>phd-08.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Arctic Termination ... Below Zero</title>
+			<pres>
+				<date>15.07.2008</date>
+				<url>http://www.risc.uni-linz.ac.at/about/conferences/rta2008/index.html</url>
+				<event>RTA '08</event>
+				<location>Hagenberg, Austria</location>
+			</pres>
+			<download>
+				<text>PDF</text>
+				<url>arctic-int-rta-08.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Certification of Arctic Termination</title>
+			<pres>
+				<date>07.03.2008</date>
+				<url>http://www.cs.vu.nl/~tcs/seminar</url>
+				<event>TCS seminar</event>
+				<location>Free University, Amsterdam, The Netherlands</location>
+			</pres>
+			<download>
+				<text>Abstract</text>
+				<url>cert-tcs-vu-08.txt</url>
+			</download>
+			<download>
+				<text>PDF</text>
+				<url>cert-tcs-vu-08.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Certification of proving termination of term rewriting by matrix interpretations</title>
+			<pres>
+				<date>21.01.2008</date>
+				<url>http://ics.upjs.sk/sofsem08</url>
+				<event>SOFSEM '08</event>
+				<location>Nový Smokovec, High Tatras, Slovakia</location>
+			</pres>
+			<download>
+				<text>PDF</text>
+				<url>mint-cert-sofsem-08.pdf</url>
 			</download>
 		</talk>
 	</year>
+
+	<year id="2007">
+		<talk>
+			<title>Semantic labeling for proving termination of term rewriting</title>
+			<pres>
+				<date>17.12.2007</date>
+				<event>Protheo seminar</event>
+				<location>Loria, Nancy, France</location>
+			</pres>
+			<download>
+				<text>Abstract</text>
+				<url>sl-protheo-loria-07.txt</url>
+			</download>
+			<download>
+				<text>PDF</text>
+				<url>sl-protheo-loria-07.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Predictive Labeling with Dependency Pairs using SAT</title>
+			<pres>
+				<date>20.07.2007</date>
+				<url>http://www.cadeconference.org/meetings/cade21</url>
+				<event>CADE '07</event>
+				<location>Bremen, Germany</location>
+			</pres>
+			<download>
+				<text>PDF</text>
+				<url>predlab-cade-07.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Certification of Matrix Interpretations in Coq</title>
+			<pres>
+				<date>29.06.2007</date>
+				<url>http://www.lsv.ens-cachan.fr/rdp07/wst.html</url>
+				<event>WST '07</event>
+				<location>Paris, France</location>
+			</pres>
+			<download>
+				<text>PDF</text>
+				<url>mint-cert-wst-07.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Termination of Term Rewriting Meets Theorem Proving</title>
+			<pres>
+				<date>31.05.2007</date>
+				<url>http://www.win.tue.nl/prose</url>
+				<event>Prose (Process seminar)</event>
+				<location>Eidhoven University of Technology, Eindhoven, The Netherlands</location>
+			</pres>
+			<download>
+				<text>Abstract</text>
+				<url>cert-term-prose-tue-07.txt</url>
+			</download>
+			<download>
+				<text>PDF</text>
+				<url>cert-term-prose-tue-07.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Certification of Termination</title>
+			<pres>
+				<date>24.05.2007</date>
+				<url>http://www.win.tue.nl/~hzantema/terese.html</url>
+				<event>TeReSe meeting</event>
+				<location>Eindhoven, The Netherlands</location>
+			</pres>
+			<download>
+				<text>Abstract</text>
+				<url>cert-term-terese-07.txt</url>
+			</download>
+			<download>
+				<text>PDF [handout]</text>
+				<url>cert-term-terese-07-handout.txt</url>
+			</download>
+			<download>
+				<text>PDF [talk]</text>
+				<url>cert-term-terese-07-talk.txt</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Certification of Matrix Interpretations in Coq</title>
+			<pres>
+				<date>11.05.2007</date>
+				<url>http://color.loria.fr/workshop.html</url>
+				<event>CoLoR workshop</event>
+				<location>Nancy, France</location>
+			</pres>
+			<download>
+				<text>PDF</text>
+				<url>mint-cert-color-07.pdf</url>
+			</download>
+		</talk>
+		<talk>
+			<title>Poster: TPA - Termination Proved Automatically (revised version)</title>
+			<pres>
+				<date>22.03.2007</date>
+				<event>NIRICT kick-off event</event>
+				<location>Utrecht, The Netherlands</location>
+			</pres>
+			<download>
+				<text>PDF [poster]</text>
+				<url>tpa-poster-nirict-07.pdf</url>
+			</download>
+		</talk>
+	</year>
+
 <!--
-  <DIV class="paper">
-  <STRONG>Termination of Rewriting and Its Certification</STRONG>
-  <DIV class="talk">25.09.2008, PhD defence ceremony, Eidhoven University of Technology, Eindhoven, The Netherlands</DIV>
-  Get presentation:
-  <A class="download" href="pres/phd-08.pdf">PDF</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Arctic Termination ... Below Zero</STRONG>
-  <DIV class="talk">15.07.2008 <A href="http://www.risc.uni-linz.ac.at/about/conferences/rta2008/index.html">RTA</A>,
-    Hagenberg, Austria</DIV>
-  Get presentation:
-  <A class="download" href="pres/arctic-int-rta-08.pdf">PDF</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Certification of Arctic Termination</STRONG>
-  <DIV class="talk">07.03.2008, <A href="http://www.cs.vu.nl/~tcs/seminar/">TCS seminar</A>,
-    <A href="http://www.vu.nl/">VU</A>, Amsterdam, The Netherlands</DIV>
-  Get presentation:
-  <A class="download" href="pres/cert-tcs-vu-08.txt">Abstract</A>
-  <A class="download" href="pres/cert-tcs-vu-08.pdf">PDF</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Certification of proving termination of term rewriting by matrix interpretations.</STRONG>
-  <DIV class="talk">21.01.2008, <A href="http://ics.upjs.sk/sofsem08/">SOFSEM '08</A>, Nový Smokovec, High Tatras, Slovakia</DIV>
-  Get presentation:
-  <A class="download" href="pres/mint-cert-sofsem-08.pdf">PDF</A>
-  </DIV>
-
-  <H2>2007</H2>
-
-  <DIV class="paper">
-  <STRONG>Semantic labeling for proving termination of term rewriting</STRONG>
-  <DIV class="talk">17.12.2007, Protheo seminar, Loria, Nancy, France</DIV>
-  Get presentation:
-  <A class="download" href="pres/sl-protheo-loria-07.txt">Abstract</A>
-  <A class="download" href="pres/sl-protheo-loria-07.pdf">PDF</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Predictive Labeling with Dependency Pairs using SAT.</STRONG>
-  <DIV class="talk">20.07.2007, <A href="http://www.cadeconference.org/meetings/cade21/">CADE '07</A>, Bremen, Germany</DIV>
-  Get presentation:
-  <A class="download" href="pres/predlab-cade-07.pdf">PDF</A>
-  </DIV>
-  <DIV class="paper">
-  <STRONG>Certification of Matrix Interpretations in Coq.</STRONG>
-  <DIV class="talk">29.06.2007, <A href="http://www.lsv.ens-cachan.fr/rdp07/wst.html">WST '07</A>, Paris, France</DIV>
-  Get presentation:
-  <A class="download" href="pres/mint-cert-wst-07.pdf">PDF</A>
-  </DIV>
-  <DIV class="paper">
-  <STRONG>Termination of Term Rewriting Meets Theorem Proving.</STRONG>
-  <DIV class="talk">31.05.2007, <A href="http://www.win.tue.nl/prose">Prose (Process seminar)</A>, Eidhoven University of Technology, Eindhoven, The Netherlands</DIV>
-  Get presentation:
-  <A class="download" href="pres/cert-term-prose-tue-07.txt">Abstract</A>
-  <A class="download" href="pres/cert-term-prose-tue-07.pdf">PDF</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Certification of Termination.</STRONG>
-  <DIV class="talk">24.05.2007, <A href="http://www.win.tue.nl/~hzantema/terese.html">TeReSe meeting</A>, Eindhoven, The Netherlands</DIV>
-  Get presentation:
-  <A class="download" href="pres/cert-term-terese-07.txt">Abstract</A>
-  <A class="download" href="pres/cert-term-terese-07-handout.pdf">PDF [handout]</A>
-  <A class="download" href="pres/cert-term-terese-07-talk.pdf">PDF [talk]</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Certification of Matrix Interpretations in Coq.</STRONG>
-  <DIV class="talk">11.05.2007, <A href="http://color.loria.fr/workshop.html">CoLoR workshop</A>, Nancy, France</DIV>
-  Get presentation:
-  <A class="download" href="pres/mint-cert-color-07.pdf">PDF</A>
-  </DIV>
-
-  <DIV class="paper">
-  <STRONG>Poster: TPA - Termination Proved Automatically</STRONG>(revised version)
-  <DIV class="talk">22.03.2007, NIRICT kick-off event, Utrecht, The Netherlands</DIV>
-  Get poster:
-  <A class="download" href="pres/tpa-poster-nirict-07.pdf">PDF</A>
-  </DIV>
-
   <H2>2006</H2>
 
   <DIV class="paper">
