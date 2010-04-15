@@ -4,15 +4,18 @@
 <page menu="home">
 	<title>Adam Koprowski :: Home</title>
 	<content>
-		<header>Home</header>
-		<header>My travel plans</header>
-		<![CDATA[
-		<div id="tripit-badge">
-			<script type="text/javascript" src="http://www.tripit.com/account/badge/id/89F900BB98D75AE6E4A1E8E36B92A80F/div_id/tripit-badge/badge.js" />
-			<noscript>
-				<a href="http://www.tripit.com/">TripIt - Organize your travel</a>
-			</noscript>
-		</div>
-		]]>
+		<heading>Home</heading>
+		
+		<heading>My travel plans</heading>
+		<html>
+			<![CDATA[
+			<div id="tripit-badge">
+				<script type="text/javascript" src="http://www.tripit.com/account/badge/id/89F900BB98D75AE6E4A1E8E36B92A80F/div_id/tripit-badge/badge.js" />
+				<noscript>
+					<a href="http://www.tripit.com/">TripIt - Organize your travel</a>
+				</noscript>
+			</div>
+			]]>
+		</html>
 	</content>
 </page>

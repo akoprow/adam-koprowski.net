@@ -3,7 +3,6 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
-	<xsl:strip-space elements="*" />
 
 	<!--*************************************************************************************************-->
 	<!--******************************************* Variables *******************************************-->
@@ -107,7 +106,44 @@
 	<xsl:template match="group" mode="talks">
 		<H2>
 			<xsl:value-of select="@id" />
-		</H2>	
+		</H2>
+		<xsl:apply-templates mode="talks" />
+	</xsl:template>
+	
+	<xsl:template match="talk" mode="talks">
+		<DIV class="paper">
+  			<STRONG>
+	  			<xsl:value-of select="title" />
+  			</STRONG>
+  			<xsl:apply-templates mode="talks" select="pres" />
+  			Get:
+  			<xsl:apply-templates mode="talks" select="download" />
+		</DIV>
+	</xsl:template>
+
+	<xsl:template match="pres" mode="talks">
+		<DIV class="talk">
+			<xsl:value-of select="date" />,
+			<xsl:choose>
+				<xsl:when test="url">
+					<A href="{url}">
+						<xsl:value-of select="event" />
+					</A>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="event" />				
+				</xsl:otherwise>
+			</xsl:choose>
+			,
+			<xsl:value-of select="location" />
+		</DIV>
+	</xsl:template>
+
+	<xsl:template match="download" mode="talks">
+		<A class="download" href="pres/{url}">
+			<xsl:value-of select="text" />
+		</A>
+		<xsl:text><![CDATA[ &nbsp; ]]></xsl:text>
 	</xsl:template>
 
 	<!--*************************************************************************************************-->
@@ -172,6 +208,10 @@
 							<td width="100%" class="pageContent" style="padding: 20px 20px 10px 90px;">
 								<xsl:apply-templates select="content" />																				
 							</td>
+							<td style="padding: 120px 100px 10px 5px;">
+								<table cellpadding="0" cellspacing="0" width="145" align="center" />
+								<div style="width: 185px; height: 0px;"><span /></div>
+							</td>
 						</tr>
 					</table>
 				</TD>
@@ -183,7 +223,7 @@
 							<td width="30">
 								<div style="width: 5px; height: 0px;"><span/></div>
 							</td>
-							<xsl:apply-templates select="document('data/menu.xml')" mode="bottom" />
+							<xsl:call-template name="show-menu-bottom" />
 						</tr>
 					</table>
 					<div style="width: 0px; height: 10px;"><span /></div>
@@ -238,5 +278,9 @@
 		</table>
 		<div style="width: 0px; height: 15px;"><span /></div> 
 	</xsl:template> 
+
+	<xsl:template match="html">
+		<xsl:value-of select="." disable-output-escaping="yes" />
+	</xsl:template>
 	
 </xsl:stylesheet>
