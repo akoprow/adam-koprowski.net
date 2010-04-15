@@ -19,7 +19,7 @@
 
 	<xsl:template match="entry">
 		<li>
-			<A href="{@urlid}">
+			<A href="{@urlid}.html">
 				<xsl:value-of select="text" />
 			</A>
 			<ul>
@@ -30,7 +30,7 @@
 
 	<xsl:template match="subentry">
 		<li>
-			<A href="{@urlid}">
+			<A href="{@urlid}.html">
 				<xsl:value-of select="text" />
 			</A>
 		</li>
