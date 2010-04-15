@@ -21,7 +21,7 @@
 		</html>
 	</xsl:template>
 
-	<xsl:template match="year">
+	<xsl:template match="group">
 		<tr>
 			<th colspan="3">
 				<xsl:value-of select="@id" />
@@ -65,7 +65,7 @@
 
 	<xsl:template match="download">
 		<div>
-			<A href="{url}">
+			<A href="../output/pres/{url}">
 				<xsl:value-of select="text" /> 
 			</A>
 		</div>
