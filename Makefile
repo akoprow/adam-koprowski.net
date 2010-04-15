@@ -2,18 +2,18 @@
 
 .PHONY: clean all
 
-HTML := $(shell grep -e 'urlid=".*"' menu.xml | sed -e 's/.*urlid="\(.*\)".*/\1/')
+HTML := $(shell grep -e 'urlid=".*"' data/menu.xml | sed -e 's/.*urlid="\(.*\)".*/\1/')
 HTML_FILES := $(HTML:%=output/%.html)
 
 all: $(HTML_FILES) preview
 
-preview: preview/menu.html preview/talk_list.html
+preview: preview/menu.html preview/talks.html
 
 clean:
-	rm -f output/*.html
+	rm -f output/*.html preview
 
-preview/%.html: preview_%.xsl %.xml
-	xsltproc -o $@ preview_$*.xsl $*.xml
+preview/%.html: preview_%.xsl data/%.xml
+	xsltproc -o $@ preview_$*.xsl data/$*.xml
 
-output/%.html: webpage.xsl %.xml
-	xsltproc -o $@ webpage.xsl $*.xml
+output/%.html: webpage.xsl pages/%.xml
+	xsltproc -o $@ webpage.xsl pages/$*.xml

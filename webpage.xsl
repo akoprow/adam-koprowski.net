@@ -146,7 +146,7 @@
 																				<td width="30">
 																					<div style="width: 5px; height: 0px;"><span></span></div>
 																				</td>
-																				<xsl:apply-templates select="document('menu.xml')" mode="top" />
+																				<xsl:apply-templates select="document('data/menu.xml')" mode="top" />
 																			</tr>
 																		</table>
 																	</TD>
@@ -169,7 +169,7 @@
 																				<td width="30">
 																					<div style="width: 5px; height: 0px;"><span></span></div>
 																				</td>
-																				<xsl:apply-templates select="document('menu.xml')" mode="bottom" />
+																				<xsl:apply-templates select="document('data/menu.xml')" mode="bottom" />
 																			</tr>
 																		</table>
 																		<div style="width: 0px; height: 10px;"><span></span></div>
