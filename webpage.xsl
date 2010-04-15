@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
+	<xsl:strip-space elements="*" />
+
+	<!--*************************************************************************************************-->
+	<!--******************************************* Variables *******************************************-->
+	<!--*************************************************************************************************-->
 
 	<xsl:variable name="page-who">Adam Koprowski</xsl:variable>
 	<xsl:variable name="page-name">personal homepage</xsl:variable>
@@ -10,9 +16,6 @@
 	<xsl:variable name="menu-selection" select="/page/@menu" />
 	<xsl:variable name="menu-subselection" select="/page/@submenu" />
 	<xsl:variable name="page-title" select="/page/title" />
-
-	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
-	<xsl:strip-space elements="*" />
 
 	<!--*************************************************************************************************-->
 	<!--**************************************** Main page logic ****************************************-->
@@ -38,7 +41,34 @@
 	</xsl:template>
 	
 	<xsl:template match="entry" mode="top">
-		<xsl:call-template name="html-menu-top" />
+		<xsl:variable name="class">
+			<xsl:choose>
+				<xsl:when test="@urlid = $menu-selection">
+					amenu
+				</xsl:when>
+				<xsl:otherwise>
+					menu
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<td align="center">
+			<a href="{@urlid}.html" class="{$class}">	
+				<img src="images/bullet.gif" border="0" alt="" style="margin-bottom: 3px;" />
+				<br/>
+				<xsl:value-of select="text" />
+			</a>
+		</td>
+		<xsl:if test="not (position()=last())"> 
+			<td width="10">
+				<div style="width: 5px; height: 0px;"><span /></div>
+			</td>
+			<td>
+				<img src="images/separator.gif" border="0" alt="" />
+			</td>
+			<td width="10">
+				<div style="width: 5px; height: 0px;"><span /></div>
+			</td>
+		</xsl:if>
 	</xsl:template>
 		
 	<xsl:template name="show-menu-bottom">
@@ -46,14 +76,33 @@
 	</xsl:template>	
 	
 	<xsl:template match="entry" mode="bottom">
-		<xsl:call-template name="html-menu-bottom" />
+		<xsl:variable name="class">
+			<xsl:choose>
+				<xsl:when test="@urlid = $menu-selection">
+					abmenu
+				</xsl:when>
+				<xsl:otherwise>
+					bmenu
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<td>
+			<a href="{@urlid}.html" class="abmenu" id="abmenu">
+				<xsl:value-of select="text" />
+			</a>
+		</td>
+		<xsl:if test="not (position()=last())"> 
+			<td width="5" />
+			<td>
+				<img src="images/bmenu_separator.gif" alt="" style="margin: 0px 5px 0px 5px;" />
+			</td>
+			<td width="5" />
+		</xsl:if>
 	</xsl:template>
 
 	<!--*************************************************************************************************-->
-	<!--************************************* HTML specific templates ***********************************-->
+	<!--*************************************** General page layout *************************************-->
 	<!--*************************************************************************************************-->
-
-	<!--******************************************* page header *****************************************-->
 
 	<xsl:template name="html-header">
 		<head>
@@ -66,8 +115,6 @@
 			<link href="css/styles.css"	rel="stylesheet" type="text/css" />
 		</head>	
 	</xsl:template>
-
-	<!--*************************************** main page container *************************************-->
 
 	<xsl:template name="html-page-head">
 		<table cellpadding="0" cellspacing="0">
@@ -163,66 +210,6 @@
 				</tr>
 			</table>
 		</BODY>
-	</xsl:template>
-
-	<!--***************************************** top menu entry ****************************************-->
-
-	<xsl:template name="html-menu-top">
-		<xsl:variable name="class">
-			<xsl:choose>
-				<xsl:when test="@urlid = $menu-selection">
-					amenu
-				</xsl:when>
-				<xsl:otherwise>
-					menu
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<td align="center">
-			<a href="{@urlid}.html" class="{$class}">	
-				<img src="images/bullet.gif" border="0" alt="" style="margin-bottom: 3px;" />
-				<br/>
-				<xsl:value-of select="text" />
-			</a>
-		</td>
-		<xsl:if test="not (position()=last())"> 
-			<td width="10">
-				<div style="width: 5px; height: 0px;"><span /></div>
-			</td>
-			<td>
-				<img src="images/separator.gif" border="0" alt="" />
-			</td>
-			<td width="10">
-				<div style="width: 5px; height: 0px;"><span /></div>
-			</td>
-		</xsl:if>
-	</xsl:template>
-
-	<!--**************************************** bottom menu entry **************************************-->
-
-	<xsl:template name="html-menu-bottom">
-		<xsl:variable name="class">
-			<xsl:choose>
-				<xsl:when test="@urlid = $menu-selection">
-					abmenu
-				</xsl:when>
-				<xsl:otherwise>
-					bmenu
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<td>
-			<a href="{@urlid}.html" class="abmenu" id="abmenu">
-				<xsl:value-of select="text" />
-			</a>
-		</td>
-		<xsl:if test="not (position()=last())"> 
-			<td width="5" />
-			<td>
-				<img src="images/bmenu_separator.gif" alt="" style="margin: 0px 5px 0px 5px;" />
-			</td>
-			<td width="5" />
-		</xsl:if>
 	</xsl:template>
 	
 </xsl:stylesheet>
