@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<talks>
+<!DOCTYPE note SYSTEM "papers.dtd">
+
+<papers>
 
 	<group id="2010">
 		<paper id="hybrid-ITP-10">
@@ -46,7 +48,7 @@
 			<location>Paphos, Cyprus</location>
 			<abstract>
 				Parsing is an important problem in computer science and yet surprisingly little attention has been devoted to its formal 
-				verification. In this paper, we present TRX: a parser interpreter formally developed in the proof assistant Coq, capable 
+				verificatio10n. In this paper, we present TRX: a parser interpreter formally developed in the proof assistant Coq, capable 
 				of producing formally correct parsers. We are using parsing expression grammars (PEGs), a formalism essentially 
 				representing recursive descent parsing, which we consider an attractive alternative to context-free grammars (CFGs). 
 				From this formalization we can extract a parser for an arbitrary PEG grammar with the warranty of total correctness, i.e., 
@@ -68,4 +70,4 @@
 		</paper>
 	</group>
 
-</talks>
+</papers>
