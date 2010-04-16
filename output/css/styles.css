@@ -22,7 +22,8 @@ A.download:hover {
 	background-color: #235a89;
 	border-bottom: 2px solid #006600;
 }
-#tripit-badge {
+#tripit-badge-inner-div .div {
+	background-color: red;
 }
 
 /* content */
@@ -35,6 +36,7 @@ A.download:hover {
 .slogan { font-size: 7pt; font-family: Tahoma, sans-serif; color: #C7C6CA; text-transform: uppercase; }
 
 /*main menu*/
+
 .menu { font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
 .amenu { font-weight: bold; font-size: 8pt; font-family: Tahoma, sans-serif; color: #ffffff; text-decoration: none; }
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talks>
+
+	<group id="2010">
+		<paper>
+			<authors>Herman Geuvers, Adam Koprowski, Dan Synek and Eelis van der Weegen</authors>
+			<title>Automated Machine-Checked Hybrid System Safety Proofs</title>
+			<id>hybrid-ITP-10</id>
+			<type>conference</type>
+			<prefix>In</prefix>
+			<long>Proceedings of the International Conference on Interactive Theorem Proving</long>
+			<short>ITP '10</short>
+			<url>http://www.floc-conference.org/ITP-home.html</url>
+			<location>Edinburgh, Scotland</location>
+			<note>To appear</note>
+		</paper>
+		<paper>
+			<authors>Adam Koprowski and Henri Binsztok</authors>
+			<title>TRX: A Formally Verified Parser Interpreter</title>
+			<id>trx-ESOP-10</id>
+			<type>conference</type>
+			<prefix>In</prefix>
+			<long>Proceedings of the 19th European Symposium on Programming</long>
+			<short>ESOP '10</short>
+			<url>http://research.microsoft.com/en-us/um/people/adg/esop2010</url>
+			<location>Paphos, Cyprus</location>
+		</paper>
+	</group>
+
+</talks>

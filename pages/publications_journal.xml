@@ -4,6 +4,9 @@
 <page menu="publications" submenu="publications_journal">
 	<title>Adam Koprowski :: Publications :: Journals</title>
 	<content>
-		<text>Coming soon... stay tuned!</text>
+		<heading>
+			Publications (journal articles)
+		</heading>
+		<papers type="journals" />
 	</content>
 </page>

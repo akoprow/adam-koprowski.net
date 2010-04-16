@@ -4,6 +4,9 @@
 <page menu="publications" submenu="publications_other">
 	<title>Adam Koprowski :: Publications :: Other</title>
 	<content>
-		<text>Coming soon... stay tuned!</text>
+		<heading>
+			Publications (other)
+		</heading>
+		<papers type="other" />
 	</content>
 </page>

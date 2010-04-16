@@ -143,7 +143,47 @@
 		<A class="download" href="pres/{url}">
 			<xsl:value-of select="text" />
 		</A>
-		<xsl:text><![CDATA[ &nbsp; ]]></xsl:text>
+		<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
+	</xsl:template>
+
+	<!--*************************************************************************************************-->
+	<!--***************************************** Publications ******************************************-->
+	<!--*************************************************************************************************-->
+
+	<xsl:template match="papers">
+		<xsl:apply-templates select="document('data/papers.xml')" mode="papers" />	
+	</xsl:template>
+
+	<xsl:template match="group" mode="papers">
+		<H2>
+			<xsl:value-of select="@id" />
+		</H2>
+		<xsl:apply-templates mode="papers" />
+	</xsl:template>
+	
+	<xsl:template match="paper" mode="papers">
+		<P class="paper">
+			<xsl:value-of select="authors" />
+			<BR/>
+			<SPAN CLASS="ppub">
+				<A href="papers/{id}.html">
+					<xsl:value-of select="title" />					
+				</A>
+			</SPAN>
+			<BR/>
+			<xsl:value-of select="prefix" />			
+			<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
+			<EM>
+				<xsl:value-of select="long" />				
+			</EM>					
+			(<A href="{url}">
+				<xsl:value-of select="short" />
+			</A>)
+			<xsl:value-of select="location" />.
+			<B>
+				<xsl:value-of select="note" />
+			</B>
+		</P>
 	</xsl:template>
 
 	<!--*************************************************************************************************-->

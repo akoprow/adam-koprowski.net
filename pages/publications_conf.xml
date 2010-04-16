@@ -4,6 +4,9 @@
 <page menu="publications" submenu="publications_conf">
 	<title>Adam Koprowski :: Publications :: Conferences</title>
 	<content>
-		<text>Coming soon... stay tuned!</text>
+		<heading>
+			Publications (conference proceedings)
+		</heading>
+		<papers type="conferences" />
 	</content>
 </page>
