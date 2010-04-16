@@ -4,8 +4,12 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 
-	<xsl:template match="page">
-		<xsl:call-template name="html-page" />
-	</xsl:template>	
+	<xsl:variable name="menu-selection" select="/page/@menu" />
+	<xsl:variable name="menu-subselection" select="/page/@submenu" />
+	<xsl:variable name="page-title" select="/page/title" />
 
+	<xsl:template match="page">
+ 		<xsl:call-template name="html-page" />
+	</xsl:template>
+	
 </xsl:stylesheet>

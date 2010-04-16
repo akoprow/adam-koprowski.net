@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../webpage.xsl"?>
+
+<page menu="publications">
+	<title>
+		Adam Koprowski :: Publications :: <paper-title />
+	</title>
+	<content>
+		<header>
+			<paper-title />
+		</header>
+	</content>
+</page>

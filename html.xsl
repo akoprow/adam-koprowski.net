@@ -3,9 +3,21 @@
 
 	<xsl:import href="menu.xsl" /> 
 
+	<!--*************************************************************************************************-->
+	<!--******************************************* Variables *******************************************-->
+	<!--*************************************************************************************************-->
+
 	<xsl:variable name="page-who">Adam Koprowski</xsl:variable>
 	<xsl:variable name="page-name">personal homepage</xsl:variable>
 	<xsl:variable name="page-footer">(C) 2010 Adam Koprowski</xsl:variable>
+
+	<xsl:variable name="menu-selection" select="/page/@menu" />
+	<xsl:variable name="menu-subselection" select="/page/@submenu" />
+	<xsl:variable name="page-title" select="/page/title" />
+
+	<!--*************************************************************************************************-->
+	<!--******************************************* Templates *******************************************-->
+	<!--*************************************************************************************************-->
 
 	<xsl:template name="html-page">
 		<HTML>
@@ -70,7 +82,7 @@
 					<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 440px;">
 						<tr valign="top">
 							<td width="100%" class="pageContent" style="padding: 20px 20px 10px 90px;">
-								<xsl:apply-templates select="content" />																				
+								<xsl:apply-templates select="content" />
 							</td>
 							<td style="padding: 120px 100px 10px 5px;">
 								<table cellpadding="0" cellspacing="0" width="145" align="center" />
