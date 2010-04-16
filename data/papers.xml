@@ -12,7 +12,29 @@
 			<short>ITP '10</short>
 			<url>http://www.floc-conference.org/ITP-home.html</url>
 			<location>Edinburgh, Scotland</location>
-			<note>To appear</note>
+ 			<note>To appear</note>
+			<abstract>
+				We have developed a hybrid system safety prover, implemented in Coq using the abstraction method introduced by Alur, Dang 
+				and Ivancic (2006). The development includes: a formalisation of the structure of hybrid systems; a framework for the 
+				construction of an abstract system (consisting of decidable "over-estimators" of abstract transitions and initiality) 
+				faithfully representing a concrete hybrid system; a translation of abstract systems to graphs, enabling the decision of 
+				abstract state reachability using a certified graph reachability algorithm; a proof of the safety of an example hybrid 
+				system generated using this tool stack. To produce fully certified safety proofs without relying on floating point 
+				computations, the development critically relies on the computable real number implementation of the CoRN library of 
+				constructive mathematics formalised in Coq. The development also features a nice interplay between constructive and 
+				classical logic via the double negation monad.			
+			</abstract>
+			<bibtex>
+@string{lncs   = "Lecture Notes in Computer Science"}
+@inproceedings{conf/itp/GeuKopSynWee10,
+ author       = {Herman Geuvers and Adam Koprowski and Dan Synek and Eelis van der Weegen},
+ title        = {Automated Machine-Checked Hybrid System Safety Proofs},
+ booktitle    = {Proceedings of the International Conference on Interactive Theorem Proving (ITP '10)},
+ year         = {2010},
+ series       = lncs,
+ note         = {To appear},
+}			
+			</bibtex>
 		</paper>
 		<paper>
 			<authors>Adam Koprowski and Henri Binsztok</authors>
@@ -24,9 +46,28 @@
 			<short>ESOP '10</short>
 			<url>http://research.microsoft.com/en-us/um/people/adg/esop2010</url>
 			<location>Paphos, Cyprus</location>
+			<abstract>
+				Parsing is an important problem in computer science and yet surprisingly little attention has been devoted to its formal 
+				verification. In this paper, we present TRX: a parser interpreter formally developed in the proof assistant Coq, capable 
+				of producing formally correct parsers. We are using parsing expression grammars (PEGs), a formalism essentially 
+				representing recursive descent parsing, which we consider an attractive alternative to context-free grammars (CFGs). 
+				From this formalization we can extract a parser for an arbitrary PEG grammar with the warranty of total correctness, i.e., 
+				the resulting parser is terminating and correct with respect to its grammar and the semantics of PEGs; both properties 
+				formally proven in Coq.			
+			</abstract>
+			<bibtex>
+@string{lncs   = "Lecture Notes in Computer Science"}
+@inproceedings{conf/esop/KopBin10,
+ author       = {Adam Koprowski and Henri Binsztok},
+ title        = {{TRX}: A Formally Verified Parser Interpreter},
+ booktitle    = {Proceedings of the 19th European Symposium on Programming (ESOP '10)},
+ year         = {2010},
+ series       = lncs,
+ volume       = {6012},
+ pages        = {345--365}
+}			
+			</bibtex>
 		</paper>
-
-
 	</group>
 
 </talks>
