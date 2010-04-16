@@ -24,5 +24,5 @@ preview/%.html: preview_%.xsl data/%.xml
 output/paper-%.html: webpage.xsl pages/paper.xml $(DATA_FILES)
 	xsltproc -o $@ --stringparam paper-id $* webpage.xsl pages/paper.xml 
 
-output/%.html: webpage.xsl pages/%.xml $(DATA_FILES)
-	xsltproc -o $@ webpage.xsl pages/$*.xml
+output/%.html: page.xsl pages/%.xml $(DATA_FILES)
+	xsltproc -o $@ page.xsl pages/$*.xml
