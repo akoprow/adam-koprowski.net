@@ -10,10 +10,10 @@ all: $(HTML_FILES) preview
 preview: preview/menu.html preview/talks.html
 
 clean:
-	rm -f output/*.html preview
+	rm -fr output/*.html preview
 
 preview/%.html: preview_%.xsl data/%.xml
 	xsltproc -o $@ preview_$*.xsl data/$*.xml
 
-output/%.html: webpage.xsl pages/%.xml
+output/%.html: webpage.xsl pages/%.xml data/menu.xml data/papers.xml data/talks.xml
 	xsltproc -o $@ webpage.xsl pages/$*.xml

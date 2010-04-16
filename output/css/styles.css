@@ -7,6 +7,19 @@ DIV.paper {
 	margin-right: 20px;
 	margin-bottom: 7px;
 }
+DIV.paper .title {
+    background-position: center left;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 0px;
+    padding-left: 10px;
+}
+DIV.paper .conference {
+    background-image: url('../images/conference.gif');
+    padding-left: 25px;
+}
 DIV.talk {
 	background-image: url('../images/talk.gif');
 	background-position: center left;

@@ -151,7 +151,9 @@
 	<!--*************************************************************************************************-->
 
 	<xsl:template match="papers">
-		<xsl:apply-templates select="document('data/papers.xml')" mode="papers" />	
+		<xsl:apply-templates select="document('data/papers.xml')" mode="papers">
+			<xsl:with-param name="paper_filter" select="@type" /> 
+		</xsl:apply-templates>	
 	</xsl:template>
 
 	<xsl:template match="group" mode="papers">
@@ -162,28 +164,36 @@
 	</xsl:template>
 	
 	<xsl:template match="paper" mode="papers">
-		<P class="paper">
-			<xsl:value-of select="authors" />
-			<BR/>
-			<SPAN CLASS="ppub">
+		<xsl:variable name="type_class">
+			<xsl:if test="not(type = paper_filter)">
+				<xsl:value-of select="type" />
+			</xsl:if>
+		</xsl:variable>
+		
+		<DIV class="paper">
+			<div>
+				<xsl:value-of select="authors" />
+			</div>
+  			<div class="title {$type_class}">
 				<A href="papers/{id}.html">
 					<xsl:value-of select="title" />					
 				</A>
-			</SPAN>
-			<BR/>
-			<xsl:value-of select="prefix" />			
-			<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
-			<EM>
-				<xsl:value-of select="long" />				
-			</EM>					
-			(<A href="{url}">
-				<xsl:value-of select="short" />
-			</A>)
-			<xsl:value-of select="location" />.
-			<B>
-				<xsl:value-of select="note" />
-			</B>
-		</P>
+			</div>
+			<div>
+				<xsl:value-of select="prefix" />			
+				<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
+				<EM>
+					<xsl:value-of select="long" />				
+				</EM>					
+				(<A href="{url}">
+					<xsl:value-of select="short" />
+				</A>)
+				<xsl:value-of select="location" />.
+				<B>
+					<xsl:value-of select="note" />
+				</B>
+			</div>
+		</DIV>
 	</xsl:template>
 
 	<!--*************************************************************************************************-->
