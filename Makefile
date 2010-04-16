@@ -4,12 +4,7 @@
 
 ######################################################################################################
 
-SAXON_JAR ?= /usr/share/java/saxon-6.5.5.jar
-SAXON := java -jar $(SAXON_JAR)
-
-XSLTPROC := xsltproc
-
-RUN_XSLT := $(XSLTPROC)
+RUN_XSLT := xsltproc
 
 DATA := menu papers talks
 DATA_FILES := $(DATA:%=data/%.xml)
@@ -34,11 +29,11 @@ clean:
 
 # creates simple HTML output for all XML data, that allows to check data integrity
 preview/%.html: xsl/preview_%.xsl data/%.xml
-	$(RUN_XSLT) -o $@ data/$*.xml xsl/preview_$*.xsl
+	$(RUN_XSLT) -o $@ xsl/preview_$*.xsl data/$*.xml
 
 # all per-paper pages
 output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
-	$(RUN_XSLT) -o $@ pages/paper.xml paper-id=$*
+	$(RUN_XSLT) -o $@ --stringparam paper-id $* xsl/paper.xsl data/papers.xml
 
 # all pages with corresponding XSLT stylesheet 
 output/%.html: pages/%.xml xsl/%.xsl $(DATA_FILES)

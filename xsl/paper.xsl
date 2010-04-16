@@ -4,16 +4,16 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 
-	<xsl:key name="paper-key" match="paper" use="@id"/>
+	<xsl:template match="/">
+		<xsl:apply-templates select="id($paper-id)" />
+	</xsl:template>
 
-<!-- 
-	<xsl:variable name="paper" select="document('../data/papers.xml')/key('paper-key', $paper-id)" />
--->
-
-	<xsl:template match="paper-title">
-<!-- 
-		<xsl:value-of select="$paper/title" />
--->
- 	</xsl:template>
+	<xsl:template match="paper">
+		<xsl:call-template name="page">
+			<xsl:with-param name="content">
+				<xsl:value-of select="title" />
+			</xsl:with-param>		
+		</xsl:call-template>
+	</xsl:template>
 
 </xsl:stylesheet>
