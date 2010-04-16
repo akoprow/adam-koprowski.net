@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:template name="show-menu-top">
-		<xsl:apply-templates select="document('data/menu.xml')" mode="menu-top" />
+		<xsl:apply-templates select="document('../data/menu.xml')" mode="menu-top" />
 	</xsl:template>
 
 	<xsl:template match="entry" mode="menu-top">

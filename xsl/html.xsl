@@ -19,7 +19,7 @@
 	<!--******************************************* Templates *******************************************-->
 	<!--*************************************************************************************************-->
 
-	<xsl:template name="html-page">
+	<xsl:template match="page">
 		<HTML>
 			<xsl:call-template name="html-header" />
 			<xsl:call-template name="html-main-box" />

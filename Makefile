@@ -12,6 +12,7 @@ HTML := $(shell grep -e 'urlid=".*"' data/menu.xml | sed -e 's/.*urlid="\(.*\)".
 HTML_FILES := $(HTML:%=output/%.html)
 
 XSLT := $(shell find -name '*.xsl') 
+XSLT_FILES := $(XSLT:%=xslt/%) 
 
 all: $(HTML_FILES) preview
 
@@ -20,11 +21,17 @@ preview: preview/menu.html preview/talks.html
 clean:
 	rm -fr output/*.html preview
 
-preview/%.html: preview_%.xsl data/%.xml
-	xsltproc -o $@ preview_$*.xsl data/$*.xml
+preview/%.html: xsl/preview_%.xsl data/%.xml
+	xsltproc -o $@ xsl/preview_$*.xsl data/$*.xml
 
+# All per-paper pages
 output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
-	xsltproc -o $@ --stringparam paper-id $* publication-page.xsl pages/paper.xml 
+	xsltproc -o $@ --stringparam paper-id $* xsl/publication-page.xsl pages/paper.xml 
 
-output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
-	xsltproc -o $@ page.xsl pages/$*.xml
+# All pages with corresponding XSLT stylesheet 
+output/%.html: pages/%.xml xsl/%.xsl $(DATA_FILES)
+	xsltproc -o $@ xsl/$*.xsl pages/$*.xml 
+
+# ... otherwise use the default stylesheet 
+output/%.html: pages/%.xml $(DATA_FILES)
+	xsltproc -o $@ xsl/page.xsl pages/$*.xml
