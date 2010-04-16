@@ -201,7 +201,6 @@
 	<!--*************************************************************************************************-->
 
 	<xsl:template match="paper">
-		PAPER: <xsl:value-of select="$paper-id" />
 	</xsl:template>
 
 	<!--*************************************************************************************************-->
@@ -337,8 +336,8 @@
 		<div style="width: 0px; height: 15px;"><span /></div> 
 	</xsl:template> 
 
-	<xsl:template match="html">
-		<xsl:value-of select="." disable-output-escaping="yes" />
+	<xsl:template match="verbatim">
+		<xsl:copy-of select="." />
 	</xsl:template>
 	
 </xsl:stylesheet>
