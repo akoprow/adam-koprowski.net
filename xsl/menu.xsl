@@ -37,7 +37,7 @@
 	</xsl:template>
 
 	<xsl:template name="show-menu-bottom">
-		<xsl:apply-templates select="document('data/menu.xml')" mode="menu-bottom" />
+		<xsl:apply-templates select="document('../data/menu.xml')" mode="menu-bottom" />
 	</xsl:template>
 
 	<xsl:template match="entry" mode="menu-bottom">

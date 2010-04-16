@@ -29,7 +29,7 @@
 				<xsl:value-of select="authors" />
 			</div>
   			<div class="title {$type_class}">
-				<A href="paper-{id}.html">
+				<A href="paper-{@id}.html">
 					<xsl:value-of select="title" />					
 				</A>
 			</div>

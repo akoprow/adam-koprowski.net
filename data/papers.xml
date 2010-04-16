@@ -2,10 +2,9 @@
 <talks>
 
 	<group id="2010">
-		<paper>
+		<paper id="hybrid-ITP-10">
 			<authors>Herman Geuvers, Adam Koprowski, Dan Synek and Eelis van der Weegen</authors>
 			<title>Automated Machine-Checked Hybrid System Safety Proofs</title>
-			<id>hybrid-ITP-10</id>
 			<type>conference</type>
 			<prefix>In</prefix>
 			<long>Proceedings of the International Conference on Interactive Theorem Proving</long>
@@ -36,10 +35,9 @@
 }			
 			</bibtex>
 		</paper>
-		<paper>
+		<paper id="trx-ESOP-10">
 			<authors>Adam Koprowski and Henri Binsztok</authors>
 			<title>TRX: A Formally Verified Parser Interpreter</title>
-			<id>trx-ESOP-10</id>
 			<type>conference</type>
 			<prefix>In</prefix>
 			<long>Proceedings of the 19th European Symposium on Programming</long>
