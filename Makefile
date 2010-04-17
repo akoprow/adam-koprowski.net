@@ -14,10 +14,12 @@ RUN_XSLT := $(SAXON)
 DATA := menu papers talks
 DATA_FILES := $(DATA:%=data/%.xml)
 
-PAPERS := $(shell grep -e 'id=".*"' data/papers.xml | sed -e 's/.*id="\(.*\)".*/\1/')
-PAPER_FILES := $(PAPERS:%=paper-%)
+PAPER_IDS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/publications.xsl)
+PAPERS := $(PAPER_IDS:%=paper-%)
 
-HTML := $(shell grep -e 'fileid=".*"' data/menu.xml | sed -e 's/.*fileid="\(.*\)".*/\1/') $(PAPER_FILES)
+PAGES := $(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)
+
+HTML := $(PAGES) $(PAPERS)
 HTML_FILES := $(HTML:%=output/%.html)
 
 XSLT := $(shell find -name '*.xsl') 
@@ -25,7 +27,7 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 
 ######################################################################################################
 
-all: $(HTML_FILES) preview
+all: $(HTML_FILES) $(PAPER_FILES) preview
 
 preview: preview/menu.html preview/talks.html
 

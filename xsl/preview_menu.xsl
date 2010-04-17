@@ -2,7 +2,13 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
-	<xsl:strip-space elements="*" />
+
+	<xsl:template match="/" mode="list-file-ids">
+		<xsl:for-each select="//entry">
+			<xsl:value-of select="@fileid" />
+			<xsl:text> </xsl:text>
+		</xsl:for-each>
+	</xsl:template>
 
 	<xsl:template match="/">
 		<html>

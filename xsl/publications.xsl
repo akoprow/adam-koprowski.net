@@ -4,6 +4,13 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 
+	<xsl:template match="/" mode="list-papers">
+		<xsl:for-each select="//paper">
+			<xsl:value-of select="@id" />
+			<xsl:text> </xsl:text>
+		</xsl:for-each>
+	</xsl:template>
+
 	<xsl:template match="papers">
 		<xsl:apply-templates select="document('../data/papers.xml')" mode="papers">
 			<xsl:with-param name="paper_filter" select="@type" /> 
