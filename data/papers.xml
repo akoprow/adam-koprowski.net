@@ -3,19 +3,10 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, type, prefix, long, short, url, location, note?, abstract, bibtex)>
+<!ELEMENT paper (authors, title, (journal | conference), abstract)>
 <!ATTLIST paper  id ID #REQUIRED>
-<!ELEMENT authors (#PCDATA)>
-<!ELEMENT title (#PCDATA)>
-<!ELEMENT type (#PCDATA)>
-<!ELEMENT prefix (#PCDATA)>
-<!ELEMENT long (#PCDATA)>
-<!ELEMENT short (#PCDATA)>
-<!ELEMENT url (#PCDATA)>
-<!ELEMENT location (#PCDATA)>
-<!ELEMENT note (#PCDATA)>
-<!ELEMENT abstract (#PCDATA)>
-<!ELEMENT bibtex (#PCDATA)>
+<!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
+<!ELEMENT journal (name, volume, number, pages)>
 ]>
 
 <papers>
@@ -24,13 +15,16 @@
 		<paper id="hybrid-ITP-10">
 			<authors>Herman Geuvers, Adam Koprowski, Dan Synek and Eelis van der Weegen</authors>
 			<title>Automated Machine-Checked Hybrid System Safety Proofs</title>
-			<type>conference</type>
-			<prefix>In</prefix>
-			<long>Proceedings of the International Conference on Interactive Theorem Proving</long>
-			<short>ITP '10</short>
-			<url>http://www.floc-conference.org/ITP-home.html</url>
-			<location>Edinburgh, Scotland</location>
- 			<note>To appear</note>
+			<conference>
+				<name>Proceedings of the International Conference on Interactive Theorem Proving</name>
+				<abbreviation>ITP '10</abbreviation>
+				<location>Edinburgh, Scotland</location>
+				<url>http://www.floc-conference.org/ITP-home.html</url>
+				<series><lncs /></series>
+				<volume></volume>
+				<pages></pages>
+				<note>To appear</note>
+			</conference>
 			<abstract>
 				We have developed a hybrid system safety prover, implemented in Coq using the abstraction method introduced by Alur, Dang 
 				and Ivancic (2006). The development includes: a formalisation of the structure of hybrid systems; a framework for the 
@@ -42,27 +36,19 @@
 				constructive mathematics formalised in Coq. The development also features a nice interplay between constructive and 
 				classical logic via the double negation monad.			
 			</abstract>
-			<bibtex>
-@string{lncs   = "Lecture Notes in Computer Science"}
-@inproceedings{conf/itp/GeuKopSynWee10,
- author       = {Herman Geuvers and Adam Koprowski and Dan Synek and Eelis van der Weegen},
- title        = {Automated Machine-Checked Hybrid System Safety Proofs},
- booktitle    = {Proceedings of the International Conference on Interactive Theorem Proving (ITP '10)},
- year         = {2010},
- series       = lncs,
- note         = {To appear},
-}			
-			</bibtex>
 		</paper>
 		<paper id="trx-ESOP-10">
 			<authors>Adam Koprowski and Henri Binsztok</authors>
 			<title>TRX: A Formally Verified Parser Interpreter</title>
-			<type>conference</type>
-			<prefix>In</prefix>
-			<long>Proceedings of the 19th European Symposium on Programming</long>
-			<short>ESOP '10</short>
-			<url>http://research.microsoft.com/en-us/um/people/adg/esop2010</url>
-			<location>Paphos, Cyprus</location>
+			<conference>
+				<name>Proceedings of the 19th European Symposium on Programming</name>
+				<abbreviation>ESOP '10</abbreviation>
+				<location>Paphos, Cyprus</location>
+				<url>http://research.microsoft.com/en-us/um/people/adg/esop2010</url>
+				<series><lncs/></series>
+				<volume>6012</volume>
+				<pages>345-365</pages>			
+			</conference>
 			<abstract>
 				Parsing is an important problem in computer science and yet surprisingly little attention has been devoted to its formal 
 				verificatio10n. In this paper, we present TRX: a parser interpreter formally developed in the proof assistant Coq, capable 
@@ -70,21 +56,44 @@
 				representing recursive descent parsing, which we consider an attractive alternative to context-free grammars (CFGs). 
 				From this formalization we can extract a parser for an arbitrary PEG grammar with the warranty of total correctness, i.e., 
 				the resulting parser is terminating and correct with respect to its grammar and the semantics of PEGs; both properties 
-				formally proven in Coq.			
+				formally proven in Coq.			conference
 			</abstract>
-			<bibtex>
-@string{lncs   = "Lecture Notes in Computer Science"}
-@inproceedings{conf/esop/KopBin10,
- author       = {Adam Koprowski and Henri Binsztok},
- title        = {{TRX}: A Formally Verified Parser Interpreter},
- booktitle    = {Proceedings of the 19th European Symposium on Programming (ESOP '10)},
- year         = {2010},
- series       = lncs,
- volume       = {6012},
- pages        = {345--365}
-}			
-			</bibtex>
 		</paper>
+	</group>
+	
+	<group id="2009">
+		<paper id="arctic-int-AC-09">
+			<authors>Adam Koprowski and Johannes Waldmann</authors>
+			<title>Max/Plus Tree Automata for Termination of Term Rewriting</title>
+			<journal>
+				<name>Acta Cybernetica</name>
+				<volume>19</volume>
+				<number>1</number>
+				<pages>357-392</pages>			
+			</journal>
+			<abstract>
+				We use weighted tree automata as certificates for termination of term rewriting systems. The weights are taken from the 
+				arctic semiring: natural numbers extended with -infinity, with the operations 'max' and 'plus'. In order to find and 
+				validate these certificates automatically, we restrict their transition functions to be representable by matrix operations 
+				in the semiring. The resulting class of weighted tree automata is called path-separated.<eol />
+
+				This extends the matrix method for term rewriting and the arctic matrix method for string rewriting. In combination with 
+				the dependency pair method, this allows for some conceptually simple termination proofs in cases where only much more 
+				involved proofs were known before. We further generalize to arctic numbers 'below zero': integers extended with -infinity. 
+				This allows to treat some termination problems with symbols that require a predecessor semantics.
+
+				Correctness of this approach has been formally verified in the Coq proof assistant and the formalization has been 
+				contributed to the CoLoR library of certified termination techniques. This allows formal verification of termination 
+				proofs using the arctic matrix method in combination with the dependency pair transformation. This contribution brought 
+				a substantial performance gain in the certified category of the 2008 edition of the termination competition.
+
+				The method has been implemented by leading termination provers. We report on experiments with its implementation in one 
+				such tool, Matchbox, developed by the second author.
+
+				We also show that our method can simulate a previous method of quasi- periodic interpretations, if restricted to 
+				interpretations of slope one on unary signatures.				
+			</abstract>
+		</paper>	
 	</group>
 
 </papers>

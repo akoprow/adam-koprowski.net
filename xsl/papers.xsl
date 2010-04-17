@@ -27,7 +27,11 @@
 	<xsl:template match="paper" mode="papers">
 		<xsl:variable name="type_class">
 			<xsl:if test="not(type = paper_filter)">
-				<xsl:value-of select="type" />
+				<xsl:choose>
+					<xsl:when test="conference">conference</xsl:when>
+					<xsl:when test="journal">journal</xsl:when>
+					<xsl:when test="other">other</xsl:when>
+				</xsl:choose>
 			</xsl:if>
 		</xsl:variable>
 		
@@ -41,20 +45,35 @@
 				</A>
 			</div>
 			<div>
-				<xsl:value-of select="prefix" />			
-				<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
-				<EM>
-					<xsl:value-of select="long" />				
-				</EM>					
-				(<A href="{url}">
-					<xsl:value-of select="short" />
-				</A>)
-				<xsl:value-of select="location" />.
-				<B>
-					<xsl:value-of select="note" />
-				</B>
+				<xsl:apply-templates mode="publication-summary" />
 			</div>
 		</DIV>
 	</xsl:template>
+
+	<xsl:template match="conference" mode="publication-summary">
+		In
+		<EM>
+			<xsl:value-of select="name" />				
+		</EM>					
+		(<A href="{url}">
+			<xsl:value-of select="abbreviation" />
+		</A>)
+		<xsl:value-of select="location" />.
+		<B>
+			<xsl:value-of select="note" />
+		</B>
+	</xsl:template>
+
+	<xsl:template match="journal" mode="publication-summary">
+		In
+		<EM>
+			<xsl:value-of select="name" />				
+		</EM>,
+		<xsl:value-of select="volume" />(<xsl:value-of select="number" />),
+		pp. <xsl:value-of select="pages" />,
+		<xsl:value-of select="../../@id" />
+	</xsl:template>
+	
+	<xsl:template match="*" mode="publication-summary" />
 
 </xsl:stylesheet>

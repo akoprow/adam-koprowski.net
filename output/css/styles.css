@@ -27,6 +27,9 @@ DIV.paper .journal {
     background-image: url('../images/pub-journal.png');
     padding-left: 25px;
 }
+DIV.paper .journal A {
+	color: #DCC;
+}
 DIV.paper .other {
     background-image: url('../images/pub-other.png');
     padding-left: 25px;
@@ -51,7 +54,7 @@ A.download:hover {
 }
 
 /* content */
-.text-header { font-weight: bold; font-size: 12pt; font-family: Arial Narrow, sans-serif; color: #272A32;}
+.text-header { font-weight: bold; font-size: 14pt; font-family: Arial Narrow, sans-serif; color: #272A32; font-variant: small-caps;	 }
 .pageContent { font-size: 8pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
  .pageContent a { font-size: 8pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
 
