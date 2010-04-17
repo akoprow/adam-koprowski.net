@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE papers [
+<!ELEMENT talks (group*)>
+<!ELEMENT group (talk*)>
+<!ATTLIST group id CDATA #REQUIRED>
+<!ELEMENT talk (title, pres*, download*)>
+<!ELEMENT pres (date, event, url?, location)>
+<!ELEMENT download (text, url)>
+]>
+
 <talks>
 	<group id="2010">
 		<talk>
@@ -46,8 +55,8 @@
 			<title>Arctic Termination ... Below Zero</title>
 			<pres>
 				<date>15.07.2008</date>
-				<url>http://www.risc.uni-linz.ac.at/about/conferences/rta2008/index.html</url>
 				<event>RTA '08</event>
+				<url>http://www.risc.uni-linz.ac.at/about/conferences/rta2008/index.html</url>
 				<location>Hagenberg, Austria</location>
 			</pres>
 			<download>
@@ -59,8 +68,8 @@
 			<title>Certification of Arctic Termination</title>
 			<pres>
 				<date>07.03.2008</date>
-				<url>http://www.cs.vu.nl/~tcs/seminar</url>
 				<event>TCS seminar</event>
+				<url>http://www.cs.vu.nl/~tcs/seminar</url>
 				<location>Free University, Amsterdam, The Netherlands</location>
 			</pres>
 			<download>
@@ -76,8 +85,8 @@
 			<title>Certification of proving termination of term rewriting by matrix interpretations</title>
 			<pres>
 				<date>21.01.2008</date>
-				<url>http://ics.upjs.sk/sofsem08</url>
 				<event>SOFSEM '08</event>
+				<url>http://ics.upjs.sk/sofsem08</url>
 				<location>Nový Smokovec, High Tatras, Slovakia</location>
 			</pres>
 			<download>
@@ -108,8 +117,8 @@
 			<title>Predictive Labeling with Dependency Pairs using SAT</title>
 			<pres>
 				<date>20.07.2007</date>
-				<url>http://www.cadeconference.org/meetings/cade21</url>
 				<event>CADE '07</event>
+				<url>http://www.cadeconference.org/meetings/cade21</url>
 				<location>Bremen, Germany</location>
 			</pres>
 			<download>
@@ -121,8 +130,8 @@
 			<title>Certification of Matrix Interpretations in Coq</title>
 			<pres>
 				<date>29.06.2007</date>
-				<url>http://www.lsv.ens-cachan.fr/rdp07/wst.html</url>
 				<event>WST '07</event>
+				<url>http://www.lsv.ens-cachan.fr/rdp07/wst.html</url>
 				<location>Paris, France</location>
 			</pres>
 			<download>
@@ -134,8 +143,8 @@
 			<title>Termination of Term Rewriting Meets Theorem Proving</title>
 			<pres>
 				<date>31.05.2007</date>
-				<url>http://www.win.tue.nl/prose</url>
 				<event>Prose (Process seminar)</event>
+				<url>http://www.win.tue.nl/prose</url>
 				<location>Eidhoven University of Technology, Eindhoven, The Netherlands</location>
 			</pres>
 			<download>
@@ -151,8 +160,8 @@
 			<title>Certification of Termination</title>
 			<pres>
 				<date>24.05.2007</date>
-				<url>http://www.win.tue.nl/~hzantema/terese.html</url>
 				<event>TeReSe meeting</event>
+				<url>http://www.win.tue.nl/~hzantema/terese.html</url>
 				<location>Eindhoven, The Netherlands</location>
 			</pres>
 			<download>
@@ -172,8 +181,8 @@
 			<title>Certification of Matrix Interpretations in Coq</title>
 			<pres>
 				<date>11.05.2007</date>
-				<url>http://color.loria.fr/workshop.html</url>
 				<event>CoLoR workshop</event>
+				<url>http://color.loria.fr/workshop.html</url>
 				<location>Nancy, France</location>
 			</pres>
 			<download>
@@ -200,8 +209,8 @@
 			<title>Certified Higher-Order Recursive Path Ordering</title>
 			<pres>
 				<date>13.08.2006</date>
-				<url>http://www.easychair.org/FLoC-06/RTA.html</url>
 				<event>RTA '06</event>
+				<url>http://www.easychair.org/FLoC-06/RTA.html</url>
 				<location>Seattle, USA</location>
 			</pres>
 			<download>
@@ -213,8 +222,8 @@
 			<title>TPA: Termination Proved Automatically</title>
 			<pres>
 				<date>13.08.2006</date>
-				<url>http://www.easychair.org/FLoC-06/RTA.html</url>
 				<event>RTA '06</event>
+				<url>http://www.easychair.org/FLoC-06/RTA.html</url>
 				<location>Seattle, USA</location>
 			</pres>
 			<download>
@@ -226,8 +235,8 @@
 			<title>Topics in Termination of Term Rewriting</title>
 			<pres>
 				<date>16.03.2006</date>
-				<url>http://www.win.tue.nl/prose</url>
 				<event>Prose (Process seminar)</event>
+				<url>http://www.win.tue.nl/prose</url>
 				<location>Eidhoven University of Technology, Eindhoven, The Netherlands</location>
 			</pres>
 			<download>
@@ -243,8 +252,8 @@
 			<title>Certified Higher-Order Recursive Path Ordering</title>
 			<pres>
 				<date>16.02.2006</date>
-				<url>http://www.win.tue.nl/oas/main_colloquium.html</url>
 				<event>OAS colloqium</event>
+				<url>http://www.win.tue.nl/oas/main_colloquium.html</url>
 				<location>Eidhoven University of Technology, Eindhoven, The Netherlands</location>
 			</pres>
 			<download>
@@ -263,8 +272,8 @@
 			<title>Application of Rewriting Techniques to Verification Problems</title>
 			<pres>
 				<date>29.11.2005</date>
-				<url>http://www.win.tue.nl/ifm</url>
 				<event>5th Int. Conf. on Integrated Formal Methods (Doctoral Symposium)</event>
+				<url>http://www.win.tue.nl/ifm</url>
 				<location>Eindhoven, The Netherlands</location>
 			</pres>
 			<download>
@@ -276,20 +285,20 @@
 			<title>Proving Liveness with Fairness using Rewriting</title>
 			<pres>
 				<date>20.09.2005</date>
-				<url>http://www.logic.at/frocos05</url>
 				<event>FroCoS 2005</event>
+				<url>http://www.logic.at/frocos05</url>
 				<location>Vienna, Austria</location>
 			</pres>
 			<pres>
 				<date>27.05.2005</date>
-				<url>http://www.cs.vu.nl/~tcs/seminar</url>
 				<event>TCS seminar</event>
+				<url>http://www.cs.vu.nl/~tcs/seminar</url>
 				<location>Free University, Amsterdam, The Netherlands</location>
 			</pres>
 			<pres>
 				<date>07.04.2005</date>
-				<url>http://www.win.tue.nl/oas/main_colloquium.html</url>
 				<event>OAS colloqium</event>
+				<url>http://www.win.tue.nl/oas/main_colloquium.html</url>
 				<location>Eidhoven University of Technology, Eindhoven, The Netherlands</location>
 			</pres>
 			<download>
@@ -305,8 +314,8 @@
 			<title>Using semantic labelling with natural numbers for proving termination automatically</title>
 			<pres>
 				<date>30.06.2005</date>
-				<url>http://www.win.tue.nl/~hzantema/terese.html</url>
 				<event>TeReSe meeting</event>
+				<url>http://www.win.tue.nl/~hzantema/terese.html</url>
 				<location>Eindhoven, The Netherlands</location>
 			</pres>
 			<download>

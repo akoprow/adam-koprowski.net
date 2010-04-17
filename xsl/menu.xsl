@@ -8,7 +8,7 @@
 	<xsl:template match="entry" mode="menu-top">
 		<xsl:variable name="class">
 			<xsl:choose>
-				<xsl:when test="@urlid = $menu-selection">
+				<xsl:when test="@fileid = $menu-selection">
 					amenu
 				</xsl:when>
 				<xsl:otherwise>
@@ -17,7 +17,7 @@
 			</xsl:choose>
 		</xsl:variable>
 		<td align="center">
-			<a href="{@urlid}.html" class="{$class}">	
+			<a href="{@fileid}.html" class="{$class}">	
 				<img src="images/bullet.gif" border="0" alt="" style="margin-bottom: 3px;" />
 				<br/>
 				<xsl:value-of select="text" />
@@ -43,7 +43,7 @@
 	<xsl:template match="entry" mode="menu-bottom">
 		<xsl:variable name="class">
 			<xsl:choose>
-				<xsl:when test="@urlid = $menu-selection">
+				<xsl:when test="@fileid = $menu-selection">
 					abmenu
 				</xsl:when>
 				<xsl:otherwise>
@@ -52,7 +52,7 @@
 			</xsl:choose>
 		</xsl:variable>
 		<td>
-			<a href="{@urlid}.html" class="abmenu" id="abmenu">
+			<a href="{@fileid}.html" class="abmenu" id="abmenu">
 				<xsl:value-of select="text" />
 			</a>
 		</td>

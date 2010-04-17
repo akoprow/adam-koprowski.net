@@ -17,7 +17,7 @@ DATA_FILES := $(DATA:%=data/%.xml)
 PAPERS := $(shell grep -e 'id=".*"' data/papers.xml | sed -e 's/.*id="\(.*\)".*/\1/')
 PAPER_FILES := $(PAPERS:%=paper-%)
 
-HTML := $(shell grep -e 'urlid=".*"' data/menu.xml | sed -e 's/.*urlid="\(.*\)".*/\1/') $(PAPER_FILES)
+HTML := $(shell grep -e 'fileid=".*"' data/menu.xml | sed -e 's/.*fileid="\(.*\)".*/\1/') $(PAPER_FILES)
 HTML_FILES := $(HTML:%=output/%.html)
 
 XSLT := $(shell find -name '*.xsl') 

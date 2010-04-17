@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE note SYSTEM "papers.dtd">
+<!DOCTYPE papers [
+<!ELEMENT papers (group*)>
+<!ELEMENT group (paper*)>
+<!ATTLIST group  id CDATA #REQUIRED>
+<!ELEMENT paper (authors, title, type, prefix, long, short, url, location, note?, abstract, bibtex)>
+<!ATTLIST paper  id ID #REQUIRED>
+<!ELEMENT authors (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT prefix (#PCDATA)>
+<!ELEMENT long (#PCDATA)>
+<!ELEMENT short (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT bibtex (#PCDATA)>
+]>
 
 <papers>
 
-	<group val="2010">
+	<group id="2010">
 		<paper id="hybrid-ITP-10">
 			<authors>Herman Geuvers, Adam Koprowski, Dan Synek and Eelis van der Weegen</authors>
 			<title>Automated Machine-Checked Hybrid System Safety Proofs</title>

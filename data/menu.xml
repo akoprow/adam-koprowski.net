@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE papers [
+<!ELEMENT menu (entry*)>
+<!ELEMENT entry (text, subentry*)>
+<!ATTLIST entry fileid CDATA #REQUIRED>
+<!ELEMENT subentry (text)>
+<!ATTLIST subentry fileid CDATA #REQUIRED>
+<!ELEMENT text (#PCDATA)>
+]>
 
 <menu>
-	<entry urlid="home">
+	<entry fileid="home">
 		<text>Home</text>
 	</entry>
-	<entry urlid="aboutme">
+	<entry fileid="aboutme">
 		<text>About me</text>
 	</entry>
-	<entry urlid="publications">
+	<entry fileid="publications">
 		<text>Publications</text>
-		<subentry urlid="publications">
+		<subentry fileid="publications">
 			<text>All</text>
 		</subentry>
-		<subentry urlid="publications_journal">
+		<subentry fileid="publications_journal">
 			<text>Journal articles</text>
 		</subentry>
-		<subentry urlid="publications_conf">
+		<subentry fileid="publications_conf">
 			<text>Conference proceedings</text>
 		</subentry>
-		<subentry urlid="publications_other">
+		<subentry fileid="publications_other">
 			<text>Other publications</text>
 		</subentry>
 	</entry>
-	<entry urlid="talks">
+	<entry fileid="talks">
 		<text>Presentations</text>
 	</entry>
-	<entry urlid="projects">
+	<entry fileid="projects">
 		<text>Projects</text>
 	</entry>
 </menu>
