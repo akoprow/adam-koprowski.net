@@ -14,7 +14,7 @@ RUN_XSLT := $(SAXON)
 DATA := menu papers talks
 DATA_FILES := $(DATA:%=data/%.xml)
 
-PAPER_IDS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/publications.xsl)
+PAPER_IDS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/papers.xsl)
 PAPERS := $(PAPER_IDS:%=paper-%)
 
 PAGES := $(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)

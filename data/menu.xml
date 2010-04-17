@@ -15,18 +15,18 @@
 	<entry fileid="aboutme">
 		<text>About me</text>
 	</entry>
-	<entry fileid="publications">
+	<entry fileid="papers">
 		<text>Publications</text>
-		<subentry fileid="publications">
+		<subentry fileid="$(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)">
 			<text>All</text>
 		</subentry>
-		<subentry fileid="publications_journal">
+		<subentry fileid="papers_journal">
 			<text>Journal articles</text>
 		</subentry>
-		<subentry fileid="publications_conf">
+		<subentry fileid="papers_conf">
 			<text>Conference proceedings</text>
 		</subentry>
-		<subentry fileid="publications_other">
+		<subentry fileid="papers_other">
 			<text>Other publications</text>
 		</subentry>
 	</entry>
