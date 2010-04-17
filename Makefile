@@ -4,11 +4,8 @@
 
 ######################################################################################################
 
-SAXON_JAR ?= ./saxon/saxon9he.jar
+SAXON_JAR ?= ./saxon/saxon9.jar
 SAXON := java -jar $(SAXON_JAR)
-
-XSLTPROC := xsltproc
-
 RUN_XSLT := $(SAXON)
 
 DATA := menu papers talks
@@ -29,10 +26,13 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 
 all: $(HTML_FILES) $(PAPER_FILES) preview
 
-preview: preview/menu.html preview/talks.html
+preview: preview/ preview/menu.html preview/talks.html
 
 clean:
 	rm -fr output/*.html preview
+
+preview/:
+	mkdir preview
 
 # creates simple HTML output for all XML data, that allows to check data integrity
 preview/%.html: xsl/preview_%.xsl data/%.xml
