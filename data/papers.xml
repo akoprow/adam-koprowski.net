@@ -3,7 +3,7 @@
 
 <papers>
 
-	<group id="2010">
+	<group val="2010">
 		<paper id="hybrid-ITP-10">
 			<authors>Herman Geuvers, Adam Koprowski, Dan Synek and Eelis van der Weegen</authors>
 			<title>Automated Machine-Checked Hybrid System Safety Proofs</title>

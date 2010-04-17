@@ -1,6 +1,6 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
-<!ATTLIST group  id CDATA #REQUIRED>
+<!ATTLIST group  val ID #REQUIRED>
 <!ELEMENT paper (authors, title, type, prefix, long, short, url, location, note?, abstract, bibtex)>
 <!ATTLIST paper  id ID #REQUIRED>
 <!ELEMENT authors (#PCDATA)>
