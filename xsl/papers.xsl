@@ -3,6 +3,7 @@
 
 	<xsl:import href="html.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
+	<xsl:strip-space elements="*" />
 
 	<xsl:template match="/" mode="list-papers">
 		<xsl:for-each select="//paper">
@@ -72,6 +73,17 @@
 		<xsl:value-of select="volume" />(<xsl:value-of select="number" />),
 		pp. <xsl:value-of select="pages" />,
 		<xsl:value-of select="../../@id" />
+	</xsl:template>
+
+	<xsl:template match="techreport" mode="publication-summary">
+		<EM>
+			<xsl:value-of select="type" />
+			<xsl:text> </xsl:text>				
+			<xsl:value-of select="number" />				
+		</EM>
+		<xsl:if test="institution">, <xsl:value-of select="institution" /></xsl:if>
+		<xsl:if test="address">, <xsl:value-of select="address" /></xsl:if>
+		<xsl:if test="month">, <xsl:value-of select="month" /></xsl:if>
 	</xsl:template>
 	
 	<xsl:template match="*" mode="publication-summary" />

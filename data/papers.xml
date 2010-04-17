@@ -3,10 +3,12 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, (journal | conference), abstract)>
+<!ELEMENT paper (authors, title, (journal | conference | techreport | phdthesis), abstract)>
 <!ATTLIST paper  id ID #REQUIRED>
 <!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
 <!ELEMENT journal (name, volume, number, pages)>
+<!ELEMENT techreport (type, number, institution, address?, month?)>
+<!ELEMENT phdthesis (school, month?, isbn?)>
 ]>
 
 <papers>
@@ -56,7 +58,7 @@
 				representing recursive descent parsing, which we consider an attractive alternative to context-free grammars (CFGs). 
 				From this formalization we can extract a parser for an arbitrary PEG grammar with the warranty of total correctness, i.e., 
 				the resulting parser is terminating and correct with respect to its grammar and the semantics of PEGs; both properties 
-				formally proven in Coq.			conference
+				formally proven in Coq.
 			</abstract>
 		</paper>
 	</group>
@@ -75,25 +77,148 @@
 				We use weighted tree automata as certificates for termination of term rewriting systems. The weights are taken from the 
 				arctic semiring: natural numbers extended with -infinity, with the operations 'max' and 'plus'. In order to find and 
 				validate these certificates automatically, we restrict their transition functions to be representable by matrix operations 
-				in the semiring. The resulting class of weighted tree automata is called path-separated.<eol />
+				in the semiring. The resulting class of weighted tree automata is called path-separated.
 
 				This extends the matrix method for term rewriting and the arctic matrix method for string rewriting. In combination with 
 				the dependency pair method, this allows for some conceptually simple termination proofs in cases where only much more 
 				involved proofs were known before. We further generalize to arctic numbers 'below zero': integers extended with -infinity. 
-				This allows to treat some termination problems with symbols that require a predecessor semantics.
+				This allows to treat some termination problems with symbols that require a predecessor semantics.<br/>
 
 				Correctness of this approach has been formally verified in the Coq proof assistant and the formalization has been 
 				contributed to the CoLoR library of certified termination techniques. This allows formal verification of termination 
 				proofs using the arctic matrix method in combination with the dependency pair transformation. This contribution brought 
-				a substantial performance gain in the certified category of the 2008 edition of the termination competition.
+				a substantial performance gain in the certified category of the 2008 edition of the termination competition.<br/>
 
 				The method has been implemented by leading termination provers. We report on experiments with its implementation in one 
-				such tool, Matchbox, developed by the second author.
+				such tool, Matchbox, developed by the second author.<br/>
 
 				We also show that our method can simulate a previous method of quasi- periodic interpretations, if restricted to 
 				interpretations of slope one on unary signatures.				
 			</abstract>
 		</paper>	
+		<paper id="horpo-aaecc-09">
+			<authors>Adam Koprowski</authors>
+			<title>Coq formalization of the higher-order recursive path ordering</title>
+			<journal>
+				<name>Applicable Algebra in Engineering, Communication and Computing (AAECC)</name>
+				<volume>20</volume>
+				<number>5-6</number>
+				<pages>379-425</pages>			
+			</journal>
+			<abstract>
+				The recursive path ordering (RPO) is a well-known reduction ordering introduced by Dershowitz, that is useful for proving 
+				termination of term rewriting systems (TRSs). Jouannaud and Rubio generalized this ordering to the higher-order case thus 
+				creating the higher-order recursive path ordering (HORPO). They proved that this ordering can be used for proving 
+				termination of higher-order TRSs, which essentially comes down to proving well-foundedness of HORPO. This result entails 
+				well-foundedness of RPO and termination of simply typed lambda calculus (as the beta-reduction relation is included in 
+				HORPO). This paper describes our undertaking of providing a complete, axiom-free, fully constructive formalization of 
+				those results in the proof assistant Coq. The formalization can be divided into three parts:
+				<ul>
+					<li>finite multisets and two variants of multiset extensions of a relation,</li>
+					<li>simply typed lambda calculus with termination of beta-reduction as the main result,</li>
+					<li>HORPO with a proof of its well-foundedness; also decidability of HORPO has been proved and, due to its constructive nature, a certified algorithm to verify whether two terms can be oriented with HORPO can be extracted from the proof.</li>
+				</ul>
+			</abstract>
+		</paper>
+		<paper id="color-tr-09">
+			<authors>Frédéric Blanqui and Adam Koprowski</authors>
+			<title>Automated Verification of Certificates for Termination Proofs</title>
+			<techreport>
+				<type>INRIA Research Report</type>
+				<number>6949</number>
+				<institution>INRIA</institution>
+				<address>Paris, France</address>
+				<month>June</month>
+			</techreport>
+			<abstract>
+				Termination is an important property required for total correctness of programs/algorithms. In particular it is a well 
+				studied subject in the area of term rewriting, where a number of methods and tools for proving termination has been 
+				developed over the years. Ensuring reliability of those tools is an important and challenging issue. In this paper we 
+				present a methodology and a tool for the automated verication of the results of such automated termination provers. This 
+				is accomplished by means of termination certicates, that can be easily generated by termination provers, and then by the 
+				transformation of those certicates into full formal proofs in some proof assistant/checker. This last step is done by 
+				formalizing the proofs of termination criteria used in modern termination provers. In this paper we describe the 
+				formalization of some of these criteria in the proof assistant Coq and the application of those formalizations in the 
+				transformation of termination certicates into termination proofs veriable by Coq.				
+			</abstract>
+		</paper>
+	</group>
+	
+	<group id="2008">
+		<paper id="phd-08">
+			<authors>Adam Koprowski</authors>
+			<title>Termination of Rewriting and Its Certification</title>
+			<phdthesis>
+				<school>Eindhoven University of Technology</school>
+				<month>sep</month>
+				<isbn>978-90-386-1377-2</isbn>
+			</phdthesis>
+			<abstract>
+				In programming, <emph>termination</emph> of a program/algorithm means that its evaluation will eventually terminate, 
+				regardless of the input it receives. It is an important property and is required for <emph>total correctness</emph>. 
+				In general the problem is undecidable.<br/>
+
+				<emph>Term rewriting</emph> is a formal way of specifying computation and as such it can be seen as a generic model for 
+				programming languages. Termination, here meaning lack of infinite sequences, is a well-studied concept in this context. 
+				There exist a number of methods for proving termination as well as a number of tools for doing that automatically. 
+				There is an on-going work on application of this methodology and tools to proving termination of programs in actual 
+				programming languages. 
+				
+				In this thesis we first give a short introduction to term rewriting and to termination of rewriting. Subsequently we 
+				present a number of contributions to this field, which can be categorized into the following categories: 
+				<ul>
+					<li>proposing new methods for proving termination and refining the existing ones,</li>
+					<li>developing a tool for proving termination and</li>
+					<li>proposing a methodology and tools for certification of termination proofs, i.e., formal verification of proofs 
+						produced by the existing tools for proving termination.</li>
+				</ul>
+			</abstract>
+		</paper>
+		<paper id="arctic-int-RTA-08">
+			<authors>Adam Koprowski and Johannes Waldmann</authors>
+			<title>Arctic Termination ... Below Zero</title>
+			<conference>
+				<name>Proceedings of the 19th International Conference on Rewriting Techniques and Applications</name>
+				<abbreviation>RTA '08</abbreviation>
+				<location>Hagenberg, Austria</location>
+				<url>http://www.risc.uni-linz.ac.at/about/conferences/rta2008/</url>
+				<series><lncs /></series>
+				<volume>5117</volume>
+				<pages>202-216</pages>
+			</conference>
+			<abstract>
+				We introduce the arctic matrix method for automatically proving termination of term rewriting. We use vectors and matrices 
+				over the arctic semi-ring: natural numbers extended with minus infinity, with the operations "max" and "plus". This extends 
+				the matrix method for term rewriting and the arctic matrix method for string rewriting. In combination with the Dependency 
+				Pairs transformation, this allows for some conceptually simple termination proofs in cases where only much more involved 
+				proofs were known before. We further generalize to arctic numbers "below zero": integers extended with minus infinity. 
+				This allows to treat some termination problems with symbols that require a predecessor semantics. The contents of the paper 
+				has been formally verified in the Coq proof assistant and the formalization has been contributed to the CoLoR library of 
+				certified termination techniques. This allows formal verification of termination proofs using the arctic matrix method. 
+				We also report on experiments with an implementation of this method which, compared to results from 2007, outperforms TPA 
+				(winner of the certified termination competition for term rewriting), and in the string rewriting category is as powerful 
+				as Matchbox was but now all of the proofs are certified.
+			</abstract>
+		</paper>		
+		<paper id="mint-cert-softsem-08">
+			<authors>Adam Koprowski and Hans Zantema</authors>
+			<title>Certification of Proving Termination of Term Rewriting by Matrix Interpretations</title>
+			<conference>
+				<name>Proceedings of the 34th International Conference on Current Trends in Theory and Practice of Computer Science</name>
+				<abbreviation>SOFSEM '08</abbreviation>
+				<location>Nový Smokovec, Slovakia</location>
+				<url>http://ics.upjs.sk/sofsem08/</url>
+				<series><lncs /></series>
+				<volume>4910</volume>
+				<pages>328-339</pages>
+			</conference>
+			<abstract>
+				We develop a Coq formalization of the matrix interpretation method, which is a recently developed, powerful approach to 
+				proving termination of term rewriting. Our formalization is a contribution to the CoLoR project and allows to automatically 
+				certify matrix interpretation proofs produced by tools for proving termination. Thanks to this development the combination 
+				of CoLoR and our tool, TPA, was the winner in 2007 in the new certified category of the annual Termination Competition.
+			</abstract>
+		</paper>		
 	</group>
 
 </papers>

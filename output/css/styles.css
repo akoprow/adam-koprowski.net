@@ -20,6 +20,9 @@ DIV.paper .conference {
     background-image: url('../images/pub-conference.png');
     padding-left: 25px;
 }
+DIV.paper A {
+	color: #CCC;
+}
 DIV.paper .conference A {
     color: #BCD;
 }

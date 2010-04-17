@@ -11,29 +11,29 @@ RUN_XSLT := $(SAXON)
 DATA := menu papers talks
 DATA_FILES := $(DATA:%=data/%.xml)
 
-PAPER_IDS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/papers.xsl)
-PAPERS := $(PAPER_IDS:%=paper-%)
+PAPERS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/papers.xsl)
+PAPERS_HTML := $(PAPERS:%=output/paper-%.html)
 
 PAGES := $(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)
+PAGES_HTML := $(PAGES:%=output/%.html)
 
-HTML := $(PAGES) $(PAPERS)
-HTML_FILES := $(HTML:%=output/%.html)
+HTML := $(PAGES_HTML) $(PAPERS_HTML)
 
 XSLT := $(shell find -name '*.xsl') 
 XSLT_FILES := $(XSLT:%=xslt/%) 
 
 ######################################################################################################
 
-all: $(HTML_FILES) $(PAPER_FILES) preview
+all: $(HTML) preview
 
 preview: preview/ preview/menu.html preview/talks.html
 
 clean:
-	rm -fr output/*.html preview
+	rm -fr output/*.html output/papers/*.html preview
 
 preview/:
 	mkdir preview
-
+	
 # creates simple HTML output for all XML data, that allows to check data integrity
 preview/%.html: xsl/preview_%.xsl data/%.xml
 	$(RUN_XSLT) -o $@ data/$*.xml xsl/preview_$*.xsl
