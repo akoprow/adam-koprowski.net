@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/publications.xsl" ?>
 
-<page menu="publications" submenu="publications">
+<page menu="papers" submenu="papers-all">
 	<title>Adam Koprowski :: Publications</title>
 	<content>
 		<heading>

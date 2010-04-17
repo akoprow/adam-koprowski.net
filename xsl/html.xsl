@@ -145,7 +145,7 @@
 		<table cellpadding="0" cellspacing="0" border="0"> 
 			<tr> 
 				<td class="text-header">
-					<xsl:value-of select="." />
+					<xsl:apply-templates />
 				</td> 
 				<td style="padding-left: 5px;">
 					<img src="images/txtheader_bullet.gif" border="0" alt="" />
