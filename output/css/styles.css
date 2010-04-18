@@ -1,3 +1,18 @@
+A:hover {
+	text-decoration: underline;
+}
+.pageContent A:hover {
+	color: #AAA;
+	background-color: #258;
+	border-bottom: 2px solid #006600;
+}
+DIV.download {
+    background-position: center left;
+    background-repeat: no-repeat;
+	background-image: url('../images/download.png');
+    padding-left: 25px;
+    margin-top: 5px;	
+}
 DIV.block {
 	text-indent: 0pt;
 	border: 1px dotted #EEEEEE;
@@ -54,11 +69,6 @@ DIV.talk {
 }
 A.download:link, A.download:visited {
 	color: #FFFFFF;
-}
-A.download:hover {
-	color: #AAAAAA;
-	background-color: #235a89;
-	border-bottom: 2px solid #006600;
 }
 #tripit-badge-inner-div .div {
 	background-color: red;
