@@ -34,7 +34,13 @@
 			</title>
 			<meta name="DESCRIPTION" content="" />
 			<meta name="KEYWORDS" content="" />
-			<link href="css/styles.css"	rel="stylesheet" type="text/css" />
+			<link href="css/styles.css"	rel="stylesheet" type="text/css" media="screen" />
+			<xsl:if test="/page[@smoothgallery]">
+				<script src="scripts/mootools.v1.11.js" type="text/javascript" />
+				<script src="scripts/jd.gallery.js" type="text/javascript" />
+				<script src="scripts/HistoryManager.js" type="text/javascript" />
+				<link href="css/jd.gallery.css" rel="stylesheet" type="text/css" media="screen" />
+			</xsl:if>
 		</head>	
 	</xsl:template>
 

@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/page.xsl"?>
 
-<page menu="aboutme">
+<page menu="aboutme" smoothgallery="yes">
 	<title>Adam Koprowski :: About me</title>
 	<content>
-		<text>Coming soon... stay tuned!</text>
+		<heading>About me</heading>
+		<verbatim>
+			<script type="text/javascript">
+				function startGallery() {
+					var myGallery = new gallery($('myGallery'), {
+						timed: false,
+						useHistoryManager: true
+					});
+					HistoryManager.start();
+				}
+				window.addEvent('domready', startGallery);
+			</script>
+			<div id="myGallery">
+				<div class="imageElement">
+					<h3>Item 1 Title</h3>
+					<p>Item 1 Description</p>
+					<a href="mypage1.html" title="open image" class="open"></a>
+					<img src="images/brugges2006/1.jpg" class="full" />
+					<img src="images/brugges2006/1-mini.jpg" class="thumbnail" />
+				</div>
+				<div class="imageElement">
+					<h3>Item 2 Title</h3>
+					<p>Item 2 Description</p>
+					<a href="mypage2.html" title="open image" class="open"></a>
+					<img src="images/brugges2006/2.jpg" class="full" />
+					<img src="images/brugges2006/2-mini.jpg" class="thumbnail" />
+				</div>
+			</div>
+		</verbatim>
 	</content>
 </page>
