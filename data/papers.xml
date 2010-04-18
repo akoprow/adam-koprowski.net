@@ -3,12 +3,14 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, (journal | conference | techreport | phdthesis), abstract)>
+<!ELEMENT paper (authors, title, (journal | conference | techreport | phdthesis), abstract, download)>
 <!ATTLIST paper  id ID #REQUIRED>
 <!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
 <!ELEMENT journal (name, volume, number, pages)>
 <!ELEMENT techreport (type, number, institution, address?, month?)>
 <!ELEMENT phdthesis (school, month?, isbn?)>
+<!ELEMENT download ((pdf | resource)*)>
+<!ELEMENT resource (name, url)>
 ]>
 
 <papers>
@@ -38,6 +40,9 @@
 				constructive mathematics formalised in Coq. The development also features a nice interplay between constructive and 
 				classical logic via the double negation monad.			
 			</abstract>
+			<download>
+				<pdf />
+			</download>
 		</paper>
 		<paper id="trx-ESOP-10">
 			<authors>Adam Koprowski and Henri Binsztok</authors>
@@ -60,6 +65,9 @@
 				the resulting parser is terminating and correct with respect to its grammar and the semantics of PEGs; both properties 
 				formally proven in Coq.
 			</abstract>
+			<download>
+				<pdf />
+			</download>
 		</paper>
 	</group>
 	
@@ -95,6 +103,12 @@
 				We also show that our method can simulate a previous method of quasi- periodic interpretations, if restricted to 
 				interpretations of slope one on unary signatures.				
 			</abstract>
+			<download>
+				<resource>
+					<name>from publisher's page</name>
+					<url>http://www.inf.u-szeged.hu/actacybernetica/edb/vol19n1/starten.xml</url>
+				</resource>
+			</download>
 		</paper>	
 		<paper id="horpo-aaecc-09">
 			<authors>Adam Koprowski</authors>
@@ -119,6 +133,12 @@
 					<li>HORPO with a proof of its well-foundedness; also decidability of HORPO has been proved and, due to its constructive nature, a certified algorithm to verify whether two terms can be oriented with HORPO can be extracted from the proof.</li>
 				</ul>
 			</abstract>
+			<download>
+				<resource>
+					<name>doi: 10.1007/s00200-009-0105-5</name>
+					<url>http://dx.doi.org/10.1007/s00200-009-0105-5</url>
+				</resource>
+			</download>			
 		</paper>
 		<paper id="color-tr-09">
 			<authors>Frédéric Blanqui and Adam Koprowski</authors>
@@ -141,6 +161,9 @@
 				formalization of some of these criteria in the proof assistant Coq and the application of those formalizations in the 
 				transformation of termination certicates into termination proofs veriable by Coq.				
 			</abstract>
+			<download>
+				<pdf />
+			</download>			
 		</paper>
 	</group>
 	
@@ -173,6 +196,9 @@
 						produced by the existing tools for proving termination.</li>
 				</ul>
 			</abstract>
+			<download>
+				<pdf />
+			</download>			
 		</paper>
 		<paper id="arctic-int-RTA-08">
 			<authors>Adam Koprowski and Johannes Waldmann</authors>
@@ -199,6 +225,9 @@
 				(winner of the certified termination competition for term rewriting), and in the string rewriting category is as powerful 
 				as Matchbox was but now all of the proofs are certified.
 			</abstract>
+			<download>
+				<pdf />
+			</download>			
 		</paper>		
 		<paper id="mint-cert-softsem-08">
 			<authors>Adam Koprowski and Hans Zantema</authors>
@@ -218,6 +247,9 @@
 				certify matrix interpretation proofs produced by tools for proving termination. Thanks to this development the combination 
 				of CoLoR and our tool, TPA, was the winner in 2007 in the new certified category of the annual Termination Competition.
 			</abstract>
+			<download>
+				<pdf />
+			</download>			
 		</paper>		
 	</group>
 

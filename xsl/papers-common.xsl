@@ -34,6 +34,12 @@
 			<div>
 				<xsl:apply-templates mode="present-paper" />
 			</div>
+			<xsl:if test="$download = 'yes'">
+				<div class="download">
+					Download:
+					<xsl:apply-templates select="download/*" mode="present-paper" />				
+				</div>
+			</xsl:if>
 		</DIV>
 	</xsl:template>
 
@@ -70,6 +76,18 @@
 		<xsl:if test="institution">, <xsl:value-of select="institution" /></xsl:if>
 		<xsl:if test="address">, <xsl:value-of select="address" /></xsl:if>
 		<xsl:if test="month">, <xsl:value-of select="month" /></xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="pdf" mode="present-paper">
+		<A href="papers/{../../@id}.pdf">
+			PDF
+		</A>
+	</xsl:template>
+
+	<xsl:template match="resource" mode="present-paper">
+		<A href="{url}">
+			<xsl:value-of select="name" />
+		</A>		
 	</xsl:template>
 	
 	<xsl:template match="*" mode="present-paper" />
