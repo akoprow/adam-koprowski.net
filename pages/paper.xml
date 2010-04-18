@@ -9,8 +9,11 @@
 		<heading>
 			<paper-title />
 		</heading>
-		<div class="abstract">
-			Abstract:
+		<div class="block">
+			<EM>Abstract:</EM>
+			<paper-abstract />
 		</div>
+		
+		<paper-block />
 	</content>
 </page>

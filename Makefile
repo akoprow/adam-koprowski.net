@@ -26,16 +26,14 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 
 all: $(HTML) preview
 
-preview: preview/ preview/menu.html preview/talks.html
+preview: preview/menu.html preview/talks.html
 
 clean:
 	rm -fr output/*.html output/papers/*.html preview
 
-preview/:
-	mkdir preview
-	
 # creates simple HTML output for all XML data, that allows to check data integrity
-preview/%.html: xsl/preview_%.xsl data/%.xml
+preview/%.html: ./preview/ xsl/preview_%.xsl data/%.xml
+	mkdir -p preview
 	$(RUN_XSLT) -o $@ data/$*.xml xsl/preview_$*.xsl
 
 # all per-paper pages

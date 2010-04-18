@@ -77,7 +77,7 @@
 				We use weighted tree automata as certificates for termination of term rewriting systems. The weights are taken from the 
 				arctic semiring: natural numbers extended with -infinity, with the operations 'max' and 'plus'. In order to find and 
 				validate these certificates automatically, we restrict their transition functions to be representable by matrix operations 
-				in the semiring. The resulting class of weighted tree automata is called path-separated.
+				in the semiring. The resulting class of weighted tree automata is called path-separated.<br/>
 
 				This extends the matrix method for term rewriting and the arctic matrix method for string rewriting. In combination with 
 				the dependency pair method, this allows for some conceptually simple termination proofs in cases where only much more 

@@ -16,7 +16,7 @@
 	</xsl:template>
 	
 	<xsl:template match="talk" mode="talks">
-		<DIV class="paper">
+		<DIV class="block">
   			<STRONG>
 	  			<xsl:value-of select="title" />
   			</STRONG>
