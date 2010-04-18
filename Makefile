@@ -43,9 +43,9 @@ output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
 	$(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
 
 # all pages with corresponding XSLT stylesheet 
-output/%.html: pages/%.xml xsl/%.xsl $(DATA_FILES)
+output/%.html: pages/%.xml xsl/%.xsl $(DATA_FILES) $(XSLT)
 	$(RUN_XSLT) -o $@ pages/$*.xml xsl/$*.xsl
 
 # ... otherwise use the default stylesheet 
-output/%.html: pages/%.xml $(DATA_FILES)
+output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
 	$(RUN_XSLT) -o $@ pages/$*.xml xsl/page.xsl

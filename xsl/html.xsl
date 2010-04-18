@@ -161,8 +161,10 @@
 		<div style="width: 0px; height: 15px;"><span /></div> 
 	</xsl:template> 
 
-	<xsl:template match="verbatim">
-		<xsl:copy-of select="." />
+	<xsl:template match="*|@*">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" />			
+		</xsl:copy>
 	</xsl:template>
 
 </xsl:stylesheet>

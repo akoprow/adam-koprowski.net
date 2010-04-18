@@ -9,5 +9,8 @@
 		<heading>
 			<paper-title />
 		</heading>
+		<div class="abstract">
+			Abstract:
+		</div>
 	</content>
 </page>
