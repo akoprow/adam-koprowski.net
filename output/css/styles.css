@@ -1,3 +1,11 @@
+#mygallery {
+	display: block;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 552px !important;
+	height: 414px !important;	
+}
 DIV.paper {
 	text-indent: 0pt;
 	border: 1px dotted #EEEEEE;

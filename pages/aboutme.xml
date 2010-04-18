@@ -6,6 +6,13 @@
 	<content>
 		<heading>About me</heading>
 		<verbatim>
+			<p>
+				For the serious stuff you can take a look at my <A href="resources/cv-eng.pdf">CV (pdf)</A>.
+			</p>
+			<p>
+				For a more relaxed view on my life, following the view that a picture is worth a thousand words, you may instead want
+				to take a look at the following slide-show.
+			</p> 
 			<script type="text/javascript">
 				function startGallery() {
 					var myGallery = new gallery($('myGallery'), {
