@@ -150,7 +150,7 @@
 	<xsl:template match="heading">
 		<table cellpadding="0" cellspacing="0" border="0"> 
 			<tr> 
-				<td class="text-header">
+				<td class="h1">
 					<xsl:apply-templates />
 				</td> 
 				<td style="padding-left: 5px;">
