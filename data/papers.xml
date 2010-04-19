@@ -3,13 +3,16 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, (journal | conference | workshop-proceedings | techreport | phdthesis), img?, abstract, download)>
+<!ELEMENT paper (authors, title, (journal | conference | workshop-proceedings | techreport | phdthesis | unpublished), img?, abstract, download)>
 <!ATTLIST paper  id ID #REQUIRED>
+
 <!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
 <!ELEMENT workshop-proceedings (name, abbreviation, location, url?, pages, note?)>
 <!ELEMENT journal (name, volume, number, pages)>
 <!ELEMENT techreport (type, number, institution, address?, month?)>
 <!ELEMENT phdthesis (school, month?, isbn?)>
+<!ELEMENT unpublished (note)>
+
 <!ELEMENT download ((pdf | resource)*)>
 <!ELEMENT resource (name, url)>
 ]>
@@ -83,26 +86,26 @@
 				<pages>357-392</pages>			
 			</journal>
 			<abstract>
-				We use weighted tree automata as certificates for termination of term rewriting systems. The weights are taken from the 
+				<p>We use weighted tree automata as certificates for termination of term rewriting systems. The weights are taken from the 
 				arctic semiring: natural numbers extended with -infinity, with the operations 'max' and 'plus'. In order to find and 
 				validate these certificates automatically, we restrict their transition functions to be representable by matrix operations 
-				in the semiring. The resulting class of weighted tree automata is called path-separated.<br/>
+				in the semiring. The resulting class of weighted tree automata is called path-separated.</p>
 
-				This extends the matrix method for term rewriting and the arctic matrix method for string rewriting. In combination with 
+				<p>This extends the matrix method for term rewriting and the arctic matrix method for string rewriting. In combination with 
 				the dependency pair method, this allows for some conceptually simple termination proofs in cases where only much more 
 				involved proofs were known before. We further generalize to arctic numbers 'below zero': integers extended with -infinity. 
-				This allows to treat some termination problems with symbols that require a predecessor semantics.<br/>
+				This allows to treat some termination problems with symbols that require a predecessor semantics.</p>
 
-				Correctness of this approach has been formally verified in the Coq proof assistant and the formalization has been 
+				<p>Correctness of this approach has been formally verified in the Coq proof assistant and the formalization has been 
 				contributed to the CoLoR library of certified termination techniques. This allows formal verification of termination 
 				proofs using the arctic matrix method in combination with the dependency pair transformation. This contribution brought 
-				a substantial performance gain in the certified category of the 2008 edition of the termination competition.<br/>
+				a substantial performance gain in the certified category of the 2008 edition of the termination competition.</p>
 
-				The method has been implemented by leading termination provers. We report on experiments with its implementation in one 
-				such tool, Matchbox, developed by the second author.<br/>
+				<p>The method has been implemented by leading termination provers. We report on experiments with its implementation in one 
+				such tool, Matchbox, developed by the second author.</p>
 
-				We also show that our method can simulate a previous method of quasi- periodic interpretations, if restricted to 
-				interpretations of slope one on unary signatures.				
+				<p>We also show that our method can simulate a previous method of quasi- periodic interpretations, if restricted to 
+				interpretations of slope one on unary signatures.</p>				
 			</abstract>
 			<download>
 				<resource>
@@ -300,6 +303,60 @@
 				<pdf/>
 			</download>
 		</paper>
+	</group>
+	
+	<group id="2006">
+		<paper id="horpo-TR-06">
+			<authors>Adam Koprowski</authors>
+			<title>Coq formalization of the Higher-Order Recursive Path Ordering</title>
+			<techreport>
+				<type>Technical Report</type>
+				<number>CSR-06-21</number>
+				<institution>Eindhoven University of Technology</institution>
+				<address>Eindhoven, The Netherlands</address>
+				<month>August</month>
+			</techreport>
+			<abstract>
+				<p>Recursive path ordering (RPO) is a well-known reduction ordering introduced by Dershowitz, that is useful for proving 
+				termination of term rewriting systems (TRSs). Jouannaud and Rubio generalized this ordering to the higher-order case 
+				thus creating the higher-order recursive path ordering (HORPO). They proved that this ordering can be used for proving 
+				termination of higher-order TRSs which essentially comes down to proving well-foundedness of the union of HORPO and the 
+				bete reduction relation of the simply typed lambda calculus. This result entails well-foundedness of RPO and termination 
+				of simply typed lambda calculus.</p>
+				<p>This paper describes author's undertaking of providing a complete, axiom-free, fully constructive formalization of those 
+				results in the theorem prover Coq. Formalization is complete and hence it contains all the dependant results. It can be 
+				divided into three parts:</p>
+				<ul>
+					<li>finite multisets and two variants of multiset extensions of a relation,</li>
+					<li>simply typed lambda calculus with termination of beta-reduction as the main result,</li>
+					<li>HORPO with proof of well-foundedness of its union with beta-reduction. Also decidability of HORPO has been proven 
+					and due to the constructive nature of this proof a certified algorithm to verify whether two terms can be oriented 
+					with HORPO can be extracted from this proof.</li>
+				</ul>			
+			</abstract>
+			<download>
+				<pdf/>
+			</download>
+		</paper>
+		<paper id="stlc-draft-06">
+			<authors>Adam Koprowski</authors>
+			<title>A Formalization of the Simply Typed Lambda Calculus in Coq</title>
+			<unpublished>
+				<note>Draft</note>
+			</unpublished>
+			<abstract>
+				In this paper we present a formalization of the simply typed lambda calculus with constants and with typing `a la Church. 
+				It has been accomplished using the theorem prover Coq. The formalization includes, among other results, definitions of 
+				typed terms over arbitrary many-sorted signature, a substitution operating on typing judgements, an equivalence relation 
+				generalizing the concept of alpha-convertibility to free variables and a proof of strong normalization of beta-reduction. 
+				The formalization has been used in a bigger project of certification of the higher-order recursive path ordering where 
+				well-foundedness of the union of the higher-order recursive path ordering and beta-reduction was the main result.			
+			</abstract>
+			<download>
+				<pdf/>
+			</download>
+		</paper>
+		
 	</group>
 
 </papers>

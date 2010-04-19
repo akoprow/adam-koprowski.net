@@ -67,6 +67,10 @@
 		<xsl:value-of select="../../@id" />
 	</xsl:template>
 
+	<xsl:template match="unpublished" mode="present-paper">
+		<xsl:value-of select="note" />
+	</xsl:template>
+	
 	<xsl:template match="techreport" mode="present-paper">
 		<EM>
 			<xsl:value-of select="type" />
@@ -76,6 +80,7 @@
 		<xsl:if test="institution">, <xsl:value-of select="institution" /></xsl:if>
 		<xsl:if test="address">, <xsl:value-of select="address" /></xsl:if>
 		<xsl:if test="month">, <xsl:value-of select="month" /></xsl:if>
+		<xsl:text> </xsl:text><xsl:value-of select="../../@id" />
 	</xsl:template>
 
 	<xsl:template match="phdthesis" mode="present-paper">

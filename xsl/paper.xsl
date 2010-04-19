@@ -24,12 +24,14 @@
 			<xsl:apply-templates select="$paper/abstract" />
 		</div>
 		<xsl:call-template name="paper-block" />
-		<h2>BibTeX:</h2>
-		<div class="block">
-			<pre class="bibtex">
-				<xsl:call-template name="paper-bibtex" />
-			</pre>
-		</div>
+		<xsl:if test="not($paper/unpublished)">
+			<h2>BibTeX:</h2>
+			<div class="block">
+				<pre class="bibtex">
+					<xsl:call-template name="paper-bibtex" />
+				</pre>
+			</div>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="paper-block">
