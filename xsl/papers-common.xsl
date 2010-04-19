@@ -77,6 +77,12 @@
 		<xsl:if test="address">, <xsl:value-of select="address" /></xsl:if>
 		<xsl:if test="month">, <xsl:value-of select="month" /></xsl:if>
 	</xsl:template>
+
+	<xsl:template match="phdthesis" mode="present-paper">
+		<EM>PhD Thesis,</EM>
+		<xsl:value-of select="school" />,
+		<xsl:value-of select="month" /><xsl:text> </xsl:text><xsl:value-of select="../../@id" />
+	</xsl:template>
 	
 	<xsl:template match="pdf" mode="present-paper">
 		<A href="papers/{../../@id}.pdf">

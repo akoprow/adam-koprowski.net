@@ -52,7 +52,7 @@
 			<xsl:with-param name="field">title</xsl:with-param>
 			<xsl:with-param name="value"><xsl:value-of select="$paper/title" /></xsl:with-param>					
 		</xsl:call-template>
-
+		<xsl:apply-templates select="$paper/*" mode="bibtex" />
 		<xsl:text>}</xsl:text>
 	</xsl:template>
 
@@ -69,5 +69,115 @@
 		<xsl:value-of select="$value" />
 		<xsl:text>},&#10;</xsl:text>
 	</xsl:template>
-		
+
+	<!-- TODO It would be nice to improve this mark-up... so that a call to bibtex-line is less verbose -->
+	<xsl:template match="conference" mode="bibtex"> 
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">booktitle</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="name" /> (<xsl:value-of select="abbreviation" />)</xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">year</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="../../@id" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">series</xsl:with-param>
+			<xsl:with-param name="value"><xsl:apply-templates select="series/*" mode="bibtex" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">volume</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="volume" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">pages</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="replace(pages, '-', '--')" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:if test="note">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">note</xsl:with-param>
+				<xsl:with-param name="value"><xsl:value-of select="note" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>	
+	</xsl:template>
+
+	<xsl:template match="journal" mode="bibtex">
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">journal</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="name" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">year</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="../../@id" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">volume</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="volume" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">number</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="number" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">pages</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="replace(pages, '-', '--')" /></xsl:with-param>					
+		</xsl:call-template>	
+	</xsl:template>
+
+	<xsl:template match="techreport" mode="bibtex">
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">year</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="../../@id" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:if test="month">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">month</xsl:with-param>
+				<xsl:with-param name="value"><xsl:value-of select="month" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">institution</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="institution" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:if test="address">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">address</xsl:with-param>
+				<xsl:with-param name="value"><xsl:value-of select="address" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">number</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="number" /></xsl:with-param>					
+		</xsl:call-template>	
+	</xsl:template>
+
+	<xsl:template match="phdthesis" mode="bibtex">
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">school</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="school" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:call-template name="bibtex-line">
+			<xsl:with-param name="field">year</xsl:with-param>
+			<xsl:with-param name="value"><xsl:value-of select="../../@id" /></xsl:with-param>					
+		</xsl:call-template>	
+		<xsl:if test="month">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">month</xsl:with-param>
+				<xsl:with-param name="value"><xsl:value-of select="month" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>
+		<xsl:if test="isbn">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">isbn</xsl:with-param>
+				<xsl:with-param name="value"><xsl:value-of select="isbn" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="lncs" mode="bibtex">
+		<xsl:text>Lecture Notes in Computer Science</xsl:text>
+	</xsl:template> 
+
+	<xsl:template match="*" mode="bibtex" />
+	 
+
 </xsl:stylesheet>
