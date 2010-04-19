@@ -1,3 +1,8 @@
+.paper-img {
+	float: 	right;
+	border: 1px dotted #EEE;
+	margin: 10px;
+}
 PRE {
 	margin: 0px;
 }
@@ -31,8 +36,8 @@ DIV.download {
 }
 DIV.block {
 	text-indent: 0pt;
-	border: 1px dotted #EEEEEE;
-	background-color: #666666;
+	border: 1px dotted #EEE;
+	background-color: #666;
 	padding: 10px;
 	margin-left: 20px;
 	margin-right: 20px;

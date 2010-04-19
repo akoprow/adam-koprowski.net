@@ -13,18 +13,33 @@
 		<xsl:value-of select="$paper/title" />
 	</xsl:template>
 
-	<xsl:template match="paper-abstract">
-		<xsl:apply-templates select="$paper/abstract" />
+	<xsl:template match="paper-page">
+		<xsl:if test="$paper/img">
+			<div class="paper-img">
+				<IMG src="papers/{$paper/img}" STYLE="float:right; " />
+			</div>
+		</xsl:if>	
+		<div class="block">
+			<EM>Abstract:</EM>
+			<xsl:apply-templates select="$paper/abstract" />
+		</div>
+		<xsl:call-template name="paper-block" />
+		<h2>BibTeX:</h2>
+		<div class="block">
+			<pre class="bibtex">
+				<xsl:call-template name="paper-bibtex" />
+			</pre>
+		</div>
 	</xsl:template>
 
-	<xsl:template match="paper-block">
+	<xsl:template name="paper-block">
 		<xsl:apply-templates mode="present-paper" select="$paper">
 			<xsl:with-param name="link-to-paper">no</xsl:with-param>
 			<xsl:with-param name="download">yes</xsl:with-param>
 		</xsl:apply-templates>
 	</xsl:template>
 
-	<xsl:template match="bibtex">
+	<xsl:template name="paper-bibtex">
 		<xsl:variable name="bibtex-type">
 			<xsl:choose>
 				<xsl:when test="$paper/conference">@inproceedings</xsl:when>		

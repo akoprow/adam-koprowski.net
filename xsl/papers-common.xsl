@@ -14,7 +14,7 @@
 				</xsl:choose>
 			</xsl:if>
 		</xsl:variable>
-		
+				
 		<DIV class="block paper">
 			<div>
 				<xsl:value-of select="authors" />

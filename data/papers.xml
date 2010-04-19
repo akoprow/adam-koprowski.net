@@ -3,7 +3,7 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, (journal | conference | techreport | phdthesis), abstract, download)>
+<!ELEMENT paper (authors, title, (journal | conference | techreport | phdthesis), img?, abstract, download)>
 <!ATTLIST paper  id ID #REQUIRED>
 <!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
 <!ELEMENT journal (name, volume, number, pages)>
@@ -176,6 +176,7 @@
 				<month>September</month>
 				<isbn>978-90-386-1377-2</isbn>
 			</phdthesis>
+			<img>PhD-cover.jpg</img>
 			<abstract>
 				In programming, <emph>termination</emph> of a program/algorithm means that its evaluation will eventually terminate, 
 				regardless of the input it receives. It is an important property and is required for <emph>total correctness</emph>. 

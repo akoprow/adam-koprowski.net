@@ -9,16 +9,6 @@
 		<heading>
 			<paper-title />
 		</heading>
-		<div class="block">
-			<EM>Abstract:</EM>
-			<paper-abstract />
-		</div>
-		<paper-block />
-		<h2>BibTeX:</h2>
-		<div class="block">
-			<pre class="bibtex">
-				<bibtex />
-			</pre>
-		</div>
+		<paper-page />
 	</content>
 </page>
