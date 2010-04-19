@@ -42,7 +42,7 @@
 	<xsl:template name="paper-bibtex">
 		<xsl:variable name="bibtex-type">
 			<xsl:choose>
-				<xsl:when test="$paper/conference">@inproceedings</xsl:when>		
+				<xsl:when test="$paper/conference or $paper/workshop-proceedings">@inproceedings</xsl:when>		
 				<xsl:when test="$paper/journal">@article</xsl:when>		
 				<xsl:when test="$paper/techreport">@techreport</xsl:when>		
 				<xsl:when test="$paper/phdthesis">@phdthesis</xsl:when>		
@@ -86,7 +86,7 @@
 	</xsl:template>
 
 	<!-- TODO It would be nice to improve this mark-up... so that a call to bibtex-line is less verbose -->
-	<xsl:template match="conference" mode="bibtex"> 
+	<xsl:template match="conference | workshop-proceedings" mode="bibtex"> 
 		<xsl:call-template name="bibtex-line">
 			<xsl:with-param name="field">booktitle</xsl:with-param>
 			<xsl:with-param name="value"><xsl:value-of select="name" /> (<xsl:value-of select="abbreviation" />)</xsl:with-param>					
@@ -95,14 +95,18 @@
 			<xsl:with-param name="field">year</xsl:with-param>
 			<xsl:with-param name="value"><xsl:value-of select="../../@id" /></xsl:with-param>					
 		</xsl:call-template>	
-		<xsl:call-template name="bibtex-line">
-			<xsl:with-param name="field">series</xsl:with-param>
-			<xsl:with-param name="value"><xsl:apply-templates select="series/*" mode="bibtex" /></xsl:with-param>					
-		</xsl:call-template>	
-		<xsl:call-template name="bibtex-line">
-			<xsl:with-param name="field">volume</xsl:with-param>
-			<xsl:with-param name="value"><xsl:value-of select="volume" /></xsl:with-param>					
-		</xsl:call-template>	
+		<xsl:if test="series">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">series</xsl:with-param>
+				<xsl:with-param name="value"><xsl:apply-templates select="series/*" mode="bibtex" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>	
+		<xsl:if test="volume">
+			<xsl:call-template name="bibtex-line">
+				<xsl:with-param name="field">volume</xsl:with-param>
+				<xsl:with-param name="value"><xsl:value-of select="volume" /></xsl:with-param>					
+			</xsl:call-template>
+		</xsl:if>	
 		<xsl:call-template name="bibtex-line">
 			<xsl:with-param name="field">pages</xsl:with-param>
 			<xsl:with-param name="value"><xsl:value-of select="replace(pages, '-', '--')" /></xsl:with-param>					
@@ -187,6 +191,10 @@
 			</xsl:call-template>
 		</xsl:if>
 	</xsl:template>
+
+	<xsl:template match="lnai" mode="bibtex">
+		<xsl:text>Lecture Notes in Artificial Inteligence</xsl:text>
+	</xsl:template> 
 
 	<xsl:template match="lncs" mode="bibtex">
 		<xsl:text>Lecture Notes in Computer Science</xsl:text>

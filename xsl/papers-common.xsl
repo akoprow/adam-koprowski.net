@@ -10,7 +10,7 @@
 				<xsl:choose>
 					<xsl:when test="conference">conference</xsl:when>
 					<xsl:when test="journal">journal</xsl:when>
-					<xsl:when test="other">other</xsl:when>
+					<xsl:otherwise>other</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
 		</xsl:variable>
@@ -43,7 +43,7 @@
 		</DIV>
 	</xsl:template>
 
-	<xsl:template match="conference" mode="present-paper">
+	<xsl:template match="conference | workshop-proceedings" mode="present-paper">
 		In
 		<EM>
 			<xsl:value-of select="name" />				

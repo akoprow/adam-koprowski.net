@@ -3,9 +3,10 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, (journal | conference | techreport | phdthesis), img?, abstract, download)>
+<!ELEMENT paper (authors, title, (journal | conference | workshop-proceedings | techreport | phdthesis), img?, abstract, download)>
 <!ATTLIST paper  id ID #REQUIRED>
 <!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
+<!ELEMENT workshop-proceedings (name, abbreviation, location, url?, pages, note?)>
 <!ELEMENT journal (name, volume, number, pages)>
 <!ELEMENT techreport (type, number, institution, address?, month?)>
 <!ELEMENT phdthesis (school, month?, isbn?)>
@@ -252,6 +253,53 @@
 				<pdf />
 			</download>			
 		</paper>		
+	</group>
+
+	<group id="2007">
+		<paper id="predlab-cade-07">
+			<authors>Adam Koprowski and Aart Middeldorp</authors>
+			<title>Predictive Labeling with Dependency Pairs using SAT</title>
+			<conference>
+				<name>Proceedings of the 21st International Conference on Automated Deduction</name>
+				<abbreviation>CADE '07</abbreviation>
+				<location>Bremen, Germany</location>
+				<url>http://www.cadeconference.org/meetings/cade21</url>
+ 				<series><lnai/></series>
+ 				<volume>4603</volume>
+ 				<pages>410-425</pages>
+			</conference>
+			<abstract>
+				This paper combines predictive labeling with dependency pairs and reports on its implementation. Our starting point is 
+				the method of proving termination of rewrite systems using semantic labeling with infinite models in combination with 
+				lexicographic path orders. We replace semantic labeling with predictive labeling to weaken the quasi-model constraints 
+				and we combine it with dependency pairs (usable rules and argument filtering) to increase the power of the method. 
+				Encoding the resulting search problem as a propositional satisfiability problem and calling a state-of-the-art SAT solver 
+				yields a powerful technique for proving termination automatically.
+			</abstract>
+			<download>
+				<pdf/>
+			</download>
+		</paper>
+		<paper id="mint-cert-wst-07">
+			<authors>Adam Koprowski and Hans Zantema</authors>
+			<title>Certification of Matrix Interpretations in Coq</title>
+			<workshop-proceedings>
+				<name>Proceedings of the 9th International Workshop on Termination</name>
+				<abbreviation>WST '07</abbreviation>
+				<location>Paris, France</location>
+				<url>http://www.lsv.ens-cachan.fr/rdp07/wst.html</url>
+				<pages>9-12</pages>
+			</workshop-proceedings>
+			<abstract>
+				We describe how to certify the matrix interpretations method for proving termination of term rewriting in the theorem 
+				prover Coq. Certification requires both formalization of the underlying theory of monotone algebras and their instantiation 
+				to vectors and matrices as they are used in the matrix method; as well as a mechanism to deal with concrete examples, 
+				based on those theoretical results.			
+			</abstract>
+			<download>
+				<pdf/>
+			</download>
+		</paper>
 	</group>
 
 </papers>
