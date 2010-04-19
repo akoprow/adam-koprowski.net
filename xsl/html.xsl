@@ -7,9 +7,10 @@
 	<!--******************************************* Variables *******************************************-->
 	<!--*************************************************************************************************-->
 
-	<xsl:variable name="page-who">Adam Koprowski</xsl:variable>
-	<xsl:variable name="page-name">personal homepage</xsl:variable>
-	<xsl:variable name="page-footer">(C) 2010 Adam Koprowski</xsl:variable>
+	<xsl:variable name="metadata" select="document('../data/webpage.xml')/webpage" />
+	<xsl:variable name="page-who" select="$metadata/author" />
+	<xsl:variable name="page-name" select="$metadata/title" />
+	<xsl:variable name="page-footer" select="$metadata/footnote" />
 
 	<xsl:variable name="menu-selection" select="/page/@menu" />
 	<xsl:variable name="menu-subselection" select="/page/@submenu" />

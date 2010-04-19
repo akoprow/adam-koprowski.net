@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE webpage [
+<!ELEMENT webpage (author, title, footnote)>
+]>
+
+<webpage>
+	<author>Adam Koprowski</author>
+	<title>personal homepage</title>
+	<footnote>(C) 2010 Adam Koprowski</footnote>
+</webpage>
