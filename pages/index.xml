@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/page.xsl" ?>
+
+<page menu="index">
+	<title>Adam Koprowski :: Home</title>
+	<content>
+		<div style="float:right; padding:20px">
+			<heading>Contact information</heading>
+			<ul>
+			<li>e-mail: Adam.Koprowski AT gmail.com</li>
+			<li>skype: akoprow</li>
+			</ul>
+			
+			<heading>My travel plans</heading>
+			<div id="tripit-badge" style="float:right">
+				<script type="text/javascript" src="http://www.tripit.com/account/badge/id/89F900BB98D75AE6E4A1E8E36B92A80F/div_id/tripit-badge/badge.js" />
+				<noscript>
+					<a href="http://www.tripit.com/">TripIt - Organize your travel</a>
+				</noscript>
+			</div>
+		</div>
+
+		<heading>About me</heading> 
+		<div>At the moment I'm a <EM>research engineer</EM> at <A href="http://mlstate.com">MLstate</A>.</div> 
+		<div>Before I did my PhD at the <A href="http://www.win.tue.nl">Eindhoven University of Technology</A> 
+		and a postdoc at the <A href="http://www.cs.ru.nl/">Radboud University Nijmegen</A>.</div>
+
+		<heading>Professional stuff</heading>
+		<div>You can see:
+			<ul>
+				<li>my CV &amp; learn more <A href="aboutme.html">about me</A> and about what I was up to before,</li>
+				<li>the list of my <A href="papers.html">publications</A>,</li>
+				<li>the list of some <A href="talks.html">presentations</A> that I've given,</li>
+				<li>the list of some <A href="projects.html">projects</A> that I am/was involved in.</li>
+			</ul>
+		</div>
+		
+		<heading>Personal stuff</heading>
+		You can also see:
+			<ul>
+				<li><A href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=111112628061733768062.000461b33627e5588ae29&amp;t=p&amp;z=5">marathons</A> I've run,</li>
+				<li><A href="http://picasaweb.google.com/Adam.Koprowski">photos</A> I've taken,</li>
+				<li><A href="http://www.librarything.com/catalog.php?previousOffset=0&amp;previousOffset=0&amp;view=adam.koprowski&amp;shelf=shelf&amp;sort=datereadREV&amp;sort=datereadREV">books</A> I've read and</li>
+				<li><A href="http://www.imdb.com/mymovies/list?l=2700180">movies</A> I've seen.</li>
+			</ul>
+	</content>
+</page>

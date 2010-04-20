@@ -9,7 +9,7 @@
 ]>
 
 <menu>
-	<entry fileid="home">
+	<entry fileid="index">
 		<text>Home</text>
 	</entry>
 	<entry fileid="aboutme">

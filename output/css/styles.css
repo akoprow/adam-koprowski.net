@@ -1,3 +1,15 @@
+UL {
+	margin-left: -20px;
+	list-style: none;
+	vertical-align: middle;
+}	
+UL LI {
+	padding-left: 13px;
+	background-image: url(../images/listitem.png);
+	background-repeat: no-repeat;
+	background-position: 0 6px;
+	vertical-align: middle;
+}
 .paper-img {
 	float: 	right;
 	border: 1px dotted #EEE;

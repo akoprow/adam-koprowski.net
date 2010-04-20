@@ -149,6 +149,7 @@
 	</xsl:template>
 
 	<xsl:template match="heading">
+		<div style="width: 0px; height: 15px;"><span /></div> 
 		<table cellpadding="0" cellspacing="0" border="0"> 
 			<tr> 
 				<td class="h1">
