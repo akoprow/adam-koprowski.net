@@ -48,6 +48,7 @@
 				<xsl:when test="$paper/journal">@article</xsl:when>		
 				<xsl:when test="$paper/techreport">@techreport</xsl:when>		
 				<xsl:when test="$paper/phdthesis">@phdthesis</xsl:when>		
+				<xsl:when test="$paper/masterthesis">@masterthesis</xsl:when>		
 				<xsl:otherwise>
 					<xsl:message>
 						Unknown paper type for paper with id: <xsl:value-of select="$paper-id" />			
@@ -91,7 +92,12 @@
 	<xsl:template match="conference | workshop-proceedings" mode="bibtex"> 
 		<xsl:call-template name="bibtex-line">
 			<xsl:with-param name="field">booktitle</xsl:with-param>
-			<xsl:with-param name="value"><xsl:value-of select="name" /> (<xsl:value-of select="abbreviation" />)</xsl:with-param>					
+			<xsl:with-param name="value">
+				<xsl:value-of select="name" /> 
+				<xsl:if test="abbreviation">
+					(<xsl:value-of select="abbreviation" />)
+				</xsl:if>
+			</xsl:with-param>					
 		</xsl:call-template>	
 		<xsl:call-template name="bibtex-line">
 			<xsl:with-param name="field">year</xsl:with-param>
@@ -171,7 +177,7 @@
 		</xsl:call-template>	
 	</xsl:template>
 
-	<xsl:template match="phdthesis" mode="bibtex">
+	<xsl:template match="phdthesis | masterthesis" mode="bibtex">
 		<xsl:call-template name="bibtex-line">
 			<xsl:with-param name="field">school</xsl:with-param>
 			<xsl:with-param name="value"><xsl:value-of select="school" /></xsl:with-param>					

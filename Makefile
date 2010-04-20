@@ -1,6 +1,6 @@
 # - Adam Koprowski 12/04/2010
 
-.PHONY: clean all preview
+.PHONY: clean all preview publish
 
 ######################################################################################################
 
@@ -27,6 +27,9 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 all: $(HTML) preview
 
 preview: preview/menu.html preview/talks.html
+
+publish:
+	weex ak
 
 clean:
 	rm -fr output/*.html output/papers/*.html preview

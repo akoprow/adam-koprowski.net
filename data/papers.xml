@@ -3,17 +3,20 @@
 <!ELEMENT papers (group*)>
 <!ELEMENT group (paper*)>
 <!ATTLIST group  id CDATA #REQUIRED>
-<!ELEMENT paper (authors, title, (journal | conference | workshop-proceedings | techreport | phdthesis | unpublished), img?, abstract, download)>
+<!ELEMENT paper (authors, title, 
+	(journal | conference | workshop-proceedings | techreport | phdthesis | masterthesis | unpublished), 
+	img?, abstract, download)>
 <!ATTLIST paper  id ID #REQUIRED>
 
-<!ELEMENT conference (name, abbreviation, location, url?, series, volume, pages, note?)>
-<!ELEMENT workshop-proceedings (name, abbreviation, location, url?, pages, note?)>
+<!ELEMENT conference (name, abbreviation?, location, url?, series, volume, pages, note?)>
+<!ELEMENT workshop-proceedings (name, abbreviation?, location, url?, pages, note?)>
 <!ELEMENT journal (name, volume, number, pages)>
 <!ELEMENT techreport (type, number, institution, address?, month?)>
-<!ELEMENT phdthesis (school, month?, isbn?)>
+<!ELEMENT phdthesis (school, address, month?, isbn?)>
+<!ELEMENT masterthesis (school, address, month?, isbn?)>
 <!ELEMENT unpublished (note)>
 
-<!ELEMENT download ((pdf | resource)*)>
+<!ELEMENT download ((pdf | ps | resource)*)>
 <!ELEMENT resource (name, url)>
 ]>
 
@@ -177,6 +180,7 @@
 			<title>Termination of Rewriting and Its Certification</title>
 			<phdthesis>
 				<school>Eindhoven University of Technology</school>
+				<address>Eindhoven, The Netherlands</address>
 				<month>September</month>
 				<isbn>978-90-386-1377-2</isbn>
 			</phdthesis>
@@ -356,7 +360,195 @@
 				<pdf/>
 			</download>
 		</paper>
-		
+		<paper id="horpo-rta-06">
+			<authors>Adam Koprowski</authors>
+			<title>Certified Higher-Order Recursive Path Ordering</title>
+			<conference>
+				<name>Proceedings of the 17th International Conference on Rewriting Techniques and Applications</name>
+				<abbreviation>RTA '06</abbreviation>
+				<location>Seattle, WA, USA</location>
+				<url>http://www.easychair.org/FLoC-06/RTA.html</url>
+				<series><lncs /></series>
+				<volume>4098</volume>
+				<pages>227-241</pages>
+			</conference>
+			<abstract>
+				The paper reports on a formalization of a proof of well-foundedness of the higher-order recursive path ordering (HORPO) 
+				in the proof checker Coq. The development is axiom-free and fully constructive. Three substantive parts that could be 
+				used also in other developments are the formalizations of the simply-typed lambda calculus, of finite multisets and of 
+				the multiset ordering. The Coq code consists of more than 1000 lemmas and 300 definitions.
+			</abstract>
+			<download>
+				<pdf />
+				<ps />
+			</download>
+		</paper>
+		<paper id="slnat-ijcar-06">
+			<authors>Adam Koprowski and Hans Zantema</authors>
+			<title>Automation of Recursive Path Ordering for Infinite Labelled Rewrite Systems</title>
+			<conference>
+				<name>Proceedings of the 3rd International Joint Conference on Automated Reasoning</name>
+				<abbreviation>IJCAR '06</abbreviation>
+				<location>Seattle, WA, USA</location>
+				<url>http://www.easychair.org/FLoC-06/IJCAR.html</url>
+				<series><lncs /></series>
+				<volume>4130</volume>
+				<pages>332-346</pages>
+			</conference>
+			<abstract>
+				Semantic labelling is a transformational technique for proving termination of Term Rewriting Systems (TRSs). Only its 
+				variant with finite sets of labels was used so far in tools for automatic termination proving and variants with infinite 
+				sets of labels were considered not to be suitable for automation. We show that such automation can be achieved for semantic 
+				labelling with natural numbers, in combination with recursive path ordering (RPO). In order to do so we developed 
+				algorithms to deal with recursive path ordering for these infinite labelled systems. Using these techniques TPA, a tool 
+				developed by the first author, is the only current tool that can prove termination of the SUBST system automatically.			
+			</abstract>
+			<download>
+				<pdf />
+				<ps />
+			</download>
+		</paper>
+		<paper id="tpa-rta-06">
+			<authors>Adam Koprowski</authors>
+			<title>TPA: Termination Proved Automatically</title>
+			<conference>
+				<name>Proceedings of the 17th International Conference on Rewriting Techniques and Applications</name>
+				<abbreviation>RTA '06</abbreviation>
+				<location>Seattle, WA, USA</location>
+				<url>http://www.easychair.org/FLoC-06/RTA.html</url>
+				<series><lncs /></series>
+				<volume>4098</volume>
+				<pages>257-266</pages>
+			</conference>
+			<abstract>
+				TPA is a tool for proving termination of term rewrite systems (TRSs) in a fully automated fashion. The distinctive feature 
+				of TPA is the support for relative termination and the use of the technique of semantic labelling with natural numbers. 
+				Thanks to the latter, TPA is capable of delivering automated termination proofs for some difficult TRSs for which all other 
+				tools fail.
+			</abstract>
+			<download>
+				<pdf />
+				<ps />
+			</download>
+		</paper>
+		<paper id="color-wst-06">
+			<authors>Frédéric Blanqui, William Delobel, Solange Coupet-Grimal, Sébastien Hinderer and Adam Koprowski</authors>
+			<title>CoLoR, a Coq Library on Rewriting and termination</title>
+			<workshop-proceedings>
+				<name>Proceedings of the 8th International Workshop on Termination</name>
+				<abbreviation>WST '06</abbreviation>
+				<location>Seattle, WA, USA</location>
+				<pages>69-73</pages>
+			</workshop-proceedings>
+			<abstract>
+				Coq is a tool allowing to certify proofs. This paper describes a Coq library for certifying termination proofs.
+			</abstract>
+			<download>
+				<ps/>
+				<pdf/>
+			</download>
+		</paper>
+	</group>
+
+	<group id="2005">
+		<paper id="liv-ifm-05">
+			<authors>Adam Koprowski</authors>
+			<title>Application of Rewriting Techniques to Verification Problems</title>
+			<workshop-proceedings>
+				<name>Proceedings of the Doctoral Symposium on Integrated Formal Methods</name>
+				<abbreviation>IFM '05</abbreviation>
+				<location>Eindhoven, The Netherlands</location>
+				<pages>76-80</pages>
+			</workshop-proceedings>
+			<abstract>
+				The goal of the project is to employ techniques from term rewriting to verification problems. The relationship between 
+				liveness properties and termination of term rewrite systems (TRSs) is of particular interest. The emphasis is on the 
+				investigation of such properties for infinite state space systems where standard model checking techniques fail. Next 
+				to developing the necessary underlying theory and performing a case study analysis, the possibility to automate this 
+				approach is of great importance. In this paper we discuss the motivation of such work, present the results obtained 
+				so far, discuss related work and present plans for the further research.			
+			</abstract>
+			<download>
+				<pdf/>	
+				<ps/>
+			</download>
+		</paper>
+		<paper id="livfair-frocos-2005">
+			<authors>Adam Koprowski and Hans Zantema</authors>
+			<title>Proving Liveness with Fairness using Rewriting</title>
+			<conference>
+				<name>Proceedings of the 5th International Workshop on Frontiers of Combining Systems</name>
+				<abbreviation>FroCoS '05</abbreviation>
+				<location>Vienna, Austria</location>
+				<url>http://www.logic.at/frocos05/</url>
+				<series><lncs /></series>
+				<volume>3717</volume>
+				<pages>232-247</pages>			
+			</conference>
+			<abstract>
+ 				In this paper we combine rewriting techniques with verification issues. More precisely, we show how techniques for 
+ 				proving relative termination of term rewrite systems (TRSs) can be applied to prove liveness properties in fair 
+ 				computations. We do this using a new transformation which is stronger than the sound transformation from 
+ 				(Giesl, Zantema, 2003) but still is suitable for automation. On the one hand we show completeness of this approach 
+ 				under some mild conditions. On the other hand we show how this approach applies to some examples completely automatically, 
+ 				using the TPA tool designed for proving relative termination of TRSs. In particular we succeed in proving liveness in the 
+ 				classical readers-writers synchronization problem.
+ 			</abstract>	
+ 			<download>
+ 				<pdf/>
+ 				<ps/>
+ 			</download>	
+		</paper>
+	</group>
+
+	<group id="2004">
+		<paper id="horpo-mth-04">
+			<authors>Adam Koprowski</authors>
+			<title>Well-foundedness of the Higher Order Recursive Path Ordering in Coq.</title>
+			<masterthesis>
+				<school>Vrije Universiteit</school>
+				<address>Amsterdam, The Netherlands</address>
+				<month>August</month>
+			</masterthesis>
+			<abstract>
+				<p>This paper presents the formalization of the proof of well-foundedness of the higher-order recursive path ordering 
+				using Coq theorem prover. Both definition of the ordering and the proof are due to Jouannaud and Rubio.</p>
+				
+				<p>The Coq formalization is complete except for computability properties that are left as axioms. As higher-order 
+				rewriting uses simply typed lambda calculus as the meta-language, formalization contains many results from that field 
+				as well. Also theory of multisets has been formalized.</p>			
+			</abstract>
+			<download>
+				<pdf/>
+				<ps/>
+			</download>
+		</paper>
+		<paper id="rpo-ptd-04">
+			<authors>Nicole de Kleijn, Adam Koprowski and Femke van Raamsdonk</authors>
+			<title>Well-foundedness of the Recursive Path Ordering in Coq</title>
+			<workshop-proceedings>
+				<name>Dutch Proof Tools Day 2004</name>
+				<location>Nijmegen, The Netherlands</location>
+				<pages>53-68</pages>
+			</workshop-proceedings>
+			<abstract>
+				One of the important methods to prove termination of term rewriting is based on Dershowitz' recursive path ordering (RPO). 
+				A rewrite system is terminating if we have l > r in the RPO for every rewrite rule l -> r. A key step in the correctness 
+				proof of this method is to show that RPO is well-founded. Originally this is shown using Kruskal's Tree Theorem. An 
+				alternative is to proceed by induction on the definition of terms. We discuss a formalization of the latter proof in Coq.
+				Higher-order rewriting, where bound variables may be present, for a long time lacked methods to prove termination. 
+				An important step forward was the generalization of RPO to the higher-order case (HORPO) by Jouannaud and Rubio. As in 
+				the first-order case, a key step is to show well-foundedness of the ordering. There is no suitable higher-order version 
+				of Kruskal's Tree Theorem; the proof by Jouannaud and Rubio proceeds by induction on the definition of terms and uses 
+				the computability predicate. We discuss a formalization of the proof of well-foundedness in Coq. The formalized proof 
+				for the first-order case is actually found as a specialization of the proof for the higher-order case.
+				This is work in progress.			
+			</abstract>
+			<download>
+				<ps/>
+				<pdf/>
+			</download>
+		</paper>	
 	</group>
 
 </papers>
