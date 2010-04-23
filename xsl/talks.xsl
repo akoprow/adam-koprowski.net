@@ -2,6 +2,7 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:import href="html.xsl" /> 
+	<xsl:import href="common.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 
 	<xsl:template match="talks">
@@ -45,10 +46,14 @@
 	</xsl:template>
 
 	<xsl:template match="download" mode="talks">
-		<A class="download" href="pres/{url}">
-			<xsl:value-of select="text" />
-		</A>
-		<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
+		<xsl:call-template name="file-download">
+			<xsl:with-param name="url">
+				<xsl:text>pres/</xsl:text><xsl:value-of select="url" />
+			</xsl:with-param>
+			<xsl:with-param name="name">
+				<xsl:value-of select="text" />
+			</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 
 </xsl:stylesheet>
