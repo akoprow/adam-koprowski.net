@@ -11,6 +11,7 @@
 	<xsl:variable name="page-who" select="$metadata/author" />
 	<xsl:variable name="page-name" select="$metadata/title" />
 	<xsl:variable name="page-footer" select="$metadata/footnote" />
+	<xsl:variable name="google-analytics-id" select="$metadata/google-analytics-id" />
 
 	<xsl:variable name="menu-selection" select="/page/@menu" />
 	<xsl:variable name="menu-subselection" select="/page/@submenu" />
@@ -145,6 +146,16 @@
 					</td>
 				</tr>
 			</table>
+			<xsl:if test="$google-analytics-id">
+				<script type="text/javascript">
+					var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+					document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script type="text/javascript">
+					var pageTracker = _gat._getTracker("<xsl:value-of select="$google-analytics-id" />");
+					pageTracker._trackPageview();
+				</script>
+			</xsl:if>
 		</BODY>
 	</xsl:template>
 

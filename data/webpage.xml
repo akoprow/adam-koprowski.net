@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE webpage [
-<!ELEMENT webpage (author, title, footnote)>
+<!ELEMENT webpage (author, title, footnote, google-analytics-id?)>
 ]>
 
 <webpage>
 	<author>Adam Koprowski</author>
 	<title>personal homepage</title>
 	<footnote>(C) 2010 Adam Koprowski</footnote>
+	<google-analytics-id>UA-267768-3</google-analytics-id>
 </webpage>
