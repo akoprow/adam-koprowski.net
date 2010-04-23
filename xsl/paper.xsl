@@ -17,6 +17,9 @@
 		<xsl:if test="$paper/img">
 			<div class="paper-img">
 				<IMG src="papers/{$paper/img}" STYLE="float:right; " />
+				<xsl:call-template name="file-exists">
+					<xsl:with-param name="filename"><xsl:text>papers/</xsl:text><xsl:value-of select="$paper/img" /></xsl:with-param>		
+				</xsl:call-template>				
 			</div>
 		</xsl:if>	
 		<div class="block">

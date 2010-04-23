@@ -79,7 +79,7 @@
 	</group>
 	
 	<group id="2009">
-		<paper id="arctic-int-AC-09">
+		<paper id="arctic-AC-09">
 			<authors>Adam Koprowski and Johannes Waldmann</authors>
 			<title>Max/Plus Tree Automata for Termination of Term Rewriting</title>
 			<journal>
@@ -147,7 +147,7 @@
 				</resource>
 			</download>			
 		</paper>
-		<paper id="color-tr-09">
+		<paper id="color-TR-09">
 			<authors>Frédéric Blanqui and Adam Koprowski</authors>
 			<title>Automated Verification of Certificates for Termination Proofs</title>
 			<techreport>
@@ -184,7 +184,7 @@
 				<month>September</month>
 				<isbn>978-90-386-1377-2</isbn>
 			</phdthesis>
-			<img>PhD-cover.jpg</img>
+			<img>phd-08-cover.jpg</img>
 			<abstract>
 				In programming, <emph>termination</emph> of a program/algorithm means that its evaluation will eventually terminate, 
 				regardless of the input it receives. It is an important property and is required for <emph>total correctness</emph>. 
@@ -209,7 +209,7 @@
 				<pdf />
 			</download>			
 		</paper>
-		<paper id="arctic-int-RTA-08">
+		<paper id="arctic-RTA-08">
 			<authors>Adam Koprowski and Johannes Waldmann</authors>
 			<title>Arctic Termination ... Below Zero</title>
 			<conference>
@@ -238,7 +238,7 @@
 				<pdf />
 			</download>			
 		</paper>		
-		<paper id="mint-cert-softsem-08">
+		<paper id="mint-cert-SOFSEM-08">
 			<authors>Adam Koprowski and Hans Zantema</authors>
 			<title>Certification of Proving Termination of Term Rewriting by Matrix Interpretations</title>
 			<conference>
@@ -263,7 +263,7 @@
 	</group>
 
 	<group id="2007">
-		<paper id="predlab-cade-07">
+		<paper id="predlab-CADE-07">
 			<authors>Adam Koprowski and Aart Middeldorp</authors>
 			<title>Predictive Labeling with Dependency Pairs using SAT</title>
 			<conference>
@@ -287,7 +287,7 @@
 				<pdf/>
 			</download>
 		</paper>
-		<paper id="mint-cert-wst-07">
+		<paper id="mint-cert-WST-07">
 			<authors>Adam Koprowski and Hans Zantema</authors>
 			<title>Certification of Matrix Interpretations in Coq</title>
 			<workshop-proceedings>
@@ -358,9 +358,10 @@
 			</abstract>
 			<download>
 				<pdf/>
+				<ps/>
 			</download>
 		</paper>
-		<paper id="horpo-rta-06">
+		<paper id="horpo-RTA-06">
 			<authors>Adam Koprowski</authors>
 			<title>Certified Higher-Order Recursive Path Ordering</title>
 			<conference>
@@ -383,7 +384,7 @@
 				<ps />
 			</download>
 		</paper>
-		<paper id="slnat-ijcar-06">
+		<paper id="slnat-IJCAR-06">
 			<authors>Adam Koprowski and Hans Zantema</authors>
 			<title>Automation of Recursive Path Ordering for Infinite Labelled Rewrite Systems</title>
 			<conference>
@@ -408,7 +409,7 @@
 				<ps />
 			</download>
 		</paper>
-		<paper id="tpa-rta-06">
+		<paper id="tpa-RTA-06">
 			<authors>Adam Koprowski</authors>
 			<title>TPA: Termination Proved Automatically</title>
 			<conference>
@@ -431,7 +432,7 @@
 				<ps />
 			</download>
 		</paper>
-		<paper id="color-wst-06">
+		<paper id="color-WST-06">
 			<authors>Frédéric Blanqui, William Delobel, Solange Coupet-Grimal, Sébastien Hinderer and Adam Koprowski</authors>
 			<title>CoLoR, a Coq Library on Rewriting and termination</title>
 			<workshop-proceedings>
@@ -451,7 +452,7 @@
 	</group>
 
 	<group id="2005">
-		<paper id="liv-ifm-05">
+		<paper id="liv-IFM-05">
 			<authors>Adam Koprowski</authors>
 			<title>Application of Rewriting Techniques to Verification Problems</title>
 			<workshop-proceedings>
@@ -473,7 +474,7 @@
 				<ps/>
 			</download>
 		</paper>
-		<paper id="livfair-frocos-2005">
+		<paper id="livfair-FROCOS-05">
 			<authors>Adam Koprowski and Hans Zantema</authors>
 			<title>Proving Liveness with Fairness using Rewriting</title>
 			<conference>
@@ -502,7 +503,7 @@
 	</group>
 
 	<group id="2004">
-		<paper id="horpo-mth-04">
+		<paper id="horpo-MTh-04">
 			<authors>Adam Koprowski</authors>
 			<title>Well-foundedness of the Higher Order Recursive Path Ordering in Coq.</title>
 			<masterthesis>
@@ -523,7 +524,7 @@
 				<ps/>
 			</download>
 		</paper>
-		<paper id="rpo-ptd-04">
+		<paper id="rpo-PTD-04">
 			<authors>Nicole de Kleijn, Adam Koprowski and Femke van Raamsdonk</authors>
 			<title>Well-foundedness of the Recursive Path Ordering in Coq</title>
 			<workshop-proceedings>
