@@ -111,24 +111,43 @@
 		<xsl:value-of select="month" /><xsl:text> </xsl:text><xsl:value-of select="../../@id" />
 	</xsl:template>
 	
-	<xsl:template match="pdf" mode="present-paper">
-		<A href="papers/{../../@id}.pdf">PDF</A>
+	<xsl:template name="file-download">
+		<xsl:param name="url" />
+		<xsl:param name="name" />
+		<A href="{$url}">
+			<xsl:value-of select="$name" />
+		</A>
 		<xsl:text>
 		</xsl:text>
+	</xsl:template>		
+	
+	<xsl:template match="pdf" mode="present-paper">
+		<xsl:call-template name="file-download">
+			<xsl:with-param name="url">
+			    <xsl:text>papers/</xsl:text>
+			    <xsl:value-of select="../../@id" />
+			    <xsl:text>.pdf</xsl:text>
+			</xsl:with-param>
+			<xsl:with-param name="name">PDF</xsl:with-param>
+		</xsl:call-template>		
 	</xsl:template>
 
 	<xsl:template match="ps" mode="present-paper">
-		<A href="papers/{../../@id}.ps">PS</A>
-		<xsl:text>
-		</xsl:text>
+		<xsl:call-template name="file-download">
+			<xsl:with-param name="url">
+			    <xsl:text>papers/</xsl:text>
+			    <xsl:value-of select="../../@id" />
+			    <xsl:text>.ps</xsl:text>
+			</xsl:with-param>
+			<xsl:with-param name="name">PS</xsl:with-param>
+		</xsl:call-template>		
 	</xsl:template>
 
 	<xsl:template match="resource" mode="present-paper">
-		<A href="{url}">
-			<xsl:value-of select="name" />
-		</A>		
-		<xsl:text>
-		</xsl:text>
+		<xsl:call-template name="file-download">
+			<xsl:with-param name="url" select="url" />
+			<xsl:with-param name="name" select="name" />
+		</xsl:call-template>		
 	</xsl:template>
 	
 	<xsl:template match="*" mode="present-paper" />
