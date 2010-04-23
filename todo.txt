@@ -1,0 +1,8 @@
+TODO Add METADATA tags
+TODO Nicer link highlights
+TODO Icons on the home.html
+TODO proper dependencies in the Makefile
+
+
+Done:
+TODO Add papers (resources)
