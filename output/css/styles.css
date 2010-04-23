@@ -1,3 +1,6 @@
+DIV {
+	margin-bottom: 3px;
+}
 UL {
 	margin-left: -20px;
 	list-style: none;
@@ -9,11 +12,6 @@ UL LI {
 	background-repeat: no-repeat;
 	background-position: 0 6px;
 	vertical-align: middle;
-}
-.paper-img {
-	float: 	right;
-	border: 1px dotted #EEE;
-	margin: 10px;
 }
 PRE {
 	margin: 0px;
@@ -33,6 +31,11 @@ H2 {
 }
 A:hover {
 	text-decoration: underline;
+}
+.paper-img {
+	float: 	right;
+	border: 1px dotted #EEE;
+	margin: 10px;
 }
 .pageContent A:hover {
 	color: #AAA;
@@ -63,35 +66,38 @@ DIV.block {
 	width: 552px !important;
 	height: 414px !important;	
 }
-DIV.paper .title {
-    background-position: center left;
-    background-repeat: no-repeat;
+DIV.paper  DIV.title {
     font-weight: bold;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     margin-left: 0px;
-    padding-left: 10px;
-}
-DIV.paper .conference {
-    background-image: url('../images/pub-conference.png');
-    padding-left: 25px;
+    padding-left: 20px;
 }
 DIV.paper A {
 	color: #CCC;
 }
-DIV.paper .conference A {
+DIV.conference {
+    background-position: center left;
+    background-repeat: no-repeat;
+	background-image: url('../images/pub-conference.png');
+    padding-left: 20px;
+}
+DIV.conference A {
     color: #BCD;
 }
-DIV.paper .journal {
-    background-image: url('../images/pub-journal.png');
-    padding-left: 25px;
+DIV.journal {
+    background-position: center left;
+    background-repeat: no-repeat;
+	background-image: url('../images/pub-journal.png');
+    padding-left: 20px;
 }
-DIV.paper .journal A {
+DIV.journal A {
 	color: #DCC;
 }
-DIV.paper .other {
+DIV.other {
     background-image: url('../images/pub-other.png');
-    padding-left: 25px;
+    background-position: center left;
+    background-repeat: no-repeat;
 }
 DIV.talk {
 	background-image: url('../images/talk.gif');

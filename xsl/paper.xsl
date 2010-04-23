@@ -98,7 +98,7 @@
 			<xsl:with-param name="value">
 				<xsl:value-of select="name" /> 
 				<xsl:if test="abbreviation">
-					(<xsl:value-of select="abbreviation" />)
+					<xsl:text> (</xsl:text><xsl:value-of select="abbreviation" /><xsl:text>)</xsl:text>
 				</xsl:if>
 			</xsl:with-param>					
 		</xsl:call-template>	

@@ -7,6 +7,20 @@
 		<heading>
 			Publications
 		</heading>
+		<div>
+  			<div class="title journal">
+  				this symbol marks <EM>journal articles</EM>.
+			</div>
+  			<div class="title conference">
+  				this symbol marks fully referred <EM>conference publications</EM>.
+			</div>			
+			<div>
+				You may also want to check my <A href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/k/Koprowski:Adam.html">DBLP page</A>.
+			</div>
+		</div>
+		<div>
+		
+		</div>
 		<papers type="all" />
 	</content>
 </page>
