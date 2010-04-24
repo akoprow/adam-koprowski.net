@@ -1,11 +1,13 @@
-TODO Add to Google Webmasters tools
 TODO Add automatic data on when page was last updated
+TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 TODO Add METADATA tags
 TODO Nicer link highlights
 TODO Icons on the home.html
 TODO proper dependencies in the Makefile
-
+TODO Add sub-navigation for publications
+TODO Add author URLs (+ possibly page with all publications with a given person...)
 
 Done:
 TODO Add papers (resources)
 TODO Add Google Analytics script
+TODO Add to Google Webmasters tools

@@ -93,7 +93,9 @@
 								<xsl:apply-templates select="content" />
 							</td>
 							<td style="padding: 120px 100px 10px 5px;">
-								<table cellpadding="0" cellspacing="0" width="145" align="center" />
+								<table cellpadding="0" cellspacing="0" width="145" align="center">							
+									<xsl:call-template name="show-submenu-side" />
+								</table>
 								<div style="width: 185px; height: 0px;"><span /></div>
 							</td>
 						</tr>

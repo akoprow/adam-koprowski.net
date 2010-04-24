@@ -2,7 +2,7 @@
 <!DOCTYPE papers [
 <!ELEMENT menu (entry*)>
 <!ELEMENT entry (text, subentry*)>
-<!ATTLIST entry fileid CDATA #REQUIRED>
+<!ATTLIST entry fileid ID #REQUIRED>
 <!ELEMENT subentry (text)>
 <!ATTLIST subentry fileid CDATA #REQUIRED>
 <!ELEMENT text (#PCDATA)>
@@ -17,7 +17,7 @@
 	</entry>
 	<entry fileid="papers">
 		<text>Publications</text>
-		<subentry fileid="$(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)">
+		<subentry fileid="papers">
 			<text>All</text>
 		</subentry>
 		<subentry fileid="papers_journal">

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+	<xsl:param name="paper-id" />
+
 	<xsl:template name="show-menu-top">
 		<xsl:apply-templates select="document('../data/menu.xml')" mode="menu-top" />
+	</xsl:template>
+
+	<xsl:template name="show-submenu-side">
+		<xsl:apply-templates select="id($menu-selection, document('../data/menu.xml'))//subentry" mode="submenu-side" />	
 	</xsl:template>
 
 	<xsl:template match="entry" mode="menu-top">
@@ -64,5 +70,40 @@
 			<td width="5" />
 		</xsl:if>
 	</xsl:template>
-				
+
+	<xsl:template match="subentry" mode="submenu-side">
+		<xsl:variable name="class">
+			<xsl:choose>
+				<xsl:when test="@fileid = $menu-subselection">
+					asubmenu
+				</xsl:when>
+				<xsl:otherwise>
+					submenu
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<tr>
+			<td style="padding-right: 10px;">
+				<a href="publications.html">
+					<img src="images/submenu_bullet.gif" border="0" alt="" />
+				</a>
+			</td>
+			<td style="width: 100%;">
+				<a href="{@fileid}.html" class="{$class}">
+					<xsl:value-of select="text" />
+				</a>
+			</td>
+		</tr>
+		<xsl:if test="not (position()=last())"> 		
+			<tr>
+				<td/>
+				<td height="20">
+					<div style="height: 2px; background-color: #5E626D; background-image: url('images/submenu_separator.gif'); background-repeat: repeat-x;">
+						<span/>
+					</div>
+				</td>
+			</tr>
+		</xsl:if>		
+	</xsl:template>
+
 </xsl:stylesheet>
