@@ -16,6 +16,7 @@
 <!ELEMENT masterthesis (school, address, month?, isbn?)>
 <!ELEMENT unpublished (note)>
 
+<!ELEMENT authors (author*)>
 <!ELEMENT download ((pdf | ps | resource)*)>
 <!ELEMENT resource (name, url)>
 ]>
@@ -24,7 +25,12 @@
 
 	<group id="2010">
 		<paper id="hybrid-ITP-10">
-			<authors>Herman Geuvers, Adam Koprowski, Dan Synek and Eelis van der Weegen</authors>
+			<authors>
+				<author>Herman Geuvers</author>
+				<author>Adam Koprowski</author>
+				<author>Dan Synek</author>
+				<author>Eelis van der Weegen</author>
+			</authors>
 			<title>Automated Machine-Checked Hybrid System Safety Proofs</title>
 			<conference>
 				<name>Proceedings of the International Conference on Interactive Theorem Proving</name>
@@ -52,7 +58,10 @@
 			</download>
 		</paper>
 		<paper id="trx-ESOP-10">
-			<authors>Adam Koprowski and Henri Binsztok</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Henri Binsztok</author>
+			</authors>
 			<title>TRX: A Formally Verified Parser Interpreter</title>
 			<conference>
 				<name>Proceedings of the 19th European Symposium on Programming</name>
@@ -80,7 +89,10 @@
 	
 	<group id="2009">
 		<paper id="arctic-AC-09">
-			<authors>Adam Koprowski and Johannes Waldmann</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Johannes Waldmann</author>
+			</authors>
 			<title>Max/Plus Tree Automata for Termination of Term Rewriting</title>
 			<journal>
 				<name>Acta Cybernetica</name>
@@ -118,7 +130,9 @@
 			</download>
 		</paper>	
 		<paper id="horpo-aaecc-09">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Coq formalization of the higher-order recursive path ordering</title>
 			<journal>
 				<name>Applicable Algebra in Engineering, Communication and Computing (AAECC)</name>
@@ -148,7 +162,10 @@
 			</download>			
 		</paper>
 		<paper id="color-TR-09">
-			<authors>Frédéric Blanqui and Adam Koprowski</authors>
+			<authors>
+				<author>Frédéric Blanqui</author>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Automated Verification of Certificates for Termination Proofs</title>
 			<techreport>
 				<type>INRIA Research Report</type>
@@ -176,7 +193,9 @@
 	
 	<group id="2008">
 		<paper id="phd-08">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Termination of Rewriting and Its Certification</title>
 			<phdthesis>
 				<school>Eindhoven University of Technology</school>
@@ -210,7 +229,10 @@
 			</download>			
 		</paper>
 		<paper id="arctic-RTA-08">
-			<authors>Adam Koprowski and Johannes Waldmann</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Johannes Waldmann</author>
+			</authors>
 			<title>Arctic Termination ... Below Zero</title>
 			<conference>
 				<name>Proceedings of the 19th International Conference on Rewriting Techniques and Applications</name>
@@ -239,7 +261,10 @@
 			</download>			
 		</paper>		
 		<paper id="mint-cert-SOFSEM-08">
-			<authors>Adam Koprowski and Hans Zantema</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Hans Zantema</author>
+			</authors>
 			<title>Certification of Proving Termination of Term Rewriting by Matrix Interpretations</title>
 			<conference>
 				<name>Proceedings of the 34th International Conference on Current Trends in Theory and Practice of Computer Science</name>
@@ -264,7 +289,10 @@
 
 	<group id="2007">
 		<paper id="predlab-CADE-07">
-			<authors>Adam Koprowski and Aart Middeldorp</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Aart Middeldorp</author>
+			</authors>
 			<title>Predictive Labeling with Dependency Pairs using SAT</title>
 			<conference>
 				<name>Proceedings of the 21st International Conference on Automated Deduction</name>
@@ -288,7 +316,10 @@
 			</download>
 		</paper>
 		<paper id="mint-cert-WST-07">
-			<authors>Adam Koprowski and Hans Zantema</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Hans Zantema</author>
+			</authors>
 			<title>Certification of Matrix Interpretations in Coq</title>
 			<workshop-proceedings>
 				<name>Proceedings of the 9th International Workshop on Termination</name>
@@ -311,7 +342,9 @@
 	
 	<group id="2006">
 		<paper id="horpo-TR-06">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Coq formalization of the Higher-Order Recursive Path Ordering</title>
 			<techreport>
 				<type>Technical Report</type>
@@ -343,7 +376,9 @@
 			</download>
 		</paper>
 		<paper id="stlc-draft-06">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>A Formalization of the Simply Typed Lambda Calculus in Coq</title>
 			<unpublished>
 				<note>Draft</note>
@@ -362,7 +397,9 @@
 			</download>
 		</paper>
 		<paper id="horpo-RTA-06">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Certified Higher-Order Recursive Path Ordering</title>
 			<conference>
 				<name>Proceedings of the 17th International Conference on Rewriting Techniques and Applications</name>
@@ -385,7 +422,10 @@
 			</download>
 		</paper>
 		<paper id="slnat-IJCAR-06">
-			<authors>Adam Koprowski and Hans Zantema</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+				<author>Hans Zantema</author>
+			</authors>
 			<title>Automation of Recursive Path Ordering for Infinite Labelled Rewrite Systems</title>
 			<conference>
 				<name>Proceedings of the 3rd International Joint Conference on Automated Reasoning</name>
@@ -410,7 +450,9 @@
 			</download>
 		</paper>
 		<paper id="tpa-RTA-06">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>TPA: Termination Proved Automatically</title>
 			<conference>
 				<name>Proceedings of the 17th International Conference on Rewriting Techniques and Applications</name>
@@ -433,7 +475,13 @@
 			</download>
 		</paper>
 		<paper id="color-WST-06">
-			<authors>Frédéric Blanqui, William Delobel, Solange Coupet-Grimal, Sébastien Hinderer and Adam Koprowski</authors>
+			<authors>
+				<author>Frédéric Blanqui</author>
+				<author>William Delobel</author>
+				<author>Solange Coupet-Grimal</author>
+				<author>Sébastien Hinderer</author>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>CoLoR, a Coq Library on Rewriting and termination</title>
 			<workshop-proceedings>
 				<name>Proceedings of the 8th International Workshop on Termination</name>
@@ -453,7 +501,9 @@
 
 	<group id="2005">
 		<paper id="liv-IFM-05">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Application of Rewriting Techniques to Verification Problems</title>
 			<workshop-proceedings>
 				<name>Proceedings of the Doctoral Symposium on Integrated Formal Methods</name>
@@ -475,7 +525,9 @@
 			</download>
 		</paper>
 		<paper id="livfair-FROCOS-05">
-			<authors>Adam Koprowski and Hans Zantema</authors>
+			<authors>
+				<author>Adam Koprowski and Hans Zantema</author>
+			</authors>
 			<title>Proving Liveness with Fairness using Rewriting</title>
 			<conference>
 				<name>Proceedings of the 5th International Workshop on Frontiers of Combining Systems</name>
@@ -504,7 +556,9 @@
 
 	<group id="2004">
 		<paper id="horpo-MTh-04">
-			<authors>Adam Koprowski</authors>
+			<authors>
+				<author>Adam Koprowski</author>
+			</authors>
 			<title>Well-foundedness of the Higher Order Recursive Path Ordering in Coq.</title>
 			<masterthesis>
 				<school>Vrije Universiteit</school>
@@ -525,7 +579,11 @@
 			</download>
 		</paper>
 		<paper id="rpo-PTD-04">
-			<authors>Nicole de Kleijn, Adam Koprowski and Femke van Raamsdonk</authors>
+			<authors>
+				<author>Nicole de Kleijn</author>
+				<author>Adam Koprowski</author>
+				<author>Femke van Raamsdonk</author>
+			</authors>
 			<title>Well-foundedness of the Recursive Path Ordering in Coq</title>
 			<workshop-proceedings>
 				<name>Dutch Proof Tools Day 2004</name>

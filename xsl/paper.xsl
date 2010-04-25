@@ -67,7 +67,14 @@
 		
 		<xsl:call-template name="bibtex-line" >
 			<xsl:with-param name="field">author</xsl:with-param>
-			<xsl:with-param name="value"><xsl:value-of select="replace(replace($paper/authors, ',', ' and '), '  ', ' ')" /></xsl:with-param>					
+			<xsl:with-param name="value">
+				<xsl:for-each select="$paper//author">
+					<xsl:value-of select="node()" />
+					<xsl:if test="position() != last()">
+						<xsl:text> and </xsl:text>
+					</xsl:if> 
+				</xsl:for-each>
+			</xsl:with-param>					
 		</xsl:call-template>
 		<xsl:call-template name="bibtex-line" >
 			<xsl:with-param name="field">title</xsl:with-param>

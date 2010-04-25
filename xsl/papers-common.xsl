@@ -21,7 +21,7 @@
 				
 		<DIV class="block paper">
 			<div>
-				<xsl:value-of select="authors" />
+				<xsl:call-template name="present-authors" />
 			</div>
   			<div class="title {$type_class}">
   				<xsl:choose>
@@ -47,6 +47,22 @@
 		</DIV>
 	</xsl:template>
 
+	<xsl:template name="present-authors">
+		<xsl:for-each select="node()/author">
+			<xsl:value-of select="node()" />
+			<xsl:choose>
+				<xsl:when test="position() = last()">
+				</xsl:when>
+				<xsl:when test="position() + 1 = last()">
+					<xsl:text> and </xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>, </xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	
 	<xsl:template match="conference | workshop-proceedings" mode="present-paper">
 		In
 		<EM>
