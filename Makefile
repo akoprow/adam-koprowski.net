@@ -26,15 +26,15 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 
 ######################################################################################################
 
-all: $(HTML) output/bibliography.bib preview
+all: $(HTML) output/bibliography.bib output/bibliography.pdf preview
 
-preview: preview/menu.html preview/talks.html preview/bibliography.pdf
+preview: preview/menu.html preview/talks.html
 
 publish:
 	weex ak
 
 clean:
-	rm -fr output/*.html output/papers/*.html preview bibliography.aux bibliography.bbl bibliography.blg bibliography.log
+	rm -fr output/*.html output/papers/*.html preview output/bibliography.bib output/bibliography.pdf
 
 # creates simple HTML output for all XML data, that allows to check data integrity
 preview/%.html: xsl/preview_%.xsl data/%.xml
@@ -42,12 +42,12 @@ preview/%.html: xsl/preview_%.xsl data/%.xml
 	$(SHOW) XSLT data/$*.xml [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ data/$*.xml xsl/preview_$*.xsl
 
-preview/bibliography.pdf: output/bibliography.bib bibliography.tex
+output/bibliography.pdf: output/bibliography.bib output/bibliography.tex
 	$(SHOW) LATEX/Bibtex biblography.tex output/bibliography.bib [$@]
-	$(HIDE) pdflatex bibliography.tex > /dev/null
-	$(HIDE) bibtex bibliography
-	$(HIDE) for i in {1..3}; do pdflatex bibliography.tex > /dev/null; done
-	$(HIDE) mv bibliography.pdf preview/
+	$(HIDE) cd output && pdflatex bibliography.tex > /dev/null 
+	$(HIDE) cd output && bibtex bibliography
+	$(HIDE) cd output && for i in {1..3}; do pdflatex bibliography.tex > /dev/null; done
+	$(HIDE) cd output && rm -fr bibliography.aux bibliography.bbl bibliography.blg bibliography.log  > /dev/null
 
 # all per-paper pages
 output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
