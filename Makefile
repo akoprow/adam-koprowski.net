@@ -43,10 +43,6 @@ preview/%.html: ./preview/ xsl/preview_%.xsl data/%.xml
 output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
 	$(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
 
-# all pages with corresponding XSLT stylesheet 
-output/%.html: pages/%.xml xsl/%.xsl $(DATA_FILES) $(XSLT)
-	$(RUN_XSLT) -o $@ pages/$*.xml xsl/$*.xsl
-
-# ... otherwise use the default stylesheet 
+# regular pages 
 output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
-	$(RUN_XSLT) -o $@ pages/$*.xml xsl/page.xsl
+	$(RUN_XSLT) -o $@ pages/$*.xml pages/`grep xml-stylesheet pages/$*.xml | sed -e 's/.*href="\(.*\)".*/\1/'`
