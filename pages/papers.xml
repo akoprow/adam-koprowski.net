@@ -9,10 +9,10 @@
 		</heading>
 		<div>
   			<div class="title journal">
-  				this symbol marks <EM>journal articles</EM>.
+  				this symbol marks <EM>journal articles</EM> (see <A href="papers_journal.html">only journal articles</A>).
 			</div>
   			<div class="title conference">
-  				this symbol marks fully referred <EM>conference publications</EM>.
+  				this symbol marks fully referred <EM>conference publications</EM> (see <A href="papers_conf.html">only conference publications</A>).
 			</div>			
 			<div>
 				You may also want to check my <A href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/k/Koprowski:Adam.html">DBLP page</A>.
