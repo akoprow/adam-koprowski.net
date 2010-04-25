@@ -20,13 +20,49 @@
 	</xsl:template>
 
 	<xsl:template match="group" mode="papers">
-		<H2>
-			<xsl:value-of select="@id" />
-		</H2>
-		<xsl:apply-templates mode="present-paper">
-			<xsl:with-param name="link-to-paper">yes</xsl:with-param>
-			<xsl:with-param name="download">no</xsl:with-param>		
-		</xsl:apply-templates>
+		<xsl:param name="paper_filter" />
+		<xsl:choose>
+			<xsl:when test="$paper_filter = 'conferences'">
+				<xsl:call-template name="show-group">
+					<xsl:with-param name="papers" select="child::node()[conference]" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:when test="$paper_filter = 'journals'">
+				<xsl:call-template name="show-group">
+					<xsl:with-param name="papers" select="child::node()[journal]" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:when test="$paper_filter = 'other'">
+				<xsl:call-template name="show-group">
+					<!-- TODO Ugly, is there a way to include nodes that *do not* have (conference|journal) descendants? -->
+					<xsl:with-param name="papers" select="child::node()[workshop-proceedings | techreport | phdthesis | masterthesis | unpublished]" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:when test="$paper_filter = 'all'">
+				<xsl:call-template name="show-group">
+					<xsl:with-param name="papers" select="child::node()" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:message terminate="yes">
+					<xsl:text>Unknown paper filter:</xsl:text>
+					<xsl:value-of select="$paper_filter" />
+				</xsl:message>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="show-group">
+		<xsl:param name="papers" />
+		<xsl:if test="$papers">
+			<H2>
+				<xsl:value-of select="@id" />
+			</H2>
+			<xsl:apply-templates mode="present-paper" select="$papers">
+				<xsl:with-param name="link-to-paper">yes</xsl:with-param>
+				<xsl:with-param name="download">no</xsl:with-param>		
+			</xsl:apply-templates>
+		</xsl:if>
 	</xsl:template>
 		
 </xsl:stylesheet>

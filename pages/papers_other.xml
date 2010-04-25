@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="../xsl/publications.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="../xsl/papers.xsl" ?>
 
 <page menu="papers" submenu="papers-other">
 	<title>Adam Koprowski :: Publications :: Other</title>
@@ -7,6 +7,9 @@
 		<heading>
 			Publications (other)
 		</heading>
+		<div>
+			Go back to <A href="papers.html">all publications</A>.
+		</div>
 		<papers type="other" />
 	</content>
 </page>
