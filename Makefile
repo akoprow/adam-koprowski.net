@@ -26,7 +26,7 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 
 ######################################################################################################
 
-all: $(HTML) preview
+all: $(HTML) output/bibliography.bib preview
 
 preview: preview/menu.html preview/talks.html
 
@@ -51,3 +51,7 @@ output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
 output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
 	$(SHOW) XSLT pages/$*.xml [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ pages/$*.xml pages/`grep xml-stylesheet pages/$*.xml | sed -e 's/.*href="\(.*\)".*/\1/'`
+
+output/bibliography.bib: $(DATA_FILES) $(XSLT) 
+	$(SHOW) XSLT data/papers.xml [$@]
+	$(HIDE) $(RUN_XSLT) -o $@ data/papers.xml xsl/biblio.xsl
