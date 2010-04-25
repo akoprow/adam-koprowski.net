@@ -4,6 +4,9 @@
 
 ######################################################################################################
 
+SHOW := @echo
+HIDE := @
+
 SAXON_JAR ?= ./saxon/saxon9.jar
 SAXON := java -jar $(SAXON_JAR)
 RUN_XSLT := $(SAXON)
@@ -35,14 +38,17 @@ clean:
 	rm -fr output/*.html output/papers/*.html preview
 
 # creates simple HTML output for all XML data, that allows to check data integrity
-preview/%.html: ./preview/ xsl/preview_%.xsl data/%.xml
+preview/%.html: xsl/preview_%.xsl data/%.xml
 	mkdir -p preview
-	$(RUN_XSLT) -o $@ data/$*.xml xsl/preview_$*.xsl
+	$(SHOW) XSLT data/$*.xml [$@]
+	$(HIDE) $(RUN_XSLT) -o $@ data/$*.xml xsl/preview_$*.xsl
 
 # all per-paper pages
 output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
-	$(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
+	$(SHOW) XSLT pages/paper.xml "(paper-id=$*)" [$@]
+	$(HIDE) $(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
 
 # regular pages 
 output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
-	$(RUN_XSLT) -o $@ pages/$*.xml pages/`grep xml-stylesheet pages/$*.xml | sed -e 's/.*href="\(.*\)".*/\1/'`
+	$(SHOW) XSLT pages/$*.xml [$@]
+	$(HIDE) $(RUN_XSLT) -o $@ pages/$*.xml pages/`grep xml-stylesheet pages/$*.xml | sed -e 's/.*href="\(.*\)".*/\1/'`
