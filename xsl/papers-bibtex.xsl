@@ -11,7 +11,7 @@
 					<xsl:when test="$paper/journal">@article</xsl:when>		
 					<xsl:when test="$paper/techreport">@techreport</xsl:when>		
 					<xsl:when test="$paper/phdthesis">@phdthesis</xsl:when>		
-					<xsl:when test="$paper/masterthesis">@masterthesis</xsl:when>		
+					<xsl:when test="$paper/masterthesis">@mastersthesis</xsl:when>		
 					<xsl:otherwise>
 						<xsl:message terminate="yes">
 							Unknown paper type for paper with id: <xsl:value-of select="$paper/@id" />			
