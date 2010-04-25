@@ -11,7 +11,9 @@
 	<xsl:variable name="paper" select="id($paper-id, document('../data/papers.xml'))" />
 
 	<xsl:template match="paper-title">
-		<xsl:value-of select="$paper/title" />
+		<xsl:call-template name="paper-title">
+			<xsl:with-param name="title" select="$paper/title" />
+		</xsl:call-template>
 	</xsl:template>
 
 	<xsl:template match="paper-page">

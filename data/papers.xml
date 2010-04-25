@@ -62,7 +62,7 @@
 				<author>Adam Koprowski</author>
 				<author>Henri Binsztok</author>
 			</authors>
-			<title>TRX: A Formally Verified Parser Interpreter</title>
+			<title>{TRX}: A Formally Verified Parser Interpreter</title>
 			<conference>
 				<name>Proceedings of the 19th European Symposium on Programming</name>
 				<abbreviation>ESOP '10</abbreviation>
@@ -133,7 +133,7 @@
 			<authors>
 				<author>Adam Koprowski</author>
 			</authors>
-			<title>Coq formalization of the higher-order recursive path ordering</title>
+			<title>{Coq} formalization of the higher-order recursive path ordering</title>
 			<journal>
 				<name>Applicable Algebra in Engineering, Communication and Computing (AAECC)</name>
 				<volume>20</volume>
@@ -293,7 +293,7 @@
 				<author>Adam Koprowski</author>
 				<author>Aart Middeldorp</author>
 			</authors>
-			<title>Predictive Labeling with Dependency Pairs using SAT</title>
+			<title>Predictive Labeling with Dependency Pairs using {SAT}</title>
 			<conference>
 				<name>Proceedings of the 21st International Conference on Automated Deduction</name>
 				<abbreviation>CADE '07</abbreviation>
@@ -320,7 +320,7 @@
 				<author>Adam Koprowski</author>
 				<author>Hans Zantema</author>
 			</authors>
-			<title>Certification of Matrix Interpretations in Coq</title>
+			<title>Certification of Matrix Interpretations in {Coq}</title>
 			<workshop-proceedings>
 				<name>Proceedings of the 9th International Workshop on Termination</name>
 				<abbreviation>WST '07</abbreviation>
@@ -379,7 +379,7 @@
 			<authors>
 				<author>Adam Koprowski</author>
 			</authors>
-			<title>A Formalization of the Simply Typed Lambda Calculus in Coq</title>
+			<title>A Formalization of the Simply Typed Lambda Calculus in {Coq}</title>
 			<unpublished>
 				<note>Draft</note>
 			</unpublished>
@@ -453,7 +453,7 @@
 			<authors>
 				<author>Adam Koprowski</author>
 			</authors>
-			<title>TPA: Termination Proved Automatically</title>
+			<title>{TPA}: Termination Proved Automatically</title>
 			<conference>
 				<name>Proceedings of the 17th International Conference on Rewriting Techniques and Applications</name>
 				<abbreviation>RTA '06</abbreviation>
@@ -482,7 +482,7 @@
 				<author>Sébastien Hinderer</author>
 				<author>Adam Koprowski</author>
 			</authors>
-			<title>CoLoR, a Coq Library on Rewriting and termination</title>
+			<title>{CoLoR}, a Coq Library on Rewriting and termination</title>
 			<workshop-proceedings>
 				<name>Proceedings of the 8th International Workshop on Termination</name>
 				<abbreviation>WST '06</abbreviation>
@@ -560,7 +560,7 @@
 			<authors>
 				<author>Adam Koprowski</author>
 			</authors>
-			<title>Well-foundedness of the Higher Order Recursive Path Ordering in Coq.</title>
+			<title>Well-foundedness of the Higher Order Recursive Path Ordering in {Coq}.</title>
 			<masterthesis>
 				<school>Vrije Universiteit</school>
 				<address>Amsterdam, The Netherlands</address>
@@ -585,7 +585,7 @@
 				<author>Adam Koprowski</author>
 				<author>Femke van Raamsdonk</author>
 			</authors>
-			<title>Well-foundedness of the Recursive Path Ordering in Coq</title>
+			<title>Well-foundedness of the Recursive Path Ordering in {Coq}</title>
 			<workshop-proceedings>
 				<name>Dutch Proof Tools Day 2004</name>
 				<location>Nijmegen, The Netherlands</location>

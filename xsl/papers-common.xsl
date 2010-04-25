@@ -27,11 +27,15 @@
   				<xsl:choose>
   					<xsl:when test="$link-to-paper = 'yes'">
 						<A href="paper-{@id}.html">
-							<xsl:value-of select="title" />					
+							<xsl:call-template name="paper-title">
+								<xsl:with-param name="title" select="title" />							
+							</xsl:call-template>
 						</A>  					
   					</xsl:when>
   					<xsl:otherwise>
-						<xsl:value-of select="title" />					
+						<xsl:call-template name="paper-title">
+							<xsl:with-param name="title" select="title" />							
+						</xsl:call-template>
   					</xsl:otherwise>
   				</xsl:choose>
 			</div>
@@ -45,6 +49,12 @@
 				</div>
 			</xsl:if>
 		</DIV>
+	</xsl:template>
+
+	<xsl:template name="paper-title">
+		<xsl:param name="title" />
+		<!-- Getting rid of '{' and '}' in the title - they are useful only for bibtex -->
+		<xsl:value-of select="replace(replace($title, '\}', ''), '\{', '')" />						
 	</xsl:template>
 
 	<xsl:template name="present-authors">

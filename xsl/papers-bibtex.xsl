@@ -39,7 +39,8 @@
 			<xsl:with-param name="field">author</xsl:with-param>
 			<xsl:with-param name="value">
 				<xsl:for-each select="$paper//author">
-					<xsl:value-of select="node()" />
+					<!-- TODO The same thing should be done for all other accented letters... -->
+					<xsl:value-of select="replace(node(), 'é', '\\''e')" />
 					<xsl:if test="position() != last()">
 						<xsl:text> and </xsl:text>
 					</xsl:if> 
