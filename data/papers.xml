@@ -526,7 +526,8 @@
 		</paper>
 		<paper id="livfair-FROCOS-05">
 			<authors>
-				<author>Adam Koprowski and Hans Zantema</author>
+				<author>Adam Koprowski</author>
+				<author>Hans Zantema</author>
 			</authors>
 			<title>Proving Liveness with Fairness using Rewriting</title>
 			<conference>

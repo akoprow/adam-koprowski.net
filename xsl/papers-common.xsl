@@ -49,7 +49,24 @@
 
 	<xsl:template name="present-authors">
 		<xsl:for-each select="node()/author">
-			<xsl:value-of select="node()" />
+			<xsl:variable name="this-author" select="node()" />
+			<xsl:variable name="author" select="document('../data/authors.xml')/authors/author[@name = $this-author]" />
+			<xsl:if test="not($author)">
+				<xsl:message terminate="yes">
+					<xsl:text>Unknown author: </xsl:text>
+					<xsl:value-of select="node()" />
+				</xsl:message>
+			</xsl:if>
+			<xsl:choose>
+				<xsl:when test="$author/url">
+					<A href="{$author/url}">
+						<xsl:value-of select="$author/@name" />
+					</A>				
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$author/@name" />
+				</xsl:otherwise>
+			</xsl:choose>
 			<xsl:choose>
 				<xsl:when test="position() = last()">
 				</xsl:when>

@@ -11,8 +11,7 @@ SAXON_JAR ?= ./saxon/saxon9.jar
 SAXON := java -jar $(SAXON_JAR)
 RUN_XSLT := $(SAXON)
 
-DATA := menu papers talks
-DATA_FILES := $(DATA:%=data/%.xml)
+DATA_FILES := $(shell find ./data -name '*.xml')
 
 PAPERS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/papers.xsl)
 PAPERS_HTML := $(PAPERS:%=output/paper-%.html)

@@ -1,61 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE authors [
 <!ELEMENT authors (author*)>
-<!ELEMENT author (name, url?)>
+<!ELEMENT author (url?)>
+<!ATTLIST author name CDATA #REQUIRED>
 ]>
 
 <authors>
-	<author>
-		<name>Herman Geuvers</name>
+	<author name="Herman Geuvers">
 		<url>http://www.cs.ru.nl/~herman</url>
 	</author>
-	<author>
-		<name>Adam Koprowski</name>
+	<author name="Adam Koprowski">
 		<url>http://adam-koprowski.net</url>
 	</author>
-	<author>
-		<name>Dan Synek</name>
+	<author name="Dan Synek">
 		<url>http://www.cs.ru.nl/~synek</url>
 	</author>
-	<author>
-		<name>Eelis van der Weegen</name>
+	<author name="Eelis van der Weegen">
 		<url>http://www.eelis.net</url>
 	</author>
-	<author>
-		<name>Henri Binsztok</name>
+	<author name="Henri Binsztok">
 		<url>http://www-connex.lip6.fr/~binsztok</url>
 	</author>
-	<author>
-		<name>Johannes Waldmann</name>	
+	<author name="Johannes Waldmann">	
 		<url>http://www.imn.htwk-leipzig.de/~waldmann</url>
 	</author>
-	<author>
-		<name>Frédéric Blanqui</name>
+	<author name="Frédéric Blanqui">
 		<url>http://www-rocq.inria.fr/~blanqui</url>
 	</author>
-	<author>
-		<name>Hans Zantema</name>
+	<author name="Hans Zantema">
 		<url>http://www.win.tue.nl/~hzantema</url>
 	</author>
-	<author>
-		<name>Aart Middeldorp</name>
+	<author name="Aart Middeldorp">
 		<url>http://cl-informatik.uibk.ac.at/~ami</url>
 	</author>
-	<author>
-		<name>William Delobel</name>
-	</author>
-	<author>
-		<name>Solange Coupet-Grimal</name>
+	<author name="William Delobel" />
+	<author name="Solange Coupet-Grimal">
 		<url>http://www.cmi.univ-mrs.fr/~solange</url>
 	</author>
-	<author>
-		<name>Sébastien Hinderer</name>
-	</author>
-	<author>
-		<name>Nicole de Kleijn</name>
-	</author>
-	<author>
-		<name>Femke van Raamsdonk</name>
+	<author name="Sébastien Hinderer" />
+	<author name="Nicole de Kleijn" />
+	<author name="Femke van Raamsdonk">
 		<url>http://www.cs.vu.nl/~femke</url>
 	</author>
 </authors>
