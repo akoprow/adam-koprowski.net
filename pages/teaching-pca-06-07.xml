@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/page.xsl"?>
+
+<page menu="teaching">
+	<title>Adam Koprowski :: Proving with computer assistance</title>
+	<content>
+	<heading>Proving with Computer Assistance: practical part (2IF48)</heading>
+
+		<P>This is the page of the practical part of the course <I>Proving with Computer Assistance</I>.
+		For the information about the theoretical part of the course please consult the web page for 
+		<A href="http://www.win.tue.nl/~wsinrpn/courses-2if40.htm">2IF40</A>.
+		</P>
+
+	<subheading>Teachers:</subheading>
+		<UL>
+			<LI><A href="http://www.win.tue.nl/~fdechesn">F. Dechesne</A> (lectures, final assignment)</LI>
+			<LI><A href="http://adam-koprowski.net">A. Koprowski</A> (lab sessions, final assignment)</LI>
+		</UL>
+
+	<heading>News/announcements</heading> 
+		<UL>
+			<LI><B>8/06: The ultimate deadline for handing in solutions to the final assingment is set to 15/07.</B></LI>
+			<LI>24/04: Updated hints on performing <A href="#hints">case distinction</A>.</LI>
+			<LI>13/04: Some hints <A href="#hints">published</A>.</LI>
+			<LI>29/03: Materials from the last lecture available in <A href="#materials">materials</A> section.</LI>
+			<LI>28/03: Announced <A href="#hours">office hours</A> for the consultation for the final assignment.</LI>
+			<LI>28/03: Registration finished. If you did not receive email confirming your registration for the final assignment 
+				please contact <A href="http://adam-koprowski.net">me</A> as soon as possible!</LI>
+			<LI>5/03: Details about the final assignment are <A href="#finassgn">available now.</A></LI>
+			<LI>27/02: The problems with CoqIDE in version 8.1 of Coq are resolved by now and hence we decided to use this
+	    		version of the system for the course (see the updated <A href="#instinstr">installation instructions</A>)</LI>
+			<LI>26/02: Exercises for lab session with Coq are now <A href="#materials">available</A>.</LI>
+			<LI>14/02: Materials from the first lecture (handout version of slides + Coq script) are now <A href="#materials">available</A>.</LI>
+			<LI>14/02: Posted <A href="#instinstr">installation instructions</A> for Coq + CoqIDE.</LI>
+			<LI>Registration for lab session is required. You can register during the lecture on Wed 14/02, 10:45-12:30, Matrix 1.41. 
+	    		Following options are available:
+				<UL>
+					<LI>Wed 28 Feb., 10:45-12:30, MA 1.41 <B>(group full!)</B></LI>
+					<LI>Wed 28 Feb., 15:30-17:15, HG 5.95</LI>
+					<LI>Thu 1 Mar, 13:30-15:15, HG 5.95</LI>
+				</UL>
+			</LI>
+			<LI>More to come... check this page out later to find all the information about the practical part of the course.</LI>
+		</UL>
+
+	<heading>Coq v 8.1 resources</heading>
+
+	<subheading>Installation</subheading>
+
+		Installation required before the practical session! See <A href="#instinstr">below</A> for installation instructions.
+		<UL>
+	  		<LI>homepage: <A href="http://coq.inria.fr">http://coq.inria.fr</A></LI>
+  			<LI>download page: <A href="http://coq.inria.fr/distrib-eng.html">http://coq.inria.fr/distrib-eng.html</A></LI>	   
+  			<LI>To comfortably work with <EM>Coq</EM> you will also need an user interface (see below)</LI>
+		</UL>
+
+	<subheading>Interface</subheading>
+
+		Working with Coq requires an user interface. Basically there are two choices:
+		<UL>
+  			<LI><B>CoqIDE</B> (<A href="http://coq.inria.fr/distrib-eng.html">Download</A>) is a user-friendly <EM>Coq</EM> user interface. 
+      			Its main disadvantage is that the version for Windows is <u>very unstable</u>. </LI>
+  			<LI><B>Proof General</B> (<A href="http://proofgeneral.inf.ed.ac.uk">Homepage</A> | <A href="http://proofgeneral.inf.ed.ac.uk/download">Download</A>)
+          		is a <EM>Coq</EM> user interface working on top of <A href="http://www.xemacs.org/">XEmacs</A>. It is not as user 
+		  		friendly as <EM>CoqIDE</EM> (unless you are familiar with <EM>XEmacs</EM>) but is stable even on Windows. Besides it 
+		  		also works with other proof assistants, like <A href="http://www.cl.cam.ac.uk/Research/HVG/Isabelle/">Isabelle</A>.</LI>
+		</UL>
+
+	<subheading>Materials</subheading>
+
+		<UL>
+  			<LI><A href="http://www.cs.chalmers.se/Cs/Research/Logic/TypesSS05/Extra/bertot_coq.pdf">Coq in a Hurry (pdf)</A>:
+	            a nice quick introduction to <EM>Coq</EM> (recommended).</LI>
+  			<LI><A href="http://coq.inria.fr/V8.1/refman/index.html">Online reference manual (html)</A>: useful if you need more 
+	            information on certain aspect of <EM>Coq</EM> (like usage of a particular tactic etc.)</LI>
+  			<LI><A href="http://coq.inria.fr/library">Online library</A>: browsable standard library of <EM>Coq</EM>
+	            (with index to all the lemmas and definitions)</LI>			
+		</UL>
+
+	<subheading>Installation instructions</subheading>
+	<A name="instinstr"></A>
+
+		<P>The following instructions assume you are using Windows operating system. If you are interested in installation
+		for another platform then consult <A href="http://coq.inria.fr/distrib-eng.html">Coq distribution</A> page or
+		contact the course instructor.</P>
+
+		<P>For the purpose of this course we will be using the interface of CoqIDE as its installation is very easy. 
+		It boils down to downloading the Coq 8.0pl3 distribution from 
+		<A href="ftp://ftp.inria.fr/INRIA/coq/V8.0pl3/coq-8.0pl3-win.exe">here</A> and following the installation 
+		instructions (basically pressing next a number of times). At this point you may want to upgrade to 
+		Coq 8.1 which you can do by installing its distribution from <A href="ftp://ftp.inria.fr/INRIA/coq/V8.1/coq-8.1-win.exe">
+		here</A>. This has the following advantages:</P>
+		<UL>
+ 			<LI><A href="http://coq.inria.fr/doc-eng.html">documentation</A> and the 
+     			<A href="http://coq.inria.fr/library-eng.html">description of the standard library</A> 
+ 				on Coq web page refer to ver. 8.1 of the system and there are some changes compared with 8.0pl3 and</LI>
+ 			<LI>CoqIDE seems to be more stable in 8.1</LI>
+		</UL>
+
+	<heading>Course schedule and materials</heading>
+	<A name="materials"></A>
+
+		<TABLE class="showTable">
+		<TR>
+			<TH>Time &amp; Location</TH>
+			<TH>Title</TH>
+			<TH>Materials</TH>
+		</TR>
+		<TR>
+			<TD>14 Feb, 10:45-12:30, MA 1.41</TD>
+			<TD>Introduction to Coq</TD>
+			<TD><A href="teaching/pca-06-07/lecture1.pdf">slides</A> &amp; <A href="teaching/pca-06-07/demo07.v">Coq demo script</A></TD>
+		</TR>
+		<TR>
+			<TD>
+				28 Feb, 10:45-12:30, MA 1.41<BR/>
+				28 Feb, 15:30-17:15, HG 5.95<BR/>
+	 			1 Mar, 13:30-15:15, HG 5.95
+			</TD>
+			<TD>Lab sessions: hands-on experience with Coq</TD>
+			<TD><A href="teaching/pca-06-07/CoqLab07.v">Coq exercises</A></TD>
+		</TR>
+		<TR>
+			<TD>7 Mar, 10:45-12:30, MA 1.41</TD>
+			<TD>More information about Coq. <BR/> Short introduction to PVS
+			</TD>
+		<TD>
+			<A href="teaching/pca-06-07/lecture2.pdf">slides</A> &amp; 
+			<A href="http://www.cs.ru.nl/~erikpoll/Teaching/PVS/index.html">PVS demo script</A><SUP>*</SUP><BR/><SUP>*</SUP><I>available via web-page of <A href="http://www.cs.ru.nl/~erikpoll">Erik Poll</A></I>
+		</TD>
+		</TR>
+		</TABLE>
+
+	<heading>Final assignment</heading>
+	<A name="finassgn"></A>
+
+	<subheading>Procedure:</subheading>
+
+		For the final assignment follow those steps:
+		<UL>
+	  		<LI>Form a team of 2 or 3 students.</LI>
+  			<LI>Choose the exercise from the following list of exercises:
+      			<A href="teaching/pca-06-07/assignments07.pdf">assignments07.pdf</A>.<BR/>
+      			Here is the Coq script for exercise D: <A href="teaching/pca-06-07/STLC.v">STLC.v</A>
+  			</LI>
+  			<LI>Register for the final assignment <SPAN class="warning">before March 15th</SPAN> by sending an email 
+      		to <A href="http://adam-koprowski.net">A. Koprowski</A>. The email should 
+	  		contain names <B>and</B> student numbers of all the members of the group <B>and</B> 
+	  		your choice of the exercise.
+  		</LI>
+  		<LI>Solve the exercise and write a report (more on that below).</LI>
+  		<LI>Send your solution (Coq file + report) <SPAN class="warning">before May 11th</SPAN> to your
+      		assignor (<A href="http://www.win.tue.nl/~fdechesn">F. Dechesne</A> or
+      		<A href="http://adam-koprowski.net">A. Koprowski</A>)
+	  		<B>The last chance deadline: <SPAN class="warning">July 15th</SPAN></B>
+  		</LI>
+  		<LI>After submitting your solution make an appointment for the final evaluation. 
+      		Final evaluation is a short meeting (30min) of all the members of the group 
+	  		with their assignor where you will shortly discuss your solution (both Coq 
+	  		part and the report). You will also receive your grade then.</LI>
+		</UL>
+
+	<subheading>Report</subheading>
+
+		A couple of remarks considering the requirements for the report:
+		<UL>
+  		<LI>Do not make it too long. 15 pages is the absolute maximum but normally it
+      		should be much shorter. Keep in mind that longer does not mean better!</LI>
+  		<LI>What you should write:
+    		<UL>
+	  			<LI>Names and student numbers of all the members of the group.</LI>
+	  			<LI>Explanation of the problem and your approach to it.</LI>
+	  			<LI>Description of the main problems you encountered and solutions you used.
+		      		If you had some alternative ideas to solve those problems describe them
+		  			and explain your choice for the solution to this problem.</LI>
+	  			<LI>Write about your experience with the prover. What did you like, what you 
+	      			did not like etc.</LI>
+	  			<LI>Describe the cooperation within the group and the division of labor.</LI>
+	  			<LI>Add the Coq code as an appendix.</LI>
+ 			</UL>
+  		</LI>
+  		<LI>What you should <B>not</B> write
+    		<UL>
+	  			<LI>Do not unnecessarily repeat the code. Refer to appendix and quote the
+	      			code only to illustrate something.</LI>
+  	  			<LI>Do not write obvious things! Description of the proofs of the shape:
+	      			<I>"the goal is as follows so we apply this tactic and that is what we
+		  			get..."</I> are useless. </LI>
+			</UL>
+  		</LI>
+	</UL>
+
+	<subheading>Office hours for the final assignment</subheading>
+	<A name="hours"></A>
+
+		Should you have any questions concerning the final assignment you can can contact your
+		supervisor during the office hours: 
+		<UL>
+	  		<LI>groups supervised by Francien Dechesne: 4/04-25/04, Tuesdays and Wednesdays 12:45-14:00, HG 7.17</LI>
+  			<LI>groups supervised by Adam Koprowski: 11/04-4/05, Wednesdays 13:00-15:00 + arbitrary other time upon appointment, HG 6.78</LI>
+		</UL>
+
+	<subheading>Tips &amp; tricks</subheading>
+	<A name="hints"></A>
+
+		<UL>
+			<LI>Avoid using the type bool; define predicates using Prop. Don't use equality (=) to prove 
+		    	equivalence of propositions, use bi-implication (<pre>&lt;-&gt;</pre>) instead.
+			</LI>
+			<LI>For a way of doing case distinction see the following <A href="teaching/pca-06-07/Cases.v">script</A></LI>
+			<LI>If you have contradictory hypotheses then you may want to convert your goal to '<I>False</I>'.
+		    	This can be done by '<I>apply False_ind.</I>' (try: '<I>Check False_Ind.</I>')</LI>
+		</UL>
+		
+	</content>
+</page>
