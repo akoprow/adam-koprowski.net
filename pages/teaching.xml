@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/page.xsl"?>
+
+<page menu="teaching" smoothgallery="yes">
+	<title>Adam Koprowski :: Teaching</title>
+	<content>
+		<heading>Current</heading>
+		<UL>
+			<LI><A href="teaching-isr-2010.html"><B>"Coq and rewriting"</B></A>, a series of 3 lectures/lab sessions given 
+				during the advanced track of the 5th International School on Rewriting (ISR '10) in Utrecht, Netherlands</LI>
+		</UL>
+		
+		<heading>(Pre)history</heading>
+
+		Will show up here one day...
+	</content>
+</page>

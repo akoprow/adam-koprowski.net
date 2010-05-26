@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/page.xsl"?>
+
+<page menu="teaching">
+	<title>Adam Koprowski :: Coq and rewriting</title>
+	<content>
+		<heading>What</heading>
+		<EM>Coq and rewriting</EM>: a series of 3 lectures/lab sessions given as part of the advanced track of the 
+		<A href="http://www.phil.uu.nl/isr2010/">5th International School on Rewriting (ISR '10)</A> in Utrecht, Netherlands.
+		
+		<heading>Abstract</heading>
+		<P>
+			<EM>Coq</EM> is an interactive theorem prover. On the one hand it allows to express mathematical theorems and mechanically 
+			check correctness of their proofs. On the other hand it encompasses a functional programming language, allowing to write 
+			programs within the system and reason about their correctness, hence providing a software verification platform. This course 
+			will:
+			<UL>
+				<LI>introduce Coq as a tool;</LI>
+				<LI>present recent work in the term rewriting community on using theorem proving technology to certify termination proofs 
+					for term rewriting systems; and	</LI>
+				<LI>include lab sessions, where students will be presented with a number of exercises, giving them an opportunity to have 
+					a hands-on experience with the system.</LI>
+			</UL>
+		</P>
+	</content>
+</page>
