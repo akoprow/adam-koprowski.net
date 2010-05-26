@@ -1,3 +1,19 @@
+.warning {
+	color: #F66;
+	font-weight: bold;
+}
+.showTable TH {
+	text-align: center;
+	padding: 10px;
+	border: 1px dotted;
+	font-size: 10pt; font-family: Tahoma, sans-serif; color: #E6E7E9;
+}
+.showTable TD {
+	text-align: center;
+	padding: 10px;
+	border: 1px dotted;
+	font-size: 10pt; font-family: Tahoma, sans-serif; color: #E6E7E9;
+}
 DIV {
 	margin-bottom: 3px;
 }
@@ -23,7 +39,8 @@ H1, .H1 {
 	color: #333; 
 	font-variant: small-caps;	 
 }
-H2 { 
+H2, .H2 { 
+	font-weight: bold; 
 	font-size: 12pt; 
 	font-family: Arial Narrow, sans-serif; 
 	color: #333; 
@@ -114,8 +131,8 @@ A.download:link, A.download:visited {
 }
 
 /* content */
-.pageContent { font-size: 10pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
- .pageContent a { font-size: 10pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
+.pageContent { font-size: 11pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
+ .pageContent a { font-size: 11pt; font-family: Tahoma, sans-serif; color: #E6E7E9; }
 
 /* top elements */
 .company { font-weight: bold; font-size: 18pt; font-family: Arial Narrow, sans-serif; color: #ffffff; }

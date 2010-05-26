@@ -22,5 +22,28 @@
 					a hands-on experience with the system.</LI>
 			</UL>
 		</P>
+
+		<heading>Coq installation</heading>
+		<P>
+		  <SPAN class="warning">WARNING!</SPAN>
+		  All students taking part in this course are expected to have a working version of Coq pre-installed
+		  when joining the course. Please follow the instructions below and in case of any problems contact <A href="http://adam-koprowski.net">me</A>.
+		</P>
+
+		<P>
+		  What you will need to take part in this course is:
+		  <UL>
+		    <LI><EM>Coq 8.2pl1</EM> -- you can download it <A href="http://coq.inria.fr/download">here</A>. If you are running Linux (preferred platform
+		      for Coq developments) you may need to install it from sources. For more information see: 
+		      <A href="http://www.chargueraud.org/arthur/projects/proofs/install/">Coq installation tutorial</A> (courtesy of Arthur Charguéraud).
+		    </LI>
+		    <LI>An interface to Coq: i.e. either <EM>ProofGeneral</EM> (preferred) or <EM>CoqIDE</EM>. CoqIDE comes bundled with standard Coq distribution.
+		      For ProofGeneral you will need to have (X)emacs on your system and then follow instructions from: 
+		      <A href="http://proofgeneral.inf.ed.ac.uk/download">Proof General's download page</A>.
+		    </LI>
+		    <LI><SPAN class="warning">Please do this installation well in advance of the course</SPAN>, so that I will be able to assist you in case 
+		      you run into any problems. There will be no time during the course to do that!</LI>
+		  </UL>
+		</P>
 	</content>
 </page>

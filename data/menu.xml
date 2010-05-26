@@ -38,6 +38,9 @@
 		<subentry fileid="teaching-isr-2010">
 			<text>Coq and rewriting (ISR '10)</text>
 		</subentry>
+		<subentry fileid="teaching-pca-06-07">
+			<text>Proving with computer assistance 07/08</text>
+		</subentry>
 	</entry>
 	<entry fileid="projects">
 		<text>Projects</text>

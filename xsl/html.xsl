@@ -175,6 +175,18 @@
 		</table>
 		<div style="width: 0px; height: 15px;"><span /></div> 
 	</xsl:template> 
+	
+	<xsl:template match="subheading">
+		<div style="width: 0px; height: 5px;"><span /></div> 
+		<table cellpadding="0" cellspacing="0" border="0"> 
+			<tr> 
+				<td class="h2">
+					<xsl:apply-templates />
+				</td>
+			</tr> 
+		</table>
+		<div style="width: 0px; height: 5px;"><span /></div> 
+	</xsl:template> 
 
 	<xsl:template match="*|@*">
 		<xsl:copy>
