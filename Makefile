@@ -7,8 +7,13 @@
 SHOW := @echo
 HIDE := @
 
-SAXON_JAR ?= ./tools/saxon/saxon9.jar
-SAXON := java -jar $(SAXON_JAR)
+SAXON_JAR ?= ../tools/saxon/saxon9.jar
+RESOLVER_JAR ?= ../tools/saxon/resolver.jar
+SAXON := java -cp $(SAXON_JAR):$(RESOLVER_JAR) -Dxml.catalog.files=../tools/saxon/dtds/catalog.xml \
+	-Dxml.catalog.verbosity=1 net.sf.saxon.Transform \
+    -r org.apache.xml.resolver.tools.CatalogResolver \
+    -x org.apache.xml.resolver.tools.ResolvingXMLReader \
+    -y org.apache.xml.resolver.tools.ResolvingXMLReader
 RUN_XSLT := $(SAXON)
 
 DATA_FILES := $(shell find ./data -name '*.xml')
