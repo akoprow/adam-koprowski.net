@@ -7,7 +7,7 @@
 SHOW := @echo
 HIDE := @
 
-SAXON_JAR ?= ./saxon/saxon9.jar
+SAXON_JAR ?= ./tools/saxon/saxon9.jar
 SAXON := java -jar $(SAXON_JAR)
 RUN_XSLT := $(SAXON)
 
