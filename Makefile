@@ -4,17 +4,7 @@
 
 ######################################################################################################
 
-SHOW := @echo
-HIDE := @
-
-SAXON_JAR ?= ../tools/saxon/saxon9.jar
-RESOLVER_JAR ?= ../tools/saxon/resolver.jar
-SAXON := java -cp $(SAXON_JAR):$(RESOLVER_JAR) -Dxml.catalog.files=../tools/saxon/dtds/catalog.xml \
-	-Dxml.catalog.verbosity=1 net.sf.saxon.Transform \
-    -r org.apache.xml.resolver.tools.CatalogResolver \
-    -x org.apache.xml.resolver.tools.ResolvingXMLReader \
-    -y org.apache.xml.resolver.tools.ResolvingXMLReader
-RUN_XSLT := $(SAXON)
+include Makefile.common
 
 DATA_FILES := $(shell find ./data -name '*.xml')
 
@@ -40,6 +30,9 @@ publish:
 
 clean:
 	rm -fr output/*.html output/papers/*.html preview output/bibliography.bib output/bibliography.pdf
+
+data/books.xml:
+	cd libraryThing && make update-books && cd ..
 
 # creates simple HTML output for all XML data, that allows to check data integrity
 preview/%.html: xsl/preview_%.xsl data/%.xml
