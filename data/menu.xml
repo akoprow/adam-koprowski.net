@@ -45,4 +45,16 @@
 	<entry fileid="projects">
 		<text>Projects</text>
 	</entry>
+	<entry fileid="leisure">
+		<text>Free time</text>	
+		<subentry fileid="books">
+			<text>Reading</text>
+		</subentry>
+		<subentry fileid="movies">
+			<text>Movies</text>
+		</subentry>
+		<subentry fileid="running">
+			<text>Running</text>
+		</subentry>
+	</entry>
 </menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/page.xsl" ?>
+
+<page menu="leisure">
+	<title>Adam Koprowski :: Leisure</title>
+	<content>
+		<heading>Free time</heading>
+		<text>In my free time I like to:</text>
+		<ul>
+			<li>read <A href="books.html">books</A>,</li>
+			<li>watch <A href="movies.html">movies</A>,</li>
+			<li>do some <A href="running.html">running</A>.</li>
+		</ul>
+	</content>
+</page>
