@@ -1,3 +1,32 @@
+.books LI {
+    width: 350px;
+    height: 100px;
+    float: left;
+    padding: 10px;
+}
+.booksTable {
+	font-size: 11pt; 
+	font-family: Tahoma, sans-serif; 
+	color: #E6E7E9;
+}
+.booksTable .no {
+	width: 20px;	
+}
+.booksTable .img {
+	margin: 7px;
+	border: 1px dotted;
+}
+
+span.title {
+	display: block;
+	font-variant: small-caps;
+}
+span.author {
+	display: block;
+	font-style: italic;
+	text-transform: capitalize;
+}
+
 .warning {
 	color: #F66;
 	font-weight: bold;
