@@ -7,23 +7,26 @@
 
 	<xsl:template match="books">
 		<OL class="books">
-			<xsl:apply-templates select="document('../data/books.xml')" mode="book" />
+			<xsl:for-each select="document('../data/books.xml')//book">
+				<xsl:sort order="descending" data-type="number" select="finished" />
+				<xsl:call-template name="show-book" />
+			</xsl:for-each>
 		</OL>
 	</xsl:template>
 	
-	<xsl:template match="book" mode="book">
+	<xsl:template name="show-book">
 	    <LI>
 	    	<table class="booksTable">
 	    		<tr>
 	    			<td class="no">
-                         <xsl:number/> 
+	                         <xsl:number value="position()" format="1. "/>
 	    			</td>
 	    			<td class="img">
 						<img src="{cover-url}" height="100" />
 	    			</td>
 	    			<td class="data">
 						<span class="author">
-							<xsl:value-of select="author" />
+							<xsl:value-of select="lower-case(author)" />
 						</span>
 						<span class="title">
 							<xsl:value-of select="title" />
