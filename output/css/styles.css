@@ -16,7 +16,21 @@
 	margin: 7px;
 	border: 1px dotted;
 }
-
+span.rating span {
+	display: block;
+	float: left;
+	height: 20px;
+	width: 20px;
+}
+span.full-star {
+	background-image: url('../images/full-star.png');
+}
+span.half-star {
+	background-image: url('../images/half-star.png')
+}
+span.empty-star {
+	background-image: url('../images/empty-star.png')
+}
 span.title {
 	display: block;
 	font-variant: small-caps;
