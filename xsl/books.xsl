@@ -7,7 +7,7 @@
 
 	<xsl:template match="books">
 		<OL class="books">
-			<xsl:for-each select="document('../data/books.xml')//book">
+			<xsl:for-each select="document('../data/books.xml')//book[contains(tags,'read-2010')]">
 				<xsl:sort order="descending" data-type="number" select="finished" />
 				<xsl:call-template name="show-book" />
 			</xsl:for-each>
