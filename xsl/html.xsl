@@ -28,6 +28,15 @@
 		</HTML>
 	</xsl:template>
 
+	<xsl:template match="bare-page">
+		<HTML>
+			<xsl:call-template name="html-header" />
+			<BODY>
+				<xsl:apply-templates select="content" />
+			</BODY>
+		</HTML>	
+	</xsl:template>
+
 	<xsl:template name="html-header">
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

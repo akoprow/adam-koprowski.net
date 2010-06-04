@@ -20,16 +20,28 @@
 		<div id="books">
 			<ul>
 				<li><a href="#2010">2010</a></li>
-				<li><a href="books-2009.html">2009</a></li>
-				<li><a href="books-2008.html">2008</a></li>
-				<li><a href="books-2007.html">2007</a></li>
-				<li><a href="books-2006.html">&lt;=2006</a></li>
+				<li><a href="#2009">2009</a></li>
+				<li><a href="#2008">2008</a></li>
+				<li><a href="#2007">2007</a></li>
+				<li><a href="#2006">&lt;=2006</a></li>
 			</ul>	
 			<div id="2010">	
 				<subheading>Reading now</subheading>
 				<books tag="reading" />
 				<subheading>2010</subheading>
 				<books tag="read-2010" />
+			</div>
+			<div id="2009">	
+				<books tag="read-2009" />
+			</div>
+			<div id="2008">	
+				<books tag="read-2008" />
+			</div>
+			<div id="2007">	
+				<books tag="read-2007" />
+			</div>
+			<div id="2006">	
+				<books tag="read-before-2007" />
 			</div>
 		</div>
 	</content>

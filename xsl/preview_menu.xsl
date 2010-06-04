@@ -4,7 +4,7 @@
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 
 	<xsl:template match="/" mode="list-file-ids">
-		<xsl:for-each select="//entry | //subentry">
+		<xsl:for-each select="//entry | //subentry | //subsubentry">
 			<xsl:value-of select="@fileid" />
 			<xsl:text> </xsl:text>
 		</xsl:for-each>

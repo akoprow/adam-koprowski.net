@@ -3,8 +3,9 @@
 <!ELEMENT menu (entry*)>
 <!ELEMENT entry (text, subentry*)>
 <!ATTLIST entry fileid ID #REQUIRED>
-<!ELEMENT subentry (text)>
+<!ELEMENT subentry (text, subsubentry*)>
 <!ATTLIST subentry fileid CDATA #REQUIRED>
+<!ATTLIST subsubentry fileid CDATA #REQUIRED>
 <!ELEMENT text (#PCDATA)>
 ]>
 
