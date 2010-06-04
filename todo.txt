@@ -1,4 +1,5 @@
 Books:
+TODO Add links to books
 TODO Add author's cloud for books
 TODO Add books by ratings
 TODO Normalize capitalization of book authors/titles

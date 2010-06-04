@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
 
-<page menu="leisure">
+<page menu="leisure" jquery="true">
 	<title>Adam Koprowski :: Books</title>
 	<content>
+		<script type="text/javascript">
+		$(function() {
+			$("#books").tabs({
+				ajaxOptions: {
+					error: function(xhr, status, index, anchor) {
+						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
+					}
+				}
+			});
+		});
+		</script>	
 		<heading>Books</heading>
 		
-		<books />
+		<div id="books">
+			<ul>
+				<li><a href="#2010">2010</a></li>
+				<li><a href="books-2009.html">2009</a></li>
+				<li><a href="books-2009.html">2008</a></li>
+				<li><a href="books-2009.html">2007</a></li>
+				<li><a href="books-2009.html">&lt;2006</a></li>
+			</ul>	
+			<div id="2010">	
+				<heading>Reading now</heading>
+				<books tag="reading" />
+				<heading>2010</heading>
+				<books tag="read-2010" />
+			</div>
+		</div>
 	</content>
 </page>

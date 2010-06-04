@@ -6,7 +6,7 @@
 
 include Makefile.common
 
-DATA_FILES := $(shell find ./data -name '*.xml')
+DATA_FILES := $(shell find ./data -name '*.xml') data/books.xml
 
 PAPERS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/papers.xsl)
 PAPERS_HTML := $(PAPERS:%=output/paper-%.html)

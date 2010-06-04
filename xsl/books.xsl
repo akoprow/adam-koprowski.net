@@ -6,12 +6,14 @@
 	<xsl:strip-space elements="*" />
 
 	<xsl:template match="books">
+		<xsl:variable name="selected-tag" select="@tag" />
 		<OL class="books">
-			<xsl:for-each select="document('../data/books.xml')//book[contains(tags,'read-2010')]">
+			<xsl:for-each select="document('../data/books.xml')//book[contains(tags, $selected-tag)]">
 				<xsl:sort order="descending" data-type="number" select="finished" />
 				<xsl:call-template name="show-book" />
 			</xsl:for-each>
 		</OL>
+		<div style="clear: both;" />
 	</xsl:template>
 	
 	<xsl:template name="show-book">
