@@ -89,9 +89,6 @@ H2, .H2 {
 	color: #333; 
 	font-variant: small-caps;
 }
-A:hover {
-	text-decoration: underline;
-}
 .paper-img {
 	float: 	right;
 	border: 1px dotted #EEE;
@@ -101,6 +98,16 @@ A:hover {
 	color: #AAA;
 	background-color: #258;
 	border-bottom: 2px solid #006600;
+}
+#books A {
+	border: 0px;
+	text-decoration: none;
+}
+#books A:hover {
+	text-decoration: underline;
+}
+A:hover {
+	text-decoration: underline;
 }
 DIV.download {
     background-position: center left;

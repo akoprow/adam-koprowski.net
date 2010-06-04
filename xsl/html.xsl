@@ -32,7 +32,7 @@
 		<HTML>
 			<xsl:call-template name="html-header" />
 			<BODY>
-				<xsl:apply-templates select="content" />
+				<xsl:apply-templates select="content/node()" />
 			</BODY>
 		</HTML>	
 	</xsl:template>
@@ -104,7 +104,7 @@
 					<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 440px;">
 						<tr valign="top">
 							<td width="100%" class="pageContent" style="padding: 20px 20px 10px 90px;">
-								<xsl:apply-templates select="content" />
+								<xsl:apply-templates select="content/node()" />
 							</td>
 							<td style="padding: 120px 100px 10px 5px;">
 								<table cellpadding="0" cellspacing="0" width="145" align="center">							

@@ -24,14 +24,18 @@
 	                         <xsl:number value="position()" format="1. "/>
 	    			</td>
 	    			<td class="img">
-						<img src="{cover-url}" height="100" />
+	    				<a href="http://www.librarything.com/work/book/{id}">
+							<img src="{cover-url}" height="100" />
+						</a>
 	    			</td>
 	    			<td class="data">
 						<span class="author">
 							<xsl:value-of select="lower-case(author)" />
 						</span>
 						<span class="title">
-							<xsl:value-of select="title" />
+		    				<a href="http://www.librarything.com/work/book/{id}">
+								<xsl:value-of select="title" />
+							</a>
 						</span>
 						<span class="rating">
 							<xsl:if test="number(rating)">

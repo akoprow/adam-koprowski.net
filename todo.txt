@@ -1,18 +1,18 @@
 Books:
-TODO Add links to books
 TODO Add author's cloud for books
 TODO Add books by ratings
-TODO Normalize capitalization of book authors/titles
 
 Papers:
 TODO Fix special characters in bibtex
 TODO Add publications sorted by authors
 
 General:
-TODO Include a back button on every page
+TODO Include a back button on every page & a go-to-top one
 TODO Add METADATA tags
 TODO Nicer link highlights
 TODO Icons on the home.html
+
+-----------------------------------------------------------------------------------------------------------
 
 Canceled:
 TODO proper dependencies in the Makefile
@@ -26,3 +26,5 @@ TODO Add sub-navigation for publications
 TODO Add papers (resources)
 TODO Add Google Analytics script
 TODO Add to Google Webmasters tools
+TODO Books: add links to books
+TODO Books: normalize capitalization of book authors/titles
