@@ -21,14 +21,14 @@
 			<ul>
 				<li><a href="#2010">2010</a></li>
 				<li><a href="books-2009.html">2009</a></li>
-				<li><a href="books-2009.html">2008</a></li>
-				<li><a href="books-2009.html">2007</a></li>
-				<li><a href="books-2009.html">&lt;2006</a></li>
+				<li><a href="books-2008.html">2008</a></li>
+				<li><a href="books-2007.html">2007</a></li>
+				<li><a href="books-2006.html">&lt;=2006</a></li>
 			</ul>	
 			<div id="2010">	
-				<heading>Reading now</heading>
+				<subheading>Reading now</subheading>
 				<books tag="reading" />
-				<heading>2010</heading>
+				<subheading>2010</subheading>
 				<books tag="read-2010" />
 			</div>
 		</div>
