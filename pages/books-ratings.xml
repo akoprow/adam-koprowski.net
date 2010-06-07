@@ -16,15 +16,20 @@
 		});
 		</script>	
 		<heading>Books</heading>
+
+		<div>
+			You can also see my books <A href="books.html">chronologically</A>
+			and my <A href="http://www.librarything.com/catalog.php?shelf_rows=10&amp;previousOffset=0&amp;shelf_rows=25&amp;previousOffset=0&amp;view=adam.koprowski&amp;shelf=shelf&amp;sort=stamp">LibraryThing</A> page. 
+		</div>
 		
 		<div id="books">
 			<ul>
-				<li><a href="#great">Great</a></li>
-				<li><a href="#good">Good</a></li>
-				<li><a href="#ok">OK</a></li>
-				<li><a href="#not-good">Not good</a></li>
+				<li><a href="#great">Loved it!</a></li>
+				<li><a href="#good">Liked it</a></li>
+				<li><a href="#ok">It was ok</a></li>
+				<li><a href="#not-good">Didn't like it</a></li>
 			</ul>	
-			<div id="great">	
+			<div id="great">
 				<books rating-min="4.5" rating-max="5.0" />
 			</div>
 			<div id="good">	

@@ -17,6 +17,11 @@
 		</script>	
 		<heading>Books</heading>
 		
+		<div>
+			You can also see my books by <A href="books-ratings.html">ratings</A>
+			and my <A href="http://www.librarything.com/catalog.php?shelf_rows=10&amp;previousOffset=0&amp;shelf_rows=25&amp;previousOffset=0&amp;view=adam.koprowski&amp;shelf=shelf&amp;sort=stamp">LibraryThing</A> page.
+		</div> 		
+		
 		<div id="books">
 			<ul>
 				<li><a href="#2010">2010</a></li>
