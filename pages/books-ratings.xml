@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
+
+<page menu="leisure" jquery="true">
+	<title>Adam Koprowski :: Books by rating</title>
+	<content>
+		<script type="text/javascript">
+		$(function() {
+			$("#books").tabs({
+				ajaxOptions: {
+					error: function(xhr, status, index, anchor) {
+						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
+					}
+				}
+			});
+		});
+		</script>	
+		<heading>Books</heading>
+		
+		<div id="books">
+			<ul>
+				<li><a href="#great">Great</a></li>
+				<li><a href="#good">Good</a></li>
+				<li><a href="#ok">OK</a></li>
+				<li><a href="#not-good">Not good</a></li>
+			</ul>	
+			<div id="great">	
+				<books rating-min="4.5" rating-max="5.0" />
+			</div>
+			<div id="good">	
+				<books rating-min="4.0" rating-max="4.0" />
+			</div>
+			<div id="ok">	
+				<books rating-min="3.0" rating-max="3.5" />
+			</div>
+			<div id="not-good">	
+				<books rating-min="0.0" rating-max="2.5" />
+			</div>
+		</div>
+	</content>
+</page>

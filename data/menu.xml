@@ -49,7 +49,10 @@
 	<entry fileid="leisure">
 		<text>Free time</text>	
 		<subentry fileid="books">
-			<text>Reading</text>
+			<text>Books: by year</text>
+		</subentry>
+		<subentry fileid="books-ratings">
+			<text>Books: by rating</text>
 		</subentry>
 		<subentry fileid="movies">
 			<text>Movies</text>

@@ -6,12 +6,30 @@
 	<xsl:strip-space elements="*" />
 
 	<xsl:template match="books">
-		<xsl:variable name="selected-tag" select="@tag" />
 		<OL class="books">
-			<xsl:for-each select="document('../data/books.xml')//book[contains(tags, $selected-tag)]">
-				<xsl:sort order="descending" data-type="number" select="finished" />
-				<xsl:call-template name="show-book" />
-			</xsl:for-each>
+		<xsl:choose>
+			<xsl:when test="@tag">
+				<xsl:variable name="selected-tag" select="@tag" />
+				<xsl:for-each select="document('../data/books.xml')//book[contains(tags, $selected-tag)]">
+					<xsl:sort order="descending" data-type="number" select="finished" />
+					<xsl:call-template name="show-book" />
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:when test="@rating-min and @rating-max">
+				<xsl:variable name="min" select="@rating-min" />
+				<xsl:variable name="max" select="@rating-max" />
+				<xsl:for-each select="document('../data/books.xml')//book[(rating ge $min) and (rating le $max)]">
+					<xsl:sort order="descending" data-type="number" select="rating" />
+					<xsl:sort order="descending" data-type="number" select="finished" />
+					<xsl:call-template name="show-book" />
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:message terminate="yes">
+					Unknown books tag
+				</xsl:message>
+			</xsl:otherwise>
+		</xsl:choose>
 		</OL>
 		<div style="clear: both;" />
 	</xsl:template>
