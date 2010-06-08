@@ -1,3 +1,11 @@
+.authors-cloud {
+	display: block;
+}
+.authors-cloud SPAN {
+	font-variant: small-caps;
+	text-transform: capitalize;	
+	padding: 3px;
+}
 .books LI {
     width: 350px;
     height: 100px;

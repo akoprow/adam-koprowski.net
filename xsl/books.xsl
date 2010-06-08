@@ -98,23 +98,16 @@
 	    </LI>
 	</xsl:template>
 	
-	<xsl:template match="book-authors-cloud"> 
-		<xsl:for-each select="document('../data/books.xml')//book[not(author = preceding-sibling::book/author)]">
-			<xsl:sort data-type="text" select="author" />
-			<LI>
-				<xsl:value-of select="author" />
-			</LI>
-<!-- 
-			<xsl:sort order="ascending" data-type="text" select="author" />
-				<LI>
-					<xsl:value-of select="author" />
-					<xsl:for-each select="preceding-sibling::book">
-						<xsl:value-of select="author" />
-					</xsl:for-each>
-				</LI>
-			<xsl:if test="not(author = preceding-sibling::author)">
-			</xsl:if>
--->
-		</xsl:for-each>						
+	<xsl:template match="book-authors-cloud">
+		<div class="authors-cloud">
+			<xsl:for-each select="document('../data/books.xml')//book[not(author = preceding-sibling::book/author)]">
+				<xsl:sort data-type="text" select="author" />
+				<xsl:variable name="this-author" select="author" /> 
+				<SPAN style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;">
+					<xsl:text> </xsl:text>
+					<xsl:value-of select="replace($this-author, ' ', '&#160;')" />
+				</SPAN>
+			</xsl:for-each>
+		</div>						
 	</xsl:template>
 </xsl:stylesheet>
