@@ -48,7 +48,7 @@
 	    			</td>
 	    			<td class="data">
 						<span class="author">
-							<xsl:value-of select="lower-case(author)" />
+							<xsl:value-of select="author" />
 						</span>
 						<span class="title">
 		    				<a href="http://www.librarything.com/work/book/{id}">
@@ -96,5 +96,25 @@
 	    		</tr>
 			</table>
 	    </LI>
+	</xsl:template>
+	
+	<xsl:template match="book-authors-cloud"> 
+		<xsl:for-each select="document('../data/books.xml')//book[not(author = preceding-sibling::book/author)]">
+			<xsl:sort data-type="text" select="author" />
+			<LI>
+				<xsl:value-of select="author" />
+			</LI>
+<!-- 
+			<xsl:sort order="ascending" data-type="text" select="author" />
+				<LI>
+					<xsl:value-of select="author" />
+					<xsl:for-each select="preceding-sibling::book">
+						<xsl:value-of select="author" />
+					</xsl:for-each>
+				</LI>
+			<xsl:if test="not(author = preceding-sibling::author)">
+			</xsl:if>
+-->
+		</xsl:for-each>						
 	</xsl:template>
 </xsl:stylesheet>

@@ -54,6 +54,9 @@
 		<subentry fileid="books-ratings">
 			<text>Books: by rating</text>
 		</subentry>
+		<subentry fileid="books-authors">
+			<text>Books: authors' cloud</text>
+		</subentry>
 		<subentry fileid="movies">
 			<text>Movies</text>
 		</subentry>
