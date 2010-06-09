@@ -1,10 +1,8 @@
 # - Adam Koprowski 12/04/2010
 
-.PHONY: clean all preview publish
-
 ######################################################################################################
 
-include Makefile.common
+include Makefile.XSLT
 
 DATA_FILES := $(shell find ./data -name '*.xml') data/books.xml
 
@@ -21,7 +19,11 @@ XSLT_FILES := $(XSLT:%=xslt/%)
 
 ######################################################################################################
 
+.PHONY: clean all preview publish update update-books
+
 all: $(HTML) output/bibliography.bib output/bibliography.pdf preview
+
+update: update-books all
 
 preview: preview/menu.html preview/talks.html
 
@@ -31,8 +33,8 @@ publish:
 clean:
 	rm -fr output/*.html output/papers/*.html preview output/bibliography.bib output/bibliography.pdf
 
-data/books.xml:
-	cd libraryThing && make update-books && cd ..
+update-books:
+	make -C LibraryThing
 
 # creates simple HTML output for all XML data, that allows to check data integrity
 preview/%.html: xsl/preview_%.xsl data/%.xml
