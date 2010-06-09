@@ -1,11 +1,17 @@
 Books:
 TODO In authors' cloud add list of books per author (showing on mouse hover)
+TODO In authors' cloud add authors' photos
+TODO Include LibraryThing rating next to mine
 
 Papers:
 TODO Fix special characters in bibtex
 TODO Add publications sorted by authors
 
+Running:
+TODO Add table with results
+
 General:
+TODO Add movies
 TODO Add photos
 TODO Add guestbook
 TODO Add info: 'Last updated on'
