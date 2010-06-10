@@ -4,23 +4,17 @@
 <page menu="leisure" jquery="true">
 	<title>Adam Koprowski :: Books</title>
 	<content>
-		<script type="text/javascript">
-		$(function() {
-			$("#books").tabs({
-				ajaxOptions: {
-					error: function(xhr, status, index, anchor) {
-						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
-					}
-				}
-			});
-		});
-		</script>	
+		<jquery-tabs id="books" />
 		<heading>Books</heading>
 		
+		<lt-link />
 		<div>
-			You can also see my books by <A href="books-ratings.html">ratings</A>
-			and my <A href="http://www.librarything.com/catalog.php?shelf_rows=10&amp;previousOffset=0&amp;shelf_rows=25&amp;previousOffset=0&amp;view=adam.koprowski&amp;shelf=shelf&amp;sort=stamp">LibraryThing</A> page.
+			You can also see my books 
+			<A href="books-ratings.html">by ratings</A>
+			and
+			<A href="books-authors.html">by authors</A>.
 		</div> 		
+		<vspace />
 		
 		<div id="books">
 			<ul>
@@ -32,21 +26,21 @@
 			</ul>	
 			<div id="2010">	
 				<subheading>Reading now</subheading>
-				<books tag="reading" />
+				<books-by-tag tag="reading" />
 				<subheading>2010</subheading>
-				<books tag="read-2010" />
+				<books-by-tag tag="read-2010" />
 			</div>
 			<div id="2009">	
-				<books tag="read-2009" />
+				<books-by-tag tag="read-2009" />
 			</div>
 			<div id="2008">	
-				<books tag="read-2008" />
+				<books-by-tag tag="read-2008" />
 			</div>
 			<div id="2007">	
-				<books tag="read-2007" />
+				<books-by-tag tag="read-2007" />
 			</div>
 			<div id="2006">	
-				<books tag="read-before-2007" />
+				<books-by-tag tag="read-before-2007" />
 			</div>
 		</div>
 	</content>

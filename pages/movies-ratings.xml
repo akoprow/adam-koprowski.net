@@ -4,25 +4,14 @@
 <page menu="leisure" jquery="true">
 	<title>Adam Koprowski :: Movies by ratings</title>
 	<content>
+		<jquery-tabs id="movies" />
 		<heading>Movies I've seen</heading>
-		<script type="text/javascript">
-		$(function() {
-			$("#movies").tabs({
-				ajaxOptions: {
-					error: function(xhr, status, index, anchor) {
-						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
-					}
-				}
-			});
-		});
-		</script>	
 		
-		<div>
-			This page is generated from <A href="http://www.imdb.com/mymovies/list?l=2700180">my vote history at IMDB</A>.
-		</div> 		
+		<imdb-link />
 		<div>
 			You can also see my movies <A href="movies.html">chronologically</A>.
 		</div>
+		<vspace />
 		
 		<div id="movies">
 			<ul>

@@ -4,23 +4,14 @@
 <page menu="leisure" jquery="true">
 	<title>Adam Koprowski :: Movies</title>
 	<content>
+		<jquery-tabs id="movies" />
 		<heading>Movies I've seen</heading>
-		<script type="text/javascript">
-		$(function() {
-			$("#movies").tabs({
-				ajaxOptions: {
-					error: function(xhr, status, index, anchor) {
-						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
-					}
-				}
-			});
-		});
-		</script>	
 		
+		<imdb-link />
 		<div>
-			You can also see my public vote history at 
-			<A href="http://www.imdb.com/mymovies/list?l=2700180">IMDB</A>.
-		</div> 		
+			You can also see my movies by <A href="movies-ratings.html">ratings</A>.
+		</div>
+		<vspace />
 		
 		<div id="movies">
 			<ul>
@@ -28,9 +19,9 @@
 				<li><a href="#2009">2009</a></li>
 				<li><a href="#2008">&lt;=2008</a></li>
 			</ul>	
-			<movies id="2010" boundary="Seven Pounds" />
-			<movies id="2009" boundary="Burn After Reading" />
-			<movies id="2008" />
+			<movies-by-year id="2010" boundary="Seven Pounds" />
+			<movies-by-year id="2009" boundary="Burn After Reading" />
+			<movies-by-year id="2008" />
 		</div>
 	</content>
 </page>

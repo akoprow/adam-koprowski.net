@@ -202,6 +202,26 @@
 		<div style="width: 0px; height: 5px;"><span /></div> 
 	</xsl:template> 
 
+	<xsl:template match="jquery-tabs">
+		<script type="text/javascript">
+			<xsl:text>
+			$(function() {
+				$("#</xsl:text><xsl:value-of select="@id" /><xsl:text>").tabs({
+					ajaxOptions: {
+						error: function(xhr, status, index, anchor) {
+							$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
+						}
+					}
+				});
+			});
+			</xsl:text>
+		</script>
+	</xsl:template>	
+
+	<xsl:template match="vspace">
+		<div class="vspace" />
+	</xsl:template>
+
 	<xsl:template match="*|@*">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />			

@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
 
-<page menu="leisure" jquery="true">
+<page menu="leisure">
 	<title>Adam Koprowski :: Book authors' cloud</title>
 	<content>
 		<heading>Authors' cloud</heading>
+
+		<lt-link />
+		<div>
+			You can also see my books 
+			<A href="books.html">chronologically</A>
+			and 
+			<A href="books-ratings.html">by ratings</A>.
+		</div> 		
+		<vspace />
 
 		<book-authors-cloud />
 	</content>

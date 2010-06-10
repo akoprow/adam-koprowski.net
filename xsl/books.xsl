@@ -7,31 +7,37 @@
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
 
-	<xsl:template match="books">
+	<xsl:variable name="books" select="document('../data/books.xml')" />
+
+	<xsl:template match="lt-link">
+		<div>
+			This page is generated from
+			<A href="http://www.librarything.com/catalog.php?shelf_rows=10&amp;previousOffset=0&amp;shelf_rows=25&amp;previousOffset=0&amp;view=adam.koprowski&amp;shelf=shelf&amp;sort=stamp">
+				my LibraryThing collection
+			</A>
+		</div>
+	</xsl:template>
+
+	<xsl:template match="books-by-tag">
 		<OL class="books">
-		<xsl:choose>
-			<xsl:when test="@tag">
-				<xsl:variable name="selected-tag" select="@tag" />
-				<xsl:for-each select="document('../data/books.xml')//book[contains(tags, $selected-tag)]">
-					<xsl:sort order="descending" data-type="number" select="finished" />
-					<xsl:call-template name="show-book" />
-				</xsl:for-each>
-			</xsl:when>
-			<xsl:when test="@rating-min and @rating-max">
-				<xsl:variable name="min" select="@rating-min" />
-				<xsl:variable name="max" select="@rating-max" />
-				<xsl:for-each select="document('../data/books.xml')//book[(rating ge $min) and (rating le $max)]">
-					<xsl:sort order="descending" data-type="number" select="rating" />
-					<xsl:sort order="descending" data-type="number" select="finished" />
-					<xsl:call-template name="show-book" />
-				</xsl:for-each>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:message terminate="yes">
-					Unknown books tag
-				</xsl:message>
-			</xsl:otherwise>
-		</xsl:choose>
+			<xsl:variable name="selected-tag" select="@tag" />
+			<xsl:for-each select="$books//book[contains(tags, $selected-tag)]">
+				<xsl:sort order="descending" data-type="number" select="finished" />
+				<xsl:call-template name="show-book" />
+			</xsl:for-each>
+		</OL>
+		<div style="clear: both;" />
+	</xsl:template>
+
+	<xsl:template match="books-by-rating">
+		<OL class="books">
+			<xsl:variable name="min" select="number(@min)" />
+			<xsl:variable name="max" select="number(@max)" />
+			<xsl:for-each select="$books//book[(number(rating) ge $min) and (number(rating) le $max)]">
+				<xsl:sort order="descending" data-type="number" select="rating" />
+				<xsl:sort order="descending" data-type="number" select="finished" />
+				<xsl:call-template name="show-book" />
+			</xsl:for-each>
 		</OL>
 		<div style="clear: both;" />
 	</xsl:template>

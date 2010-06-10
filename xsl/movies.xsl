@@ -8,6 +8,15 @@
 
 	<xsl:variable name="movies" select="document('../data/movies.xml')" />
 
+	<xsl:template match="imdb-link">
+		<div>
+			This page is generated from
+			<A href="http://www.imdb.com/mymovies/list?l=2700180">
+				my vote history at IMDB
+			</A>.
+		</div> 		
+	</xsl:template>
+
 	<xsl:template match="movies-by-year">
 		<div id="{@id}">
   			<xsl:variable name="first" select="preceding-sibling::*[1]/@boundary" />
