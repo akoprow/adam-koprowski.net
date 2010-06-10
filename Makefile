@@ -2,7 +2,7 @@
 
 ######################################################################################################
 
-include Makefile.XSLT
+include Makefile-XSLT
 
 DATA_FILES := $(shell find ./data -name '*.xml') data/books.xml
 
