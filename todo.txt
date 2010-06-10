@@ -1,3 +1,8 @@
+Movies:
+TODO Add movies by rating
+TODO Strip double quotes from titles (beg & end)
+TODO Normalize poster sizes (some are too wide)
+
 Books:
 TODO In authors' cloud add list of books per author (showing on mouse hover)
 TODO In authors' cloud add authors' photos
@@ -11,7 +16,8 @@ Running:
 TODO Add table with results
 
 General:
-TODO Add movies
+TODO Split Sub-menus into groups
+TODO Add tips for ratings
 TODO Add photos
 TODO Add guestbook
 TODO Add info: 'Last updated on'
@@ -29,6 +35,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 Done:
+TODO Movies: Add movies
 TODO Books: add author's cloud for books
 TODO Books: add books by ratings
 TODO Books: normalize capitalization of book authors/titles

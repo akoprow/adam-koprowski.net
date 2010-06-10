@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/movies.xsl" ?>
 
-<page menu="leisure">
+<page menu="leisure" jquery="true">
 	<title>Adam Koprowski :: Movies</title>
 	<content>
 		<heading>Movies I've seen</heading>
+		<script type="text/javascript">
+		$(function() {
+			$("#movies").tabs({
+				ajaxOptions: {
+					error: function(xhr, status, index, anchor) {
+						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
+					}
+				}
+			});
+		});
+		</script>	
 		
 		<div>
 			You can also see my public vote history at 
@@ -12,7 +23,14 @@
 		</div> 		
 		
 		<div id="movies">
-			<movies />
+			<ul>
+				<li><a href="#2010">2010</a></li>
+				<li><a href="#2009">2009</a></li>
+				<li><a href="#2008">&lt;=2008</a></li>
+			</ul>	
+			<movies id="2010" boundary="Seven Pounds" />
+			<movies id="2009" boundary="Burn After Reading" />
+			<movies id="2008" />
 		</div>
 	</content>
 </page>

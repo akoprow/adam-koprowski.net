@@ -6,13 +6,29 @@
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
 
+	<xsl:variable name="movies" select="document('../data/movies.xml')" />
+
 	<xsl:template match="movies">
-		<OL class="movies">
-			<xsl:for-each select="document('../data/movies.xml')//movie">
-				<xsl:call-template name="show-movie" />
-			</xsl:for-each>
-		</OL>
-		<div style="clear: both;" />
+		<div id="{@id}">
+  			<xsl:variable name="first" select="preceding-sibling::*[1]/@boundary" />
+			<xsl:variable name="last" select="@boundary" />
+
+			<xsl:if test="$last and not($movies//movie[title = $last])">
+				<xsl:message terminate="yes">
+					<xsl:text>Cannot find a boundary movie: </xsl:text>
+					<xsl:value-of select="$last" />
+				</xsl:message>
+			</xsl:if>
+			<OL class="movies">
+				<xsl:for-each select="$movies//movie[
+					not(preceding-sibling::movie/title = $last) and
+					not(following-sibling::movie/title = $first) and
+					not(title = $first)]">
+					<xsl:call-template name="show-movie" />
+				</xsl:for-each>
+			</OL>
+			<div style="clear: both;" />
+		</div>
 	</xsl:template>
 	
 	<xsl:template name="show-movie">

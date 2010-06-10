@@ -41,7 +41,7 @@
 	    	<table class="booksTable">
 	    		<tr>
 	    			<td class="no">
-	                         <xsl:number value="position()" format="1. "/>
+                         <xsl:number value="position()" format="1. "/>
 	    			</td>
 	    			<td class="img">
 	    				<a href="http://www.librarything.com/work/book/{id}">
