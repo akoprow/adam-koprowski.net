@@ -1,3 +1,22 @@
+.movies LI {
+    width: 250px;
+    height: 100px;
+    float: left;
+    padding: 10px;
+}
+.moviesTable {
+	font-size: 11pt; 
+	font-family: Tahoma, sans-serif; 
+	color: #E6E7E9;
+}
+.moviesTable .no {
+	width: 20px;	
+}
+.moviesTable .img {
+	margin: 7px;
+	border: 1px dotted;
+}
+
 .authors-cloud {
 	display: block;
 }
@@ -24,6 +43,7 @@
 	margin: 7px;
 	border: 1px dotted;
 }
+
 span.rating span {
 	display: block;
 	float: left;
