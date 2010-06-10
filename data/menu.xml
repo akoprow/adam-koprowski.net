@@ -60,6 +60,9 @@
 		<subentry fileid="movies">
 			<text>Movies: by year</text>
 		</subentry>
+		<subentry fileid="movies-ratings">
+			<text>Movies: by rating</text>
+		</subentry>
 		<subentry fileid="running">
 			<text>Running: completed marathons</text>
 		</subentry>

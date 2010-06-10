@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/movies.xsl" ?>
+
+<page menu="leisure" jquery="true">
+	<title>Adam Koprowski :: Movies by ratings</title>
+	<content>
+		<heading>Movies I've seen</heading>
+		<script type="text/javascript">
+		$(function() {
+			$("#movies").tabs({
+				ajaxOptions: {
+					error: function(xhr, status, index, anchor) {
+						$(anchor.hash).html("Hmmm... couldn't load this tab... sorry");
+					}
+				}
+			});
+		});
+		</script>	
+		
+		<div>
+			This page is generated from <A href="http://www.imdb.com/mymovies/list?l=2700180">my vote history at IMDB</A>.
+		</div> 		
+		<div>
+			You can also see my movies <A href="movies.html">chronologically</A>.
+		</div>
+		
+		<div id="movies">
+			<ul>
+				<li><a href="#great">Loved it!</a></li>
+				<li><a href="#good">Liked it</a></li>
+				<li><a href="#ok">It was ok</a></li>
+				<li><a href="#not-good">Didn't like it</a></li>
+			</ul>	
+			<movies-by-rating id="great" min="9" max="10" />
+			<movies-by-rating id="good" min="8" max="8" />
+			<movies-by-rating id="ok" min="7" max="7" />
+			<movies-by-rating id="not-good" min="0" max="6" />
+		</div>
+	</content>
+</page>

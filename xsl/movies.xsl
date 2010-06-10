@@ -8,7 +8,7 @@
 
 	<xsl:variable name="movies" select="document('../data/movies.xml')" />
 
-	<xsl:template match="movies">
+	<xsl:template match="movies-by-year">
 		<div id="{@id}">
   			<xsl:variable name="first" select="preceding-sibling::*[1]/@boundary" />
 			<xsl:variable name="last" select="@boundary" />
@@ -24,6 +24,21 @@
 					not(preceding-sibling::movie/title = $last) and
 					not(following-sibling::movie/title = $first) and
 					not(title = $first)]">
+					<xsl:call-template name="show-movie" />
+				</xsl:for-each>
+			</OL>
+			<div style="clear: both;" />
+		</div>
+	</xsl:template>
+
+	<xsl:template match="movies-by-rating">
+		<div id="{@id}">
+  			<xsl:variable name="min" select="number(@min)" />
+			<xsl:variable name="max" select="number(@max)" />
+
+			<OL class="movies">
+				<xsl:for-each select="$movies//movie[(number(my-rating) ge $min) and (number(my-rating) le $max)]">
+					<xsl:sort order="descending" data-type="number" select="my-rating" />
 					<xsl:call-template name="show-movie" />
 				</xsl:for-each>
 			</OL>
