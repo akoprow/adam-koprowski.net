@@ -53,9 +53,9 @@
 				<link href="css/jd.gallery.css" rel="stylesheet" type="text/css" media="screen" />
 			</xsl:if>
 			<xsl:if test="/page[@jquery]">
-				<link type="text/css" href="css/jquery-ui-1.8.1.custom.css" rel="stylesheet" />	
+				<link type="text/css" href="css/jquery-ui-1.8.2.custom.css" rel="stylesheet" />	
 				<script type="text/javascript" src="js/jquery-1.4.2.min.js" />
-				<script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js" />
+				<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js" />
 			</xsl:if>
 		</head>	
 	</xsl:template>
