@@ -3,7 +3,9 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:ext="ext.xsl">
 
-	<xsl:import href="common.xsl" /> 
+	<xsl:import href="common.xsl" />
+
+	<xsl:variable name="authors" select="document('../data/authors.xml')" />
 
 	<xsl:template match="paper" mode="present-paper">
 		<xsl:param name="link-to-paper" />
@@ -60,7 +62,7 @@
 	<xsl:template name="present-authors">
 		<xsl:for-each select="node()/author">
 			<xsl:variable name="this-author" select="node()" />
-			<xsl:variable name="author" select="document('../data/authors.xml')/authors/author[@name = $this-author]" />
+			<xsl:variable name="author" select="$authors/authors/author[@name = $this-author]" />
 			<xsl:if test="not($author)">
 				<xsl:message terminate="yes">
 					<xsl:text>Unknown author: </xsl:text>

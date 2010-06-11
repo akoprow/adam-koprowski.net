@@ -4,9 +4,10 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="common.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
+	<xsl:variable name="talks" select="document('../data/talks.xml')" />
 
 	<xsl:template match="talks">
-		<xsl:apply-templates select="document('../data/talks.xml')" mode="talks" />	
+		<xsl:apply-templates select="$talks" mode="talks" />	
 	</xsl:template>
 
 	<xsl:template match="group" mode="talks">

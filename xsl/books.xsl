@@ -76,7 +76,7 @@
 	
 	<xsl:template match="book-authors-cloud">
 		<div class="authors-cloud">
-			<xsl:for-each select="document('../data/books.xml')//book[not(author = preceding-sibling::book/author)]">
+			<xsl:for-each select="$books//book[not(author = preceding-sibling::book/author)]">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
 				<SPAN style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;">

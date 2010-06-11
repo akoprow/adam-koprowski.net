@@ -5,6 +5,7 @@
 	<xsl:import href="papers-common.xsl" /> 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
+	<xsl:variable name="papers" select="document('../data/papers.xml')" />
 
 	<xsl:template match="/" mode="list-papers">
 		<xsl:for-each select="//paper">
@@ -14,7 +15,7 @@
 	</xsl:template>
 
 	<xsl:template match="papers">
-		<xsl:apply-templates select="document('../data/papers.xml')" mode="papers">
+		<xsl:apply-templates select="$papers" mode="papers">
 			<xsl:with-param name="paper_filter" select="@type" /> 
 		</xsl:apply-templates>	
 	</xsl:template>

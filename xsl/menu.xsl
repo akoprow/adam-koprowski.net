@@ -3,12 +3,14 @@
 
 	<xsl:param name="paper-id" />
 
+	<xsl:variable name="menu" select="document('../data/menu.xml')" />
+
 	<xsl:template name="show-menu-top">
-		<xsl:apply-templates select="document('../data/menu.xml')" mode="menu-top" />
+		<xsl:apply-templates select="$menu" mode="menu-top" />
 	</xsl:template>
 
 	<xsl:template name="show-submenu-side">
-		<xsl:apply-templates select="id($menu-selection, document('../data/menu.xml'))//subentry" mode="submenu-side" />	
+		<xsl:apply-templates select="id($menu-selection, $menu)//subentry" mode="submenu-side" />	
 	</xsl:template>
 
 	<xsl:template match="entry" mode="menu-top">
@@ -43,7 +45,7 @@
 	</xsl:template>
 
 	<xsl:template name="show-menu-bottom">
-		<xsl:apply-templates select="document('../data/menu.xml')" mode="menu-bottom" />
+		<xsl:apply-templates select="$menu" mode="menu-bottom" />
 	</xsl:template>
 
 	<xsl:template match="entry" mode="menu-bottom">

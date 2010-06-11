@@ -8,7 +8,8 @@
 	<xsl:strip-space elements="*" />
 
 	<xsl:param name="paper-id" />
-	<xsl:variable name="paper" select="id($paper-id, document('../data/papers.xml'))" />
+	<xsl:variable name="papers" select="document('../data/papers.xml')" />
+	<xsl:variable name="paper" select="id($paper-id, $papers)" />
 
 	<xsl:template match="paper-title">
 		<xsl:call-template name="paper-title">

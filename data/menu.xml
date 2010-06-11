@@ -55,7 +55,7 @@
 			<text>Books: by rating</text>
 		</subentry>
 		<subentry fileid="books-authors">
-			<text>Books: authors' cloud</text>
+			<text>Books: by authors</text>
 		</subentry>
 		<subentry fileid="movies">
 			<text>Movies: by year</text>
@@ -64,7 +64,7 @@
 			<text>Movies: by rating</text>
 		</subentry>
 		<subentry fileid="running">
-			<text>Running: completed marathons</text>
+			<text>Running: by location</text>
 		</subentry>
 	</entry>
 </menu>
