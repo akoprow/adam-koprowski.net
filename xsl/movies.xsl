@@ -63,7 +63,7 @@
 	                         <xsl:number value="position()" format="1. "/>
 	    			</td>
 	    			<td class="img">
-						<img src="{poster-url}" height="100" />
+						<img src="images/imdb-posters/{id}.jpg" height="100" />
 	    			</td>
 	    			<td class="data">
 						<span class="title">
