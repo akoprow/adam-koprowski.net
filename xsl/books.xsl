@@ -19,18 +19,18 @@
 	</xsl:template>
 
 	<xsl:template match="books-by-tag">
-		<OL class="books">
+		<UL class="books">
 			<xsl:variable name="selected-tag" select="@tag" />
 			<xsl:for-each select="$books//book[contains(tags, $selected-tag)]">
 				<xsl:sort order="descending" data-type="number" select="finished" />
 				<xsl:call-template name="show-book" />
 			</xsl:for-each>
-		</OL>
+		</UL>
 		<div style="clear: both;" />
 	</xsl:template>
 
 	<xsl:template match="books-by-rating">
-		<OL class="books">
+		<UL class="books">
 			<xsl:variable name="min" select="number(@min)" />
 			<xsl:variable name="max" select="number(@max)" />
 			<xsl:for-each select="$books//book[(number(rating) ge $min) and (number(rating) le $max)]">
@@ -38,7 +38,7 @@
 				<xsl:sort order="descending" data-type="number" select="finished" />
 				<xsl:call-template name="show-book" />
 			</xsl:for-each>
-		</OL>
+		</UL>
 		<div style="clear: both;" />
 	</xsl:template>
 	

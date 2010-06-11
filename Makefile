@@ -27,7 +27,7 @@ update: update-books all
 
 preview: preview/menu.html preview/talks.html
 
-publish:
+publish: all
 	weex ak
 
 clean:

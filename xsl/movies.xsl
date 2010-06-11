@@ -28,14 +28,14 @@
 					<xsl:value-of select="$last" />
 				</xsl:message>
 			</xsl:if>
-			<OL class="movies">
+			<UL class="movies">
 				<xsl:for-each select="$movies//movie[
 					not(preceding-sibling::movie/title = $last) and
 					not(following-sibling::movie/title = $first) and
 					not(title = $first)]">
 					<xsl:call-template name="show-movie" />
 				</xsl:for-each>
-			</OL>
+			</UL>
 			<div style="clear: both;" />
 		</div>
 	</xsl:template>
@@ -45,12 +45,12 @@
   			<xsl:variable name="min" select="number(@min)" />
 			<xsl:variable name="max" select="number(@max)" />
 
-			<OL class="movies">
+			<UL class="movies">
 				<xsl:for-each select="$movies//movie[(number(my-rating) ge $min) and (number(my-rating) le $max)]">
 					<xsl:sort order="descending" data-type="number" select="my-rating" />
 					<xsl:call-template name="show-movie" />
 				</xsl:for-each>
-			</OL>
+			</UL>
 			<div style="clear: both;" />
 		</div>
 	</xsl:template>
@@ -63,7 +63,8 @@
 	                         <xsl:number value="position()" format="1. "/>
 	    			</td>
 	    			<td class="img">
-						<img src="images/imdb-posters/{id}.jpg" height="100" />
+<!--				    <script type="text/javascript" src="http://www.movieposterdb.com/embed.inc.php?movie_id={id}" />-->
+				    <img src="images/imdb-posters/{id}.jpg" height="100" />
 	    			</td>
 	    			<td class="data">
 						<span class="title">

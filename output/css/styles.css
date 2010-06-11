@@ -6,6 +6,7 @@
     height: 100px;
     float: left;
     padding: 10px;
+    background-image: none;
 }
 .moviesTable {
 	font-size: 11pt; 
@@ -29,10 +30,11 @@
 	padding: 3px;
 }
 .books LI {
-    width: 350px;
+    width: 300px;
     height: 100px;
     float: left;
     padding: 10px;
+    background-image: none;
 }
 .booksTable {
 	font-size: 11pt; 
