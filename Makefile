@@ -30,6 +30,9 @@ preview: preview/menu.html preview/talks.html
 publish: all
 	weex ak
 
+snapshot: all
+	tar -chzf snapshots/webpage-`date +%Y%m%d`.tar.gz output
+
 clean:
 	rm -fr output/*.html output/papers/*.html preview output/bibliography.bib output/bibliography.pdf
 
