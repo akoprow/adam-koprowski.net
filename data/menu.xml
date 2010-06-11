@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE papers [
 <!ELEMENT menu (entry*)>
-<!ELEMENT entry (text, subentry*)>
+<!ELEMENT entry (text, (subentry | subentry-separator)*)>
 <!ATTLIST entry fileid ID #REQUIRED>
 <!ELEMENT subentry (text, subsubentry*)>
 <!ATTLIST subentry fileid CDATA #REQUIRED>
@@ -57,12 +57,14 @@
 		<subentry fileid="books-authors">
 			<text>Books: by authors</text>
 		</subentry>
+		<subentry-separator />
 		<subentry fileid="movies">
 			<text>Movies: by year</text>
 		</subentry>
 		<subentry fileid="movies-ratings">
 			<text>Movies: by rating</text>
 		</subentry>
+		<subentry-separator />
 		<subentry fileid="running">
 			<text>Running: by location</text>
 		</subentry>

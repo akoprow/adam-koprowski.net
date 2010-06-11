@@ -17,7 +17,6 @@ TODO Add table with results
 
 === Layout/presentation:
 TODO decrease left-margin for jQuery panels
-TODO Split Sub-menus into groups
 TODO Nicer link highlights
 TODO Icons on the home.
 
@@ -39,6 +38,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Layout: Split sub-menus into groups
 TODO Movies: Add movies by rating
 TODO Movies: Add movies
 TODO Books: add author's cloud for books

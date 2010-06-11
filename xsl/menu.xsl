@@ -10,7 +10,7 @@
 	</xsl:template>
 
 	<xsl:template name="show-submenu-side">
-		<xsl:apply-templates select="id($menu-selection, $menu)//subentry" mode="submenu-side" />	
+		<xsl:apply-templates select="id($menu-selection, $menu)//(subentry | subentry-separator)" mode="submenu-side" />
 	</xsl:template>
 
 	<xsl:template match="entry" mode="menu-top">
@@ -96,16 +96,18 @@
 				</a>
 			</td>
 		</tr>
-		<xsl:if test="not (position()=last())"> 		
-			<tr>
-				<td/>
-				<td height="20">
-					<div style="height: 2px; background-color: #5E626D; background-image: url('images/submenu_separator.gif'); background-repeat: repeat-x;">
-						<span/>
-					</div>
-				</td>
-			</tr>
-		</xsl:if>		
+		<tr height="10" />
+	</xsl:template>
+	
+	<xsl:template match="subentry-separator" mode="submenu-side">
+		<tr>
+			<td/>
+			<td height="20">
+				<div style="height: 2px; background-color: #5E626D; background-image: url('images/submenu_separator.gif'); background-repeat: repeat-x;">
+					<span/>
+				</div>
+			</td>
+		</tr>		
 	</xsl:template>
 
 </xsl:stylesheet>
