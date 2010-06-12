@@ -63,7 +63,7 @@
 								<xsl:value-of select="title" />
 							</a>
 						</span>
-						<span class="rating">
+						<span>
 							<xsl:call-template name="show-rating">
 								<xsl:with-param name="rating" select="rating" />
 							</xsl:call-template>

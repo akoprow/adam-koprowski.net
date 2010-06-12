@@ -21,7 +21,6 @@ TODO Nicer link highlights, especially on IMG
 TODO Icons on the home.
 
 === Content:
-TODO Add tips for ratings
 TODO Add photos
 TODO Add guestbook
 TODO Add info: 'Last updated on'
@@ -38,6 +37,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Content: Add tips for ratings
 TODO Layout: Split sub-menus into groups
 TODO Movies: Add movies by rating
 TODO Movies: Add movies

@@ -70,7 +70,7 @@
 						<span class="title">
 							<xsl:value-of select="title" />
 						</span>
-						<span class="rating">
+						<span>
 							<xsl:variable name="rating">
 								<xsl:choose>
 									<xsl:when test="my-rating = 10">5.0</xsl:when>
