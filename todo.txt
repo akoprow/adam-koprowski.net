@@ -17,7 +17,7 @@ TODO Add table with results
 
 === Layout/presentation:
 TODO decrease left-margin for jQuery panels
-TODO Nicer link highlights
+TODO Nicer link highlights, especially on IMG
 TODO Icons on the home.
 
 === Content:

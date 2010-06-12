@@ -16,7 +16,7 @@
 .moviesTable .no {
 	width: 20px;	
 }
-.moviesTable .img {
+.moviesTable img {
 	margin: 7px;
 	border: 1px dotted;
 }
@@ -44,7 +44,7 @@
 .booksTable .no {
 	width: 20px;	
 }
-.booksTable .img {
+.booksTable img {
 	margin: 7px;
 	border: 1px dotted;
 }
