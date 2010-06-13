@@ -74,16 +74,57 @@
 	    </LI>
 	</xsl:template>
 	
+	<xsl:template name="show-authors-book">
+		<LI>
+	    	<table>
+	    		<tr>
+	    			<td class="cover">
+						<img src="{cover-url}" height="100" />
+					</td>
+				</tr>
+				<tr>
+					<td class="rating">
+						<xsl:call-template name="show-rating">
+							<xsl:with-param name="rating" select="rating" />
+						</xsl:call-template>					
+					</td>
+				</tr>
+				<tr>
+					<td class="title">
+						<span>
+							<xsl:value-of select="title" />
+						</span>
+					</td>
+				</tr>
+			</table>
+		</LI>
+		<xsl:if test="position() mod 5 = 0">
+			<div style="clear: both;" />
+		</xsl:if>
+	</xsl:template>
+	
 	<xsl:template match="book-authors-cloud">
 		<div class="authors-cloud">
 			<xsl:for-each select="$books//book[not(author = preceding-sibling::book/author)]">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
-				<SPAN style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;">
+				<xsl:variable name="author-id" select="concat('author-tip-', 
+					translate($this-author, ' .', '__'))" /> 
+				<span class="load-local" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
+					href="#{$author-id}" rel="#{$author-id}">
 					<xsl:text> </xsl:text>
 					<xsl:value-of select="replace($this-author, ' ', '&#160;')" />
-				</SPAN>
+				</span>
+				<span class="author-tip" id="{$author-id}">
+					<ul>
+						<xsl:for-each select="$books//book[author = $this-author]">
+							<xsl:sort order="descending" data-type="number" select="finished" />
+							<xsl:call-template name="show-authors-book" />
+						</xsl:for-each>
+					</ul>
+					<div style="clear: both;" />
+				</span>
 			</xsl:for-each>
 		</div>						
-	</xsl:template>
+ 	</xsl:template>
 </xsl:stylesheet>

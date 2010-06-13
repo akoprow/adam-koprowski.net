@@ -54,8 +54,13 @@
 			</xsl:if>
 			<xsl:if test="/page[@jquery]">
 				<link type="text/css" href="css/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
+				<link type="text/css" href="css/jquery.cluetip.css" rel="stylesheet" />
 				<script type="text/javascript" src="js/jquery-1.4.2.min.js" />
 				<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js" />
+				<script type="text/javascript" src="js/jquery.bgiframe.min.js" />
+				<script type="text/javascript" src="js/jquery.hoverIntent.js" />
+				<script type="text/javascript" src="js/jquery.cluetip.min.js" />
+				<script type="text/javascript" src="js/cluetip.js" />
 			</xsl:if>
 		</head>	
 	</xsl:template>

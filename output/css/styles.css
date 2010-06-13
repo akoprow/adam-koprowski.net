@@ -1,3 +1,42 @@
+.authors-cloud .load-local {
+	margin: 1px;	
+}
+.authors-cloud .highlight {
+	color: #FDD;
+	background-color: #369;
+	border: 1px #FFF dotted;
+	overflow:hidden;
+	margin: 0px;
+}
+
+.author-tip UL {
+	list-style: none;
+	vertical-align: middle;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.author-tip LI {
+	background-image: none;
+	float: left;
+	padding: 5px;
+}
+.author-tip TD {
+	vertical-align: middle;
+	width: 100px;
+}
+.author-tip TD.title {
+	width: 40px;
+	font-size: 8pt;
+	color: #EEE;
+	text-align: center;
+}
+.author-tip TD.cover {
+	text-align: center;
+}
+.author-tip TD.cover IMG {
+	border: #FFF 1px dotted;
+	text-align: center;
+}
 .vspace {
 	height: 20px;	
 }

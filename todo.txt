@@ -3,8 +3,8 @@ TODO Strip double quotes from titles (beg & end)
 TODO Normalize poster sizes (some are too wide)
 
 === Books:
+TODO Make author's tip with books load via ajax
 TODO Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
-TODO In authors' cloud add list of books per author (showing on mouse hover)
 TODO In authors' cloud add authors' photos
 TODO Include LibraryThing rating next to mine
 
@@ -21,6 +21,7 @@ TODO Nicer link highlights, especially on IMG
 TODO Icons on the home.
 
 === Content:
+TODO Add news tab with changes
 TODO Add photos
 TODO Add guestbook
 TODO Add info: 'Last updated on'
@@ -37,6 +38,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Books: In authors' cloud add list of books per author (showing on mouse hover)
 TODO Content: Add tips for ratings
 TODO Layout: Split sub-menus into groups
 TODO Movies: Add movies by rating
