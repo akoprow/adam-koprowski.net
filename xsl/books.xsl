@@ -8,6 +8,7 @@
 	<xsl:strip-space elements="*" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
+	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author) and not(contains(tags, 'reading'))]" />
 
 	<xsl:template match="lt-link">
 		<div>
@@ -103,9 +104,17 @@
 		</xsl:if>
 	</xsl:template>
 	
+	<xsl:template match="read-books-count">
+		<xsl:value-of select="count($books//book)" />	
+	</xsl:template>
+
+	<xsl:template match="authors-count">
+		<xsl:value-of select="count($authors)" />	
+	</xsl:template>	
+	
 	<xsl:template match="book-authors-cloud">
 		<div class="authors-cloud">
-			<xsl:for-each select="$books//book[not(author = preceding-sibling::book/author)]">
+			<xsl:for-each select="$authors">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
 				<xsl:variable name="author-id" select="concat('author-tip-', 

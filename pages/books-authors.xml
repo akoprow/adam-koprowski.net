@@ -12,7 +12,13 @@
 			<A href="books.html">chronologically</A>
 			and 
 			<A href="books-ratings.html">by ratings</A>.
-		</div> 		
+		</div>
+		<div>
+			Hover over author's entry to see books that I've read by her. 
+		</div>
+		<div>
+			A total of <read-books-count /> read books by <authors-count /> different authors.
+		</div>
 		<vspace />
 
 		<book-authors-cloud />
