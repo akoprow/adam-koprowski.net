@@ -119,11 +119,11 @@
 				<xsl:variable name="this-author" select="author" /> 
 				<xsl:variable name="author-id" select="concat('author-tip-', 
 					translate($this-author, ' .', '__'))" /> 
-				<span class="load-local" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
+				<span class="author" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
 					href="#{$author-id}" rel="#{$author-id}">
-					<xsl:text> </xsl:text>
 					<xsl:value-of select="replace($this-author, ' ', '&#160;')" />
 				</span>
+				<xsl:text> </xsl:text>
 				<span class="author-tip" id="{$author-id}">
 					<ul>
 						<xsl:for-each select="$books//book[author = $this-author]">

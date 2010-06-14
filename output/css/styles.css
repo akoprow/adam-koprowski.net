@@ -1,11 +1,20 @@
-.authors-cloud .load-local {
-	padding: 1px;	
+.authors-cloud {
+	display: block;
+}
+.authors-cloud SPAN {
+	font-variant: small-caps;
+	text-transform: capitalize;	
+	padding: 3px;
+	display: inline;
+}
+.authors-cloud .author {
+	padding: 1px 5px 1px 5px;
 }
 .authors-cloud .highlight {
 	color: #FDD;
 	background-color: #369;
 	border: 1px #FFF dotted;
-	padding: 0px;
+	padding: 0px 4px 0px 4px;
 }
 
 .author-tip UL {
@@ -59,14 +68,6 @@
 	border: 1px dotted;
 }
 
-.authors-cloud {
-	display: block;
-}
-.authors-cloud SPAN {
-	font-variant: small-caps;
-	text-transform: capitalize;	
-	padding: 3px;
-}
 .books LI {
     width: 300px;
     height: 100px;
@@ -105,11 +106,6 @@ span.empty-star {
 span.title {
 	display: block;
 	font-variant: small-caps;
-}
-span.author {
-	display: block;
-	font-style: italic;
-	text-transform: capitalize;
 }
 
 .warning {
@@ -168,7 +164,6 @@ H2, .H2 {
 .pageContent A:hover {
 	color: #AAA;
 	background-color: #258;
-	border-bottom: 2px solid #006600;
 }
 #books A {
 	border: 0px;
@@ -179,6 +174,11 @@ H2, .H2 {
 }
 A:hover {
 	text-decoration: underline;
+}
+.pageContent A:hover IMG {
+	border: 1px #F88 solid;
+	color: #FFF;
+	background-color: #FFF;
 }
 DIV.download {
     background-position: center left;

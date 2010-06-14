@@ -4,9 +4,9 @@ TODO Normalize poster sizes (some are too wide)
 
 === Books:
 TODO Make author's tip with books load via ajax
+TODO Author's tip with books - make width fit content (calculate based on number of books to show)
 TODO Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
 TODO In authors' cloud add authors' photos
-TODO Include LibraryThing rating next to mine
 
 === Papers:
 TODO Fix special characters in bibtex
@@ -34,6 +34,7 @@ TODO proper dependencies in the Makefile
 -----------------------------------------------------------------------------------------------------------
 
 === Canceled:
+TODO Books: Include LibraryThing rating next to mine (LibraryThing's ranking seems to be pretty irrelevant)
 TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
