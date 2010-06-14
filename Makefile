@@ -12,7 +12,7 @@ PAPERS_HTML := $(PAPERS:%=output/paper-%.html)
 PAGES := $(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)
 PAGES_HTML := $(PAGES:%=output/%.html)
 
-HTML := $(PAGES_HTML) $(PAPERS_HTML)
+HTML := $(PAGES_HTML) $(PAPERS_HTML) $(AUTHORS_HTML)
 
 XSLT := $(shell find -name '*.xsl') 
 XSLT_FILES := $(XSLT:%=xslt/%) 
@@ -25,7 +25,7 @@ all: $(HTML) output/bibliography.bib output/bibliography.pdf preview
 
 update: update-books all
 
-preview: preview/menu.html preview/talks.html
+preview: preview/menu.html preview/talks.html preview/books.html
 
 publish: all
 	$(SHOW) Publishing...
