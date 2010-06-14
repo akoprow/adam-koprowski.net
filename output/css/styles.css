@@ -1,12 +1,12 @@
 .authors-cloud .load-local {
-	margin: 1px;	
+	padding: 1px;	
 }
 .authors-cloud .highlight {
 	color: #FDD;
 	background-color: #369;
 	border: 1px #FFF dotted;
 	overflow:hidden;
-	margin: 0px;
+	padding: 0px;
 }
 
 .author-tip UL {
