@@ -85,7 +85,10 @@
 	margin: 7px;
 	border: 1px dotted;
 }
-
+span.author {
+	font-style: italic;
+	text-transform: capitalize;
+}
 span.rating span {
 	display: block;
 	float: left;

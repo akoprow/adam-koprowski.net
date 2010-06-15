@@ -68,6 +68,12 @@
 								<xsl:with-param name="rating" select="rating" />
 							</xsl:call-template>
 						</span>
+						<xsl:if test="string-length(comment) > 0">
+							<div style="clear: both" />
+							<span>
+								<img class="book-comment" src="images/comment.png" title="Comment|{comment}" />
+							</span>
+						</xsl:if>
 					</td>
 	    		</tr>
 			</table>
