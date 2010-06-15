@@ -30,6 +30,7 @@ TODO Include a back button on every page & a go-to-top one
 
 === General:
 TODO proper dependencies in the Makefile
+TODO use SCons instead of make?
 
 -----------------------------------------------------------------------------------------------------------
 

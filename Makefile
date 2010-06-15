@@ -12,6 +12,9 @@ PAPERS_HTML := $(PAPERS:%=output/paper-%.html)
 PAGES := $(shell $(RUN_XSLT) -im:list-file-ids data/menu.xml xsl/preview_menu.xsl)
 PAGES_HTML := $(PAGES:%=output/%.html)
 
+AUTHORS := $(shell $(RUN_XSLT) data/books.xml xsl/books-list-authors.xsl)
+AUTHORS_HTML := $(AUTHORS:%=output/book-author/%.html)
+
 HTML := $(PAGES_HTML) $(PAPERS_HTML) $(AUTHORS_HTML)
 
 XSLT := $(shell find -name '*.xsl') 
@@ -37,7 +40,7 @@ snapshot: all
 
 clean:
 	$(SHOW) Cleaning...
-	$(HIDE) rm -fr output/*.html output/papers/*.html preview output/bibliography.bib output/bibliography.pdf
+	$(HIDE) rm -fr output/*.html output/papers/*.html preview output/bibliography.bib output/bibliography.pdf output/book-author/*.html
 
 update-books:
 	$(HIDE) make -C LibraryThing
@@ -59,6 +62,11 @@ output/bibliography.pdf: output/bibliography.bib output/bibliography.tex
 output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
 	$(SHOW) Generating: [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
+
+# all per-paper pages
+output/book-author/%.html: pages/books.xml $(DATA_FILES) $(XSLT)
+	$(SHOW) Generating: [$@]
+	$(HIDE) $(RUN_XSLT) -o $@ pages/books.xml xsl/book-author.xsl author=$*
 
 # regular pages 
 output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)

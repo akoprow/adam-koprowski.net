@@ -5,7 +5,6 @@
 	<xsl:import href="ratings.xsl" />
 	 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
-	<xsl:strip-space elements="*" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
 	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author) and not(contains(tags, 'reading'))]" />
@@ -75,35 +74,6 @@
 	    </LI>
 	</xsl:template>
 	
-	<xsl:template name="show-authors-book">
-		<LI>
-	    	<table>
-	    		<tr>
-	    			<td class="cover">
-						<img src="{cover-url}" height="100" />
-					</td>
-				</tr>
-				<tr>
-					<td class="rating">
-						<xsl:call-template name="show-rating">
-							<xsl:with-param name="rating" select="rating" />
-						</xsl:call-template>					
-					</td>
-				</tr>
-				<tr>
-					<td class="title">
-						<span>
-							<xsl:value-of select="title" />
-						</span>
-					</td>
-				</tr>
-			</table>
-		</LI>
-		<xsl:if test="position() mod 5 = 0">
-			<div style="clear: both;" />
-		</xsl:if>
-	</xsl:template>
-	
 	<xsl:template match="read-books-count">
 		<xsl:value-of select="count($books//book)" />	
 	</xsl:template>
@@ -117,22 +87,11 @@
 			<xsl:for-each select="$authors">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
-				<xsl:variable name="author-id" select="concat('author-tip-', 
-					translate($this-author, ' .', '__'))" /> 
 				<span class="author" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
-					href="#{$author-id}" rel="#{$author-id}">
+					rel="book-author/{translate($this-author, ' ', '_')}.html">
 					<xsl:value-of select="replace($this-author, ' ', '&#160;')" />
 				</span>
 				<xsl:text> </xsl:text>
-				<span class="author-tip" id="{$author-id}">
-					<ul>
-						<xsl:for-each select="$books//book[author = $this-author]">
-							<xsl:sort order="descending" data-type="number" select="finished" />
-							<xsl:call-template name="show-authors-book" />
-						</xsl:for-each>
-					</ul>
-					<div style="clear: both;" />
-				</span>
 			</xsl:for-each>
 		</div>						
  	</xsl:template>
