@@ -4,7 +4,7 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="ratings.xsl" />
 	 
-	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
 	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author) and not(contains(tags, 'reading'))]" />

@@ -4,7 +4,7 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="papers-common.xsl" /> 
 	<xsl:import href="papers-bibtex.xsl" /> 
-	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
 
 	<xsl:param name="paper-id" />

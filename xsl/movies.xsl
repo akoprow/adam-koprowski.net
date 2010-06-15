@@ -3,7 +3,7 @@
 
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="ratings.xsl" />
-	<xsl:output method="html" indent="yes" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
 	<xsl:strip-space elements="*" />
 
 	<xsl:variable name="movies" select="document('../data/movies.xml')" />
