@@ -8,15 +8,13 @@
 	display: inline;
 }
 .authors-cloud .author {
-	padding: 1px 5px 1px 5px;
+	border: 1px solid transparent;
 }
 .authors-cloud .highlight {
 	color: #FDD;
 	background-color: #369;
 	border: 1px #FFF dotted;
-	padding: 0px 4px 0px 4px;
 }
-
 .author-tip UL {
 	list-style: none;
 	vertical-align: middle;
