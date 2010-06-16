@@ -5,7 +5,7 @@
 
 	<xsl:import href="common.xsl" />
 
-	<xsl:variable name="authors" select="document('../data/authors.xml')" />
+	<xsl:variable name="authors" select="document('../data/paper-authors.xml')" />
 
 	<xsl:template match="paper" mode="present-paper">
 		<xsl:param name="link-to-paper" />

@@ -15,6 +15,10 @@
 	background-color: #369;
 	border: 1px #FFF dotted;
 }
+.author-tip SPAN {
+	border: 5px;
+	vertical-align: middle;	
+}
 .author-tip UL {
 	list-style: none;
 	vertical-align: middle;

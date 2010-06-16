@@ -9,17 +9,37 @@
 	<xsl:param name="author" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
+	<xsl:variable name="authors" select="document('../data/book-authors.xml')" />
 
 	<xsl:template match="/">
 		<xsl:variable name="author-dec" select="$books//book[translate(author, ' ', '_') = $author][1]/author" />
+		<xsl:variable name="author-data" select="$authors//author[lower-case(name) = $author-dec]" />
+		
 		<span class="author-tip">
-			<ul>
-				<xsl:for-each select="$books//book[author = $author-dec]">
-					<xsl:sort order="descending" data-type="number" select="finished" />
-					<xsl:call-template name="show-authors-book" />
-				</xsl:for-each>
-			</ul>
-			<div style="clear: both;" />
+<!--
+			<table>
+				<tr>
+					<xsl:if test="$author-data/img-url">
+						<td class="author-photo">
+							<li>
+								<img src="{$author-data/img-url}" />
+							</li>
+						</td>
+					</xsl:if>
+					<td>
+-->
+						<ul>
+							<xsl:for-each select="$books//book[author = $author-dec]">
+								<xsl:sort order="descending" data-type="number" select="finished" />
+								<xsl:call-template name="show-authors-book" />
+							</xsl:for-each>
+						</ul>
+						<div style="clear: both;" />					
+<!--
+					</td>
+				</tr>
+			</table>
+-->
 		</span>
  	</xsl:template>
 

@@ -2,5 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
 
 <snippet cluetip="true">
+	<heading>Reading now</heading>
+	<books-by-tag tag="reading" />
+	<heading>2010</heading>
 	<books-by-tag tag="read-2010" />
 </snippet>

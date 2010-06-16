@@ -4,7 +4,7 @@
 
 include Makefile-XSLT
 
-DATA_FILES := $(shell find ./data -name '*.xml') data/books.xml
+DATA_FILES := $(shell find ./data -name '*.xml') data/books.xml data/book-authors.xml data/movies.xml
 
 PAPERS := $(shell $(RUN_XSLT) -im:list-papers data/papers.xml xsl/papers.xsl)
 PAPERS_HTML := $(PAPERS:%=output/paper-%.html)
@@ -64,9 +64,9 @@ output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
 	$(HIDE) $(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
 
 # all per-paper pages
-output/book-author/%.html: pages/books.xml $(DATA_FILES) $(XSLT)
+output/book-author/%.html: pages/books-authors.xml $(DATA_FILES) $(XSLT)
 	$(SHOW) Generating: [$@]
-	$(HIDE) $(RUN_XSLT) -o $@ pages/books.xml xsl/book-author.xsl author=$*
+	$(HIDE) $(RUN_XSLT) -o $@ $< xsl/book-author.xsl author=$*
 
 # regular pages 
 output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
