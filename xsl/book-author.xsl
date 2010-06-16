@@ -16,7 +16,6 @@
 		<xsl:variable name="author-data" select="$authors//author[lower-case(name) = $author-dec]" />
 		
 		<span class="author-tip">
-<!--
 			<table>
 				<tr>
 					<xsl:if test="$author-data/img-url">
@@ -27,7 +26,6 @@
 						</td>
 					</xsl:if>
 					<td>
--->
 						<ul>
 							<xsl:for-each select="$books//book[author = $author-dec and not(contains(tags, 'reading'))]">
 								<xsl:sort order="descending" data-type="number" select="finished" />
@@ -35,11 +33,9 @@
 							</xsl:for-each>
 						</ul>
 						<div style="clear: both;" />					
-<!--
 					</td>
 				</tr>
 			</table>
--->
 		</span>
  	</xsl:template>
 
