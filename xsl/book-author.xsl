@@ -29,7 +29,7 @@
 					<td>
 -->
 						<ul>
-							<xsl:for-each select="$books//book[author = $author-dec]">
+							<xsl:for-each select="$books//book[author = $author-dec and not(contains(tags, 'reading'))]">
 								<xsl:sort order="descending" data-type="number" select="finished" />
 								<xsl:call-template name="show-authors-book" />
 							</xsl:for-each>
