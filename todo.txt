@@ -3,7 +3,6 @@ TODO Strip double quotes from titles (beg & end)
 TODO Normalize poster sizes (some are too wide)
 
 === Books:
-TODO Fix book tips (broken because of Ajax-loading of content)
 TODO Author's cloud: the page flicking is almost gone, but it still happens when browsers side scrollbar show up.
 TODO Author's tip with books - make width fit content (calculate based on number of books to show)
 TODO Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
@@ -44,6 +43,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Books: Fix book tips (broken because of Ajax-loading of content)
 TODO Books: Add books comments (as a pop-up)
 TODO Books: Hovering over author disturbs athor's layout (at least it does in Chrome), which is pretty annoying...
 TODO Books: Make author's tip with books load via ajax

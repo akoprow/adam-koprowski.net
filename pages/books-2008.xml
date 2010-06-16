@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
 
-<snippet>
+<snippet cluetip="true">
 	<books-by-tag tag="read-2008" />
 </snippet>

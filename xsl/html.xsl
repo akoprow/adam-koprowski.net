@@ -22,6 +22,9 @@
 	<!--*************************************************************************************************-->
 
 	<xsl:template match="snippet">
+		<xsl:if test="@cluetip">
+			<script type="text/javascript" src="js/cluetip.js" />
+		</xsl:if>
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
