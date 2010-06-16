@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
+
+<snippet>
+	<books-by-rating min="4.0" max="4.0" />
+</snippet>

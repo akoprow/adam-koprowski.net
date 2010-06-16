@@ -21,6 +21,10 @@
 	<!--******************************************* Templates *******************************************-->
 	<!--*************************************************************************************************-->
 
+	<xsl:template match="snippet">
+		<xsl:apply-templates select="node()" />
+	</xsl:template>
+
 	<xsl:template match="page">
 		<HTML>
 			<xsl:call-template name="html-header" />

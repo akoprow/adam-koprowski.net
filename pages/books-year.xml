@@ -2,15 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="../xsl/books.xsl" ?>
 
 <page menu="leisure" jquery="true">
-	<title>Adam Koprowski :: Books by rating</title>
+	<title>Adam Koprowski :: Books</title>
 	<content>
 		<jquery-tabs id="books" />
 		<heading>Books</heading>
-
+		
 		<lt-link />
 		<div>
 			You can also see my books 
-			<A href="books.html">chronologically</A>
+			<A href="books-ratings.html">by ratings</A>
 			and
 			<A href="books-authors.html">by authors</A>.
 		</div> 		
@@ -18,10 +18,11 @@
 		
 		<div id="books">
 			<ul>
-				<li><a href="books-great.html">Loved it!</a></li>
-				<li><a href="books-good.html">Liked it</a></li>
-				<li><a href="books-ok.html">It was ok</a></li>
-				<li><a href="books-not-good.html">Didn't like it</a></li>
+				<li><a href="books-2010.html">2010</a></li>
+				<li><a href="books-2009.html">2009</a></li>
+				<li><a href="books-2008.html">2008</a></li>
+				<li><a href="books-2007.html">2007</a></li>
+				<li><a href="books-before-2007.html">&lt;=2006</a></li>
 			</ul>	
 		</div>
 	</content>

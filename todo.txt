@@ -3,6 +3,7 @@ TODO Strip double quotes from titles (beg & end)
 TODO Normalize poster sizes (some are too wide)
 
 === Books:
+TODO Fix book tips (broken because of Ajax-loading of content)
 TODO Author's cloud: the page flicking is almost gone, but it still happens when browsers side scrollbar show up.
 TODO Author's tip with books - make width fit content (calculate based on number of books to show)
 TODO Authors' cloud: put in a jQuery-like panel (consistency with by author & date)

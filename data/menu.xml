@@ -48,11 +48,20 @@
 	</entry>
 	<entry fileid="leisure">
 		<text>Free time</text>	
-		<subentry fileid="books">
+		<subentry fileid="books-year">
 			<text>Books: by year</text>
+			<subsubentry fileid="books-2010" />
+			<subsubentry fileid="books-2009" />
+			<subsubentry fileid="books-2008" />
+			<subsubentry fileid="books-2007" />
+			<subsubentry fileid="books-before-2007" />
 		</subentry>
 		<subentry fileid="books-ratings">
 			<text>Books: by rating</text>
+			<subsubentry fileid="books-great" />
+			<subsubentry fileid="books-good" />
+			<subsubentry fileid="books-ok" />
+			<subsubentry fileid="books-not-good" />
 		</subentry>
 		<subentry fileid="books-authors">
 			<text>Books: by authors</text>
