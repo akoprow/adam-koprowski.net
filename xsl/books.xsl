@@ -7,7 +7,7 @@
 	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
-	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author) and not(contains(tags, 'reading'))]" />
+	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author)]" />
 
 	<xsl:template match="lt-link">
 		<div>
@@ -55,9 +55,9 @@
 						</a>
 	    			</td>
 	    			<td class="data">
-						<span class="author">
+						<a class="author" rel="book-author/{translate(author, ' ', '_')}.html">
 							<xsl:value-of select="author" />
-						</span>
+						</a>
 						<span class="title">
 		    				<a href="http://www.librarything.com/work/book/{id}">
 								<xsl:value-of select="title" />

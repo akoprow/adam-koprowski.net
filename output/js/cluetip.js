@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('span.author').cluetip({
+	$('.author').cluetip({
 		showTitle: false, cluetipClass: 'author', width: '780px', attribute: 'rel', 
 		 arrows: false, cursor: 'crosshair', hoverClass: 'highlight' });
 

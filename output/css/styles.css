@@ -95,7 +95,7 @@
 	margin: 7px;
 	border: 1px dotted;
 }
-span.author {
+a.author {
 	font-style: italic;
 	text-transform: capitalize;
 }
