@@ -1,3 +1,9 @@
+.author-photo img {
+	width: 130px;
+	float: left;
+	margin-left: 30px;		
+	border: 1px #FFF dotted;
+}
 .authors-cloud {
 	display: block;
 }

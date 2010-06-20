@@ -14,29 +14,29 @@
 	<xsl:template match="/">
 		<xsl:variable name="author-dec" select="$books//book[translate(author, ' ', '_') = $author][1]/author" />
 		<xsl:variable name="author-data" select="$authors//author[lower-case(name) = $author-dec]" />
-		
-		<span class="author-tip">
-			<table>
-				<tr>
+		 
+ 		<table>
+			<tr>
+				<td>
 					<xsl:if test="$author-data/img-url">
-						<td class="author-photo">
-							<li>
-								<img src="{$author-data/img-url}" />
-							</li>
-						</td>
+						<div class="author-photo">
+							<img src="{$author-data/img-url}" />
+						</div>
 					</xsl:if>
-					<td>
-						<ul>
-							<xsl:for-each select="$books//book[author = $author-dec and not(contains(tags, 'reading'))]">
-								<xsl:sort order="descending" data-type="number" select="finished" />
-								<xsl:call-template name="show-authors-book" />
-							</xsl:for-each>
-						</ul>
-						<div style="clear: both;" />					
-					</td>
-				</tr>
-			</table>
+				</td>
+				<td>			
+		<span class="author-tip">
+					<ul>
+						<xsl:for-each select="$books//book[author = $author-dec and not(contains(tags, 'reading'))]">
+							<xsl:sort order="descending" data-type="number" select="finished" />
+							<xsl:call-template name="show-authors-book" />
+						</xsl:for-each>
+					</ul>
+					<div style="clear: both;" />					
 		</span>
+				</td>
+			</tr> 		
+ 		</table>
  	</xsl:template>
 
 	<xsl:template name="show-authors-book">

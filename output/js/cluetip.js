@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	$('span.author').cluetip({
-		showTitle: false, cluetipClass: 'author', width: '630px', attribute: 'rel', 
+		showTitle: false, cluetipClass: 'author', width: '780px', attribute: 'rel', 
 		 arrows: false, cursor: 'crosshair', hoverClass: 'highlight' });
 
 	$('img.book-comment').cluetip({
