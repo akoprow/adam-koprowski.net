@@ -15,15 +15,11 @@
 		
 		<div id="movies">
 			<ul>
-				<li><a href="#great">Loved it!</a></li>
-				<li><a href="#good">Liked it</a></li>
-				<li><a href="#ok">It was ok</a></li>
-				<li><a href="#not-good">Didn't like it</a></li>
+				<li><a href="movies-great.html">Loved it!</a></li>
+				<li><a href="movies-good.html">Liked it</a></li>
+				<li><a href="movies-ok.html">It was ok</a></li>
+				<li><a href="movies-not-good.html">Didn't like it</a></li>
 			</ul>	
-			<movies-by-rating id="great" min="9" max="10" />
-			<movies-by-rating id="good" min="8" max="8" />
-			<movies-by-rating id="ok" min="7" max="7" />
-			<movies-by-rating id="not-good" min="0" max="6" />
 		</div>
 	</content>
 </page>

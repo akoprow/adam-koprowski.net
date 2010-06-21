@@ -72,6 +72,10 @@
 		</subentry>
 		<subentry fileid="movies-ratings">
 			<text>Movies: by rating</text>
+			<subsubentry fileid="movies-great" />
+			<subsubentry fileid="movies-good" />
+			<subsubentry fileid="movies-ok" />
+			<subsubentry fileid="movies-not-good" />
 		</subentry>
 		<subentry-separator />
 		<subentry fileid="running">
