@@ -18,9 +18,9 @@
 	</xsl:template>
 
 	<xsl:template match="movies-by-year">
-		<div id="{@id}">
-  			<xsl:variable name="first" select="preceding-sibling::*[1]/@boundary" />
-			<xsl:variable name="last" select="@boundary" />
+		<div>
+  			<xsl:variable name="first" select="@first" />
+			<xsl:variable name="last" select="@last" />
 
 			<xsl:if test="$last and not($movies//movie[title = $last])">
 				<xsl:message terminate="yes">
@@ -28,11 +28,18 @@
 					<xsl:value-of select="$last" />
 				</xsl:message>
 			</xsl:if>
+			 <!-- TODO abstract this pattern, avoid repetition -->
+			<xsl:if test="$first and not($movies//movie[title = $first])">
+				<xsl:message terminate="yes">
+					<xsl:text>Cannot find a boundary movie: </xsl:text>
+					<xsl:value-of select="$first" />
+				</xsl:message>
+			</xsl:if>
 			<UL class="movies">
 				<xsl:for-each select="$movies//movie[
-					not(preceding-sibling::movie/title = $last) and
-					not(following-sibling::movie/title = $first) and
-					not(title = $first)]">
+					not(preceding-sibling::movie/title = $first) and
+					not(following-sibling::movie/title = $last) and
+					not(title = $last)]">
 					<xsl:call-template name="show-movie" />
 				</xsl:for-each>
 			</UL>
@@ -41,7 +48,7 @@
 	</xsl:template>
 
 	<xsl:template match="movies-by-rating">
-		<div id="{@id}">
+		<div>
   			<xsl:variable name="min" select="number(@min)" />
 			<xsl:variable name="max" select="number(@max)" />
 

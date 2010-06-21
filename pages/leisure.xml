@@ -8,7 +8,7 @@
 		<text>In my free time I like to:</text>
 		<ul>
 			<li>read books: <A href="books-year.html">by year</A> | <A href="books-ratings.html">by rating</A> | <A href="books-authors.html">by author</A></li>
-			<li>watch movies: <A href="movies.html">by year</A> | <A href="movies-ratings.html">by rating</A></li>
+			<li>watch movies: <A href="movies-year.html">by year</A> | <A href="movies-ratings.html">by rating</A></li>
 			<li>run marathons: <A href="running.html">by location</A></li>
 		</ul>
 	</content>

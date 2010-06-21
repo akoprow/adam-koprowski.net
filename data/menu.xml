@@ -67,8 +67,11 @@
 			<text>Books: by authors</text>
 		</subentry>
 		<subentry-separator />
-		<subentry fileid="movies">
+		<subentry fileid="movies-year">
 			<text>Movies: by year</text>
+			<subsubentry fileid="movies-2010" />
+			<subsubentry fileid="movies-2009" />
+			<subsubentry fileid="movies-2008-and-before" />
 		</subentry>
 		<subentry fileid="movies-ratings">
 			<text>Movies: by rating</text>
