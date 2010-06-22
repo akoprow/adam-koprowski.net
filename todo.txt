@@ -6,7 +6,6 @@ TODO Normalize poster sizes (some are too wide)
 TODO Add links to authors' pages at LibraryThing
 TODO Author's cloud: the page flicking is almost gone, but it still happens when browsers side scrollbar show up.
 TODO Author's tip with books - make width fit content (calculate based on number of books to show)
-TODO Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
 
 === Papers:
 TODO Fix special characters in bibtex
@@ -43,6 +42,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Books: Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
 TODO Books: In authors' cloud add authors' photos
 TODO Movies: switch tabs with Ajax
 TODO Books: Normalize book names in LT (especially series)
