@@ -93,7 +93,7 @@
 			<xsl:for-each select="$authors">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
-				<span class="author" style="font-size: {9 + 3*count(root()//book[author=$this-author and not(contains(tags,'reading'))])}px;" 
+				<span class="author" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
 					rel="book-author/{translate($this-author, ' ', '_')}.html">
 					<xsl:value-of select="replace($this-author, ' ', '&#160;')" />
 				</span>
