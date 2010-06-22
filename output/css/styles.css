@@ -1,3 +1,9 @@
+.rating-comment {
+	font-size: 10pt;
+	color: #99C;
+	font-variant: small-caps;
+	padding-top: 25px;
+}
 .author-photo img {
 	width: 130px;
 	float: left;

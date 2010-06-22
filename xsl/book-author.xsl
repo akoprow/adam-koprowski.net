@@ -28,6 +28,7 @@
 					<span class="author-tip">
 						<ul>
 							<xsl:for-each select="$books//book[author = $author-dec]">
+								<xsl:sort order="descending" select="contains(tags, 'reading')" />
 								<xsl:sort order="descending" data-type="number" select="finished" />
 								<xsl:call-template name="show-authors-book" />
 							</xsl:for-each>
@@ -52,6 +53,11 @@
 						<xsl:call-template name="show-rating">
 							<xsl:with-param name="rating" select="rating" />
 						</xsl:call-template>					
+						<xsl:if test="contains(tags, 'reading')">
+							<span class="rating-comment">
+								[reading now]
+							</span>
+						</xsl:if>
 					</td>
 				</tr>
 				<tr>
