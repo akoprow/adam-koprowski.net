@@ -63,19 +63,27 @@
 	</xsl:template>
 	
 	<xsl:template name="show-movie">
+		<xsl:variable name="imdb-url">
+			<xsl:text>http://www.imdb.com/title/tt</xsl:text>
+			<xsl:value-of select="id" />
+		</xsl:variable>
 	    <LI>
 	    	<table class="moviesTable">
 	    		<tr>
 	    			<td class="no">
-	                         <xsl:number value="position()" format="1. "/>
+                         <xsl:number value="position()" format="1. "/>
 	    			</td>
 	    			<td class="img">
 <!--				    <script type="text/javascript" src="http://www.movieposterdb.com/embed.inc.php?movie_id={id}" />-->
-				    <img src="images/imdb-posters/{id}.jpg" height="100" />
+						<a href="{$imdb-url}">
+					    	<img src="images/imdb-posters/{id}.jpg" height="100" />
+					    </a>
 	    			</td>
 	    			<td class="data">
 						<span class="title">
-							<xsl:value-of select="title" />
+							<a href="{$imdb-url}">
+								<xsl:value-of select="title" />
+							</a>
 						</span>
 						<span>
 							<xsl:variable name="rating">
@@ -93,7 +101,7 @@
 							</xsl:call-template>							
 						</span>
 						<span class="imdb">
-							<a class="imdb-info" href="#imdb-{id}" rel="#imdb-{id}">
+							<a class="imdb-info" href="{$imdb-url}" rel="#imdb-{id}">
 								IMDB
 							</a>
 						</span>

@@ -1,7 +1,6 @@
 === Movies:
 TODO Strip double quotes from titles (beg & end)
 TODO Normalize poster sizes (some are too wide)
-TODO Add IMDB ratings
 
 === Books:
 TODO Sort authors by surname, not name
@@ -44,6 +43,8 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Movies: Add IMDB links
+TODO Movies: Add IMDB ratings
 TODO Books: Fix problems with special characters in author's names
 TODO Books: Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
 TODO Books: In authors' cloud add authors' photos
