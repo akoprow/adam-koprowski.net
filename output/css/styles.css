@@ -1,3 +1,21 @@
+.imdb-stars {
+	position: relative;
+}
+.imdb-stars .inner {
+	background: url(http://i.media-imdb.com/images/SFfaca2a5028ed91753ebf40667ffe4551/tn15/stars.png) no-repeat 0 -20px;
+	position: absolute;
+	height: 20px;
+	width: 200px;
+}
+.imdb-stars .outer {
+	background: url(http://i.media-imdb.com/images/SFfaca2a5028ed91753ebf40667ffe4551/tn15/stars.png) no-repeat 0 0;
+	position: absolute;
+	top: -1px;
+	left: 0px;
+	height: 20px;
+	width: 200px;
+	margin-left: 130px;
+}
 .rating-comment {
 	font-size: 10pt;
 	color: #99C;

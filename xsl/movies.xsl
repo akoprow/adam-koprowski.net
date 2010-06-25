@@ -92,9 +92,21 @@
 								<xsl:with-param name="rating" select="$rating" />
 							</xsl:call-template>							
 						</span>
+						<a class="imdb-info" href="#imdb-{id}" rel="#imdb-{id}">
+							IMDB
+						</a>
 					</td>
 	    		</tr>
 			</table>
+			<span id="imdb-{id}">
+				<span class="imdb-stars"> 
+					<span class="outer"> 
+						<span class="inner" style="width: 134px" /> 
+					</span>
+				</span>
+				<span class="imdb-rating">6.7/10</span> 
+				<span class="imdb-votes">6,126 votes</span>
+			</span>
 	    </LI>
 	</xsl:template>
 	

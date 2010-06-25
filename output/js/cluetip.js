@@ -8,4 +8,8 @@ $(document).ready(function() {
 		splitTitle: '|', arrows: true, local: true, hideLocal: true, cluetipClass: 'jtip',
 		dropShadow: false, cursor: 'crosshair', tracking: true});
 
+	$('a.imdb-info').cluetip({
+		arrows: true, local: true, hideLocal: true, cluetipClass: 'jtip',
+		dropShadow: false, cursor: 'crosshair'});
+
 });

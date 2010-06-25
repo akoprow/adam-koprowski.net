@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/movies.xsl" ?>
 
-<snippet>
+<snippet cluetip="true">
 	<movies-by-year first="Burn After Reading" last="Seven Pounds" />
 </snippet>
