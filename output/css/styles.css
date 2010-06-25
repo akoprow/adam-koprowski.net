@@ -1,5 +1,18 @@
+.imdb-box {
+	margin-top: 8px;	
+}
+.imdb-rating {
+	font-weight: bold;
+	padding-right: 10px;	
+}
+.imdb-meta {
+	margin: 0px 0px 1px 210px;
+}
 .imdb-stars {
 	position: relative;
+	display: block;
+	height: 100%;
+	width: 200px;
 }
 .imdb-stars .inner {
 	background: url(http://i.media-imdb.com/images/SFfaca2a5028ed91753ebf40667ffe4551/tn15/stars.png) no-repeat 0 -20px;
@@ -14,7 +27,7 @@
 	left: 0px;
 	height: 20px;
 	width: 200px;
-	margin-left: 130px;
+	margin-left: 0px;
 }
 .rating-comment {
 	font-size: 10pt;

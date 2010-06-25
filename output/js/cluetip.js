@@ -9,7 +9,7 @@ $(document).ready(function() {
 		dropShadow: false, cursor: 'crosshair', tracking: true});
 
 	$('a.imdb-info').cluetip({
-		arrows: true, local: true, hideLocal: true, cluetipClass: 'jtip',
-		dropShadow: false, cursor: 'crosshair'});
+		arrows: true, local: true, hideLocal: true, showTitle: false, cluetipClass: 'jtip',
+		dropShadow: false, cursor: 'crosshair', width: '400px'});
 
 });
