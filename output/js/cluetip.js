@@ -10,6 +10,6 @@ $(document).ready(function() {
 
 	$('a.imdb-info').cluetip({
 		arrows: true, local: true, hideLocal: true, showTitle: false, cluetipClass: 'jtip',
-		dropShadow: false, cursor: 'crosshair', width: '400px'});
+		dropShadow: false, cursor: 'crosshair', width: '410px'});
 
 });
