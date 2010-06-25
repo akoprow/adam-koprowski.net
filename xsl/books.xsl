@@ -4,7 +4,7 @@
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="ratings.xsl" />
 	 
-	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
 	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author)]" />
@@ -55,8 +55,9 @@
 						</a>
 	    			</td>
 	    			<td class="data">
-						<a class="author" rel="book-author/{translate(author, ' ', '_')}.html">
-							<xsl:value-of select="author" />
+	    				<!-- TODO This encoding of author should be re-factored; it's repeated below -->
+						<a class="author" rel="book-author/{escape-html-uri(translate(author, ' ', '_'))}.html">
+							<xsl:value-of select="normalize-unicode(author)" />
 						</a>
 						<span class="title">
 		    				<a href="http://www.librarything.com/work/book/{id}">
@@ -94,8 +95,8 @@
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
 				<span class="author" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
-					rel="book-author/{translate($this-author, ' ', '_')}.html">
-					<xsl:value-of select="replace($this-author, ' ', '&#160;')" />
+					rel="book-author/{escape-html-uri(translate($this-author, ' ', '_'))}.html">
+					<xsl:value-of select="normalize-unicode(replace($this-author, ' ', '&#160;'))" />
 				</span>
 				<xsl:text> </xsl:text>
 			</xsl:for-each>

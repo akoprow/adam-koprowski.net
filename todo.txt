@@ -1,8 +1,10 @@
 === Movies:
 TODO Strip double quotes from titles (beg & end)
 TODO Normalize poster sizes (some are too wide)
+TODO Add IMDB ratings
 
 === Books:
+TODO Sort authors by surname, not name
 TODO Add links to authors' pages at LibraryThing
 TODO Author's cloud: the page flicking is almost gone, but it still happens when browsers side scrollbar show up.
 TODO Author's tip with books - make width fit content (calculate based on number of books to show)
@@ -42,6 +44,7 @@ TODO Add automatic data on when page was last updated
 TODO Split papers/talks data to one-file-per-entry to have proper last modification date?
 
 === Done:
+TODO Books: Fix problems with special characters in author's names
 TODO Books: Authors' cloud: put in a jQuery-like panel (consistency with by author & date)
 TODO Books: In authors' cloud add authors' photos
 TODO Movies: switch tabs with Ajax

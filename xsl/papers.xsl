@@ -3,7 +3,7 @@
 
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="papers-common.xsl" /> 
-	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" />
 	<xsl:strip-space elements="*" />
 	<xsl:variable name="papers" select="document('../data/papers.xml')" />
 

@@ -3,7 +3,7 @@
 
 	<xsl:import href="ratings.xsl" />
 
-	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" />
 	<xsl:strip-space elements="*" />
 
 	<xsl:param name="author" />

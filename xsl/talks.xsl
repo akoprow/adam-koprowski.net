@@ -3,7 +3,7 @@
 
 	<xsl:import href="html.xsl" /> 
 	<xsl:import href="common.xsl" /> 
-	<xsl:output method="html" indent="no" encoding="ISO-8859-1" />
+	<xsl:output method="html" indent="no" />
 	<xsl:variable name="talks" select="document('../data/talks.xml')" />
 
 	<xsl:template match="talks">
