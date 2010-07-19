@@ -45,5 +45,18 @@
 		      you run into any problems. There will be no time during the course to do that!</LI>
 		  </UL>
 		</P>
+
+		<heading>Materials</heading>
+		<div class="download">
+			Exercises:
+			<A href="teaching/isr-10/Day1_CoqIntro_ex.v">Day1</A>
+			<A href="teaching/isr-10/Day2_AbsSN_ex.v">Day2</A>
+			<A href="teaching/isr-10/Day3_StringRev_ex.v">Day3</A>
+		</div>		
+		<div class="download">
+			Slides:
+			<A href="teaching/isr-10/slides-handout.pdf">handout [PDF]</A>
+			<A href="teaching/isr-10/slides-presentation.pdf">presentation [PDF]</A>
+		</div>		
 	</content>
 </page>

@@ -38,9 +38,8 @@
 				<location>Edinburgh, Scotland</location>
 				<url>http://www.floc-conference.org/ITP-home.html</url>
 				<series><lncs /></series>
-				<volume></volume>
-				<pages></pages>
-				<note>To appear</note>
+				<volume>6172</volume>
+				<pages>259-274</pages>
 			</conference>
 			<abstract>
 				We have developed a hybrid system safety prover, implemented in Coq using the abstraction method introduced by Alur, Dang 
