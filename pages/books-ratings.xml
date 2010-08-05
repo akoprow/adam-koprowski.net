@@ -10,7 +10,7 @@
 		<lt-link />
 		<div>
 			You can also see my books 
-			<A href="books.html">chronologically</A>
+			<A href="books-year.html">chronologically</A>
 			and
 			<A href="books-authors.html">by authors</A>.
 		</div> 		

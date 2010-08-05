@@ -9,7 +9,7 @@
 		
 		<imdb-link />
 		<div>
-			You can also see my movies <A href="movies.html">chronologically</A>.
+			You can also see my movies <A href="movies-year.html">chronologically</A>.
 		</div>
 		<vspace />
 		
