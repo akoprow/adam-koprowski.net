@@ -6,13 +6,13 @@
 	<content>
 		<heading>Current</heading>
 		<UL>
-			<LI><A href="teaching-isr-2010.html"><B>"Coq and rewriting"</B></A>, a series of 3 lectures/lab sessions given 
-				during the advanced track of the 5th International School on Rewriting (ISR '10) in Utrecht, Netherlands</LI>
 		</UL>
 		
 		<heading>(Pre)history</heading>
 
 		<UL>
+			<LI><A href="teaching-isr-2010.html"><B>"Coq and rewriting"</B></A>, a series of 3 lectures/lab sessions given 
+				during the advanced track of the 5th International School on Rewriting (ISR '10) in Utrecht, Netherlands</LI>
 			<LI><A href="teaching-pca-06-07.html">Proving with computer assistance 07/08</A></LI>
 			<LI>Proving with computer assistance 06/07</LI>
 			<LI>Java AB 06/07</LI>
