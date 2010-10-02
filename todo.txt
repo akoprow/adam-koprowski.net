@@ -3,6 +3,7 @@ TODO Strip double quotes from titles (beg & end)
 TODO Normalize poster sizes (some are too wide)
 
 === Books:
+TODO Tab with books without ratings
 TODO Sort authors by surname, not name
 TODO Add links to authors' pages at LibraryThing
 TODO Author's cloud: the page flicking is almost gone, but it still happens when browsers side scrollbar show up.

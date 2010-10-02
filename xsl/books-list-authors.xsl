@@ -8,7 +8,8 @@
 	
 	<xsl:template match="/">
 		<xsl:for-each select="$authors">
- 			<xsl:value-of select="translate(author, ' ', '_')" />
+                        <xsl:variable name="apos">'</xsl:variable>
+ 			<xsl:value-of select="replace(translate(author, ' ', '_'), $apos, '')" />
 			<xsl:text> </xsl:text>
 		</xsl:for-each>
 	</xsl:template>
