@@ -7,7 +7,7 @@
 	<xsl:output method="html" indent="no" />
 
 	<xsl:variable name="books" select="document('../data/books.xml')" />
-	<xsl:variable name="authors" select="$books//book[not(author = preceding-sibling::book/author)]" />
+	<xsl:variable name="authors" select="$books//book[collections = 'Your library'][not(author = preceding-sibling::book/author)]" />
 
 	<xsl:template match="lt-link">
 		<div>
@@ -82,7 +82,7 @@
 	</xsl:template>
 	
 	<xsl:template match="read-books-count">
-		<xsl:value-of select="count($books//book)" />	
+		<xsl:value-of select="count($books//book[collections='Your library'])" />	
 	</xsl:template>
 
 	<xsl:template match="authors-count">
@@ -94,7 +94,7 @@
 			<xsl:for-each select="$authors">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
-				<span class="author" style="font-size: {9 + 3*count(root()//book[author=$this-author])}px;" 
+				<span class="author" style="font-size: {9 + 3*count(root()//book[collection='Your library'][author=$this-author])}px;" 
 					rel="book-author/{escape-html-uri(translate($this-author, ' ', '_'))}.html">
 					<xsl:value-of select="normalize-unicode(replace($this-author, ' ', '&#160;'))" />
 				</span>
