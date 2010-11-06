@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/tvseries.xsl" ?>
+
+<page menu="leisure" jquery="true">
+	<title>Adam Koprowski :: TV series</title>
+	<content>
+		<heading>TV series I watched</heading>
+		<tvseries-watched />
+		<div style="clear:both" />
+		<heading>TV series I'm watching</heading>
+		<tvseries-watching />
+	</content>
+</page>

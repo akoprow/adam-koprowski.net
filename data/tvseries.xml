@@ -5,11 +5,8 @@
 	<!ELEMENT finished (tvserie*)>
 	<!ELEMENT inprogress (tvserie*)>
 	<!ELEMENT tvserie (name, rating, imdb-id, year, length, poster, seasons)>
-	<!ELEMENT seasons ((watched | watching | pending)*)>
-	<!ATTLIST watched len CDATA #REQUIRED>
-	<!ATTLIST watching len CDATA #REQUIRED>
-	<!ATTLIST watching watched CDATA #REQUIRED>
-	<!ATTLIST pending len CDATA #REQUIRED>
+	<!ELEMENT seasons (season*)>
+	<!ATTLIST season len CDATA #REQUIRED>
 ]>
 
 <tvseries>
@@ -22,37 +19,37 @@
 			<length>55</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMjEzMzc2NjA5NV5BMl5BanBnXkFtZTcwOTI1MDAzMQ@@._V1._SY314_CR8,0,214,314_.jpg</poster>
 			<seasons>
-				<watched len="13" />
-				<watched len="13" />
-				<watched len="13" />
-				<watched len="12" />
-				<watched len="12" />
+				<season len="13"><finished /></season>
+				<season len="13"><finished /></season>
+				<season len="13"><finished /></season>
+				<season len="12"><finished /></season>
+				<season len="12"><finished /></season>
 			</seasons>
 		</tvserie>
 	</finished>
 	<inprogress>
 		<tvserie>
 			<name>Southpark</name>
-			<rating>10</rating>
+			<rating>9</rating>
 			<imdb-id>0121955</imdb-id>
 			<year>1997-</year>
 			<length>22</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMTI5MTYyNDU3NF5BMl5BanBnXkFtZTYwNjU1MzM5._V1._SY314_CR11,0,214,314_.jpg</poster>
 			<seasons>
-				<watched len="13" />
-				<watched len="18" />
-				<watched len="17" />
-				<watched len="17" />
-				<watched len="14" />
-				<watched len="17" />
-				<watched len="15" />
-				<watched len="14" />
-				<watched len="14" />
-				<watched len="14" />
-				<watched len="14" />
-				<watched len="14" />
-				<watched len="14" />
-				<watching len="12" watched="12" />
+				<season len="13"><finished /></season>
+				<season len="18"><finished /></season>
+				<season len="17"><finished /></season>
+				<season len="17"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="17"><finished /></season>
+				<season len="15"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="14"><finished /></season>
+				<season len="12">++++++++++++</season>
 			</seasons>
 		</tvserie>	
 		<tvserie>
@@ -63,11 +60,11 @@
 			<length>55</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMTc1OTc0MDA3Ml5BMl5BanBnXkFtZTcwODM2NTI5Mw@@._V1._SY314_CR1,0,214,314_.jpg</poster>
 			<seasons>
-				<watched len="12" />
-				<watched len="12" />
-				<watched len="12" />
-				<watched len="12" />
-				<watching len="6" watched="5" />
+				<season len="12"><finished /></season>
+				<season len="12"><finished /></season>
+				<season len="12"><finished /></season>
+				<season len="12"><finished /></season>
+				<season len="6">+++++</season>
 			</seasons>
 		</tvserie>
 		<tvserie>
@@ -78,11 +75,11 @@
 			<length>42</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMTc2OTA0MjczM15BMl5BanBnXkFtZTcwNjU2MTc0MQ@@._V1._SY314_CR3,0,214,314_.jpg</poster>
 			<seasons>
-				<watched len="23" />
-				<watched len="16" />
-				<watched len="24" />
-				<watched len="24" />
-				<watching len="6" watched="4" />
+				<season len="23"><finished/></season>
+				<season len="16"><finished/></season>
+				<season len="24"><finished/></season>
+				<season len="24"><finished/></season>
+				<season len="6">++++</season>
 			</seasons>
 		</tvserie>
 		<tvserie>
@@ -93,10 +90,10 @@
 			<length>43</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMjE0ODQxNjI2MV5BMl5BanBnXkFtZTYwNTgzMzg3._V1._SX450_SY624_.jpg</poster>
 			<seasons>
-				<watching len="22" watched="9" />
-				<pending len="22" />
-				<pending len="13" />
-				<pending len="24" />
+				<season len="22">+++++++++</season>
+				<season len="22" />
+				<season len="13" />
+				<season len="24" />
 			</seasons>
 		</tvserie>
 		<tvserie>
@@ -107,9 +104,9 @@
 			<length>43</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMjA0NDgyNjAwN15BMl5BanBnXkFtZTcwNTc3Mjc1MQ@@._V1._SY314_CR10,0,214,314_.jpg</poster>
 			<seasons>
-				<watching len="13" watched="12" />
-				<pending len="13" />
-				<pending len="13" />
+				<season len="13">++++++++++++</season>
+				<season len="13" />
+				<season len="13" />
 			</seasons>
 		</tvserie>		
 	</inprogress>	

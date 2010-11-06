@@ -1,3 +1,63 @@
+UL.tvseries {
+	list-style: none;
+}
+.tvseries LI {
+    width: 600px;
+    height: 140px;
+    float: left;
+    padding: 10px;
+    background-image: none;
+}
+.tvseries TD.info {
+	width: 150px;
+	margin: 10px;
+	vertical-align: middle;
+	text-align: center;
+}
+.tvseries .rating {
+	display: inline-block;
+	margin: auto;
+}
+.tvseries IMG.poster {
+	max-width: 100px;
+}
+.tvseries A.title {
+	font-size: 120%;
+	font-weight: bold;
+	color: #EEE;
+}
+.tvseries .year {
+	color: #CCC;
+}
+.tvseries SPAN.season {
+	display: inline-block;
+	border: ridge #555 2px;
+	margin-right: 5px;
+	margin-bottom: 3px;
+	font-size: 0.7em;
+	padding: 1px;
+	color: #222;
+}
+.tvseries .season SPAN.no {
+	display: inline;
+	margin-left: 1px;
+	margin-right: 3px;
+}
+.tvseries .season SPAN {
+	display: inline-block;
+	height: 17px;
+	width: 3px;
+	margin-right: 1px;
+	vertical-align: middle;
+}
+.tvseries .season .watched {
+	background-image: url(../images/tvepisode-watched.png);
+}
+.tvseries .season .unwatched {
+	background-image: url(../images/tvepisode-unwatched.png);
+}
+
+
 .moviesTable .title {
 	margin-bottom: 5px;
 }

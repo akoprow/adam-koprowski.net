@@ -81,6 +81,10 @@
 			<subsubentry fileid="movies-not-good" />
 		</subentry>
 		<subentry-separator />
+		<subentry fileid="tvseries">
+			<text>TV series: by show</text>
+		</subentry>
+		<subentry-separator />
 		<subentry fileid="running">
 			<text>Running: by location</text>
 		</subentry>
