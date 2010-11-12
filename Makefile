@@ -17,14 +17,16 @@ AUTHORS_HTML := $(AUTHORS:%=output/book-author/%.html)
 
 HTML := $(PAGES_HTML) $(PAPERS_HTML) $(AUTHORS_HTML)
 
-XSLT := $(shell find -name '*.xsl') 
-XSLT_FILES := $(XSLT:%=xslt/%) 
+XSLT := $(shell find -name '*.xsl')
+XSLT_FILES := $(XSLT:%=xslt/%)
 
 ######################################################################################################
 
-.PHONY: clean all preview publish update update-books
+.PHONY: clean all preview publish update update-books .deps
 
 all: $(HTML) output/bibliography.bib output/bibliography.pdf preview
+
+deps: .deps
 
 update: update-books all
 
@@ -53,27 +55,47 @@ preview/%.html: xsl/preview_%.xsl data/%.xml
 
 output/bibliography.pdf: output/bibliography.bib output/bibliography.tex
 	$(SHOW) Generating: [$@]
-	$(HIDE) cd output && pdflatex bibliography.tex > /dev/null 
+	$(HIDE) cd output && pdflatex bibliography.tex > /dev/null
 	$(HIDE) cd output && bibtex bibliography > /dev/null
 	$(HIDE) cd output && for i in {1..3}; do pdflatex bibliography.tex > /dev/null; done
 	$(HIDE) cd output && rm -fr bibliography.aux bibliography.bbl bibliography.blg bibliography.log  > /dev/null
 
 # all per-paper pages
-output/paper-%.html: pages/paper.xml $(DATA_FILES) $(XSLT)
+output/paper-%.html: pages/paper.xml xsl/paper.xsl
 	$(SHOW) Generating: [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ pages/paper.xml xsl/paper.xsl paper-id=$*
 
 # all per-paper pages
-output/book-author/%.html: pages/books-authors.xml $(DATA_FILES) $(XSLT)
+output/book-author/%.html: pages/books-authors.xml xsl/book-author.xsl
 	$(SHOW) Generating: [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ $< xsl/book-author.xsl author=$*
 
-# regular pages 
-output/%.html: pages/%.xml $(DATA_FILES) $(XSLT)
+# regular pages
+output/%.html: pages/%.xml
 	$(SHOW) Generating: [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ pages/$*.xml pages/`grep xml-stylesheet pages/$*.xml | sed -e 's/.*href="\(.*\)".*/\1/'`
 
 # bibliography
-output/bibliography.bib: $(DATA_FILES) $(XSLT) 
+output/bibliography.bib: data/papers.xml xsl/biblio.xsl
 	$(SHOW) Generating: [$@]
 	$(HIDE) $(RUN_XSLT) -o $@ data/papers.xml xsl/biblio.xsl
+
+%.xsl:
+	$(SHOW) Transitive dependency for: $@
+	$(HIDE) touch $@
+%.xml:
+	$(SHOW) Transitive dependency for: $@
+	$(HIDE) touch $@
+
+.deps:
+	$(SHOW) Generating: [$@]
+	$(HIDE) echo "" > $@
+# dependencies: XML pages -> XSL transformers
+	$(HIDE) grep xml-stylesheet pages/*.xml | sed -e 's/\(.*\):.*href="\.\.\/\(.*\)".*/\1:\2/' >> $@
+# dependencies: XSL inner-dependencies
+	$(HIDE) grep import xsl/*.xsl | sed -e 's/\(.*\).xsl:.*href="\(.*\)".*/\1xsl\/\2/' >> $@
+# dependencies: XSL -> XML data
+	$(HIDE) grep "document(" xsl/*.xsl | sed -e "s/\(.*\.xsl\):.*document('..\/\(.*\)').*/\1:\2/" >> $@
+
+-include .deps
+
