@@ -114,4 +114,48 @@
 			</xsl:otherwise>		
 		</xsl:choose>
 	</xsl:template>	
+	
+	<xsl:template match="season" mode="season-length">
+		<xsl:variable name="episode-length" select="number(../../length)" />
+		<season-length>
+			<xsl:choose>
+				<xsl:when test="finished">
+					<xsl:value-of select="$episode-length * @len" />
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$episode-length * string-length(.)" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</season-length>
+	</xsl:template>
+	
+	<xsl:template match="tvseries-total-days">
+		<xsl:variable name="season-lengths">
+			<xsl:apply-templates select="$tvseries//season" mode="season-length" />
+		</xsl:variable>
+		<xsl:value-of select="format-number(sum($season-lengths//season-length) div 60 div 24, '##.#')" />
+	</xsl:template>
+
+        <!-- FIXME, pattern similar to the one above, should be possible to refactor -->
+	<xsl:template match="season" mode="season-missing-length">
+		<xsl:variable name="episode-length" select="number(../../length)" />
+		<season-length>
+			<xsl:choose>
+				<xsl:when test="finished">
+					<xsl:value-of select="0" />
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$episode-length * (@len - string-length(.))" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</season-length>
+	</xsl:template>
+
+	<xsl:template match="tvseries-missing-days">
+		<xsl:variable name="season-lengths">
+			<xsl:apply-templates select="$tvseries//season" mode="season-missing-length" />
+		</xsl:variable>
+		<xsl:value-of select="format-number(sum($season-lengths//season-length) div 60 div 24, '##.#')" />
+	</xsl:template>
+
 </xsl:stylesheet>

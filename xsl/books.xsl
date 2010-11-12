@@ -94,7 +94,7 @@
 			<xsl:for-each select="$authors">
 				<xsl:sort data-type="text" select="author" />
 				<xsl:variable name="this-author" select="author" /> 
-				<span class="author" style="font-size: {9 + 3*count(root()//book[collection='Your library'][author=$this-author])}px;" 
+				<span class="author" style="font-size: {9 + 3*count(root()//book[collections='Your library'][author=$this-author])}px;" 
 					rel="book-author/{escape-html-uri(translate($this-author, ' ', '_'))}.html">
 					<xsl:value-of select="normalize-unicode(replace($this-author, ' ', '&#160;'))" />
 				</span>

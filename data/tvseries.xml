@@ -49,7 +49,8 @@
 				<season len="14"><finished /></season>
 				<season len="14"><finished /></season>
 				<season len="14"><finished /></season>
-				<season len="12">++++++++++++</season>
+				<season len="13">+++++++++++++</season>
+				<!-- 17/11 -->
 			</seasons>
 		</tvserie>	
 		<tvserie>
@@ -58,13 +59,14 @@
 			<imdb-id>0773262</imdb-id>
 			<year>2006-</year>
 			<length>55</length>
-			<poster>http://ia.media-imdb.com/images/M/MV5BMTc1OTc0MDA3Ml5BMl5BanBnXkFtZTcwODM2NTI5Mw@@._V1._SY314_CR1,0,214,314_.jpg</poster>
+			<poster>http://ia.media-imdb.com/images/M/MV5BMTkxNjU3NDk0Nl5BMl5BanBnXkFtZTcwMzcxMDU1MQ@@._V1._SX425_SY569_.jpg</poster>
 			<seasons>
 				<season len="12"><finished /></season>
 				<season len="12"><finished /></season>
 				<season len="12"><finished /></season>
 				<season len="12"><finished /></season>
-				<season len="6">+++++</season>
+				<season len="7">++++++</season>
+				<!-- 14/11 21/11 28/11 5/12 12/12 -->
 			</seasons>
 		</tvserie>
 		<tvserie>
@@ -79,7 +81,8 @@
 				<season len="16"><finished/></season>
 				<season len="24"><finished/></season>
 				<season len="24"><finished/></season>
-				<season len="6">++++</season>
+				<season len="7">++++</season>
+				<!-- 14/11 5/12 2/1 -->
 			</seasons>
 		</tvserie>
 		<tvserie>
@@ -90,7 +93,7 @@
 			<length>43</length>
 			<poster>http://ia.media-imdb.com/images/M/MV5BMjE0ODQxNjI2MV5BMl5BanBnXkFtZTYwNTgzMzg3._V1._SX450_SY624_.jpg</poster>
 			<seasons>
-				<season len="22">+++++++++</season>
+				<season len="22">++++++++++++</season>
 				<season len="22" />
 				<season len="13" />
 				<season len="24" />
@@ -107,6 +110,7 @@
 				<season len="13">++++++++++++</season>
 				<season len="13" />
 				<season len="13" />
+				<!--  -->
 			</seasons>
 		</tvserie>		
 	</inprogress>	

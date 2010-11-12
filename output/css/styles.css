@@ -31,7 +31,7 @@ UL.tvseries {
 }
 .tvseries SPAN.season {
 	display: inline-block;
-	border: ridge #555 2px;
+	border: ridge #555 1px;
 	margin-right: 5px;
 	margin-bottom: 3px;
 	font-size: 0.7em;

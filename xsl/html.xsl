@@ -141,6 +141,7 @@
 					<div style="width: 0px; height: 10px;"><span /></div>
 					<div align="center" class="footer">
 						<xsl:value-of select="$page-footer" />
+                                                <div class="last-update">Last updated: <xsl:value-of select="current-date()" /></div>
 					</div>
 				</TD>
 			</TR>

@@ -6,8 +6,14 @@
 	<content>
 		<heading>TV series I watched</heading>
 		<tvseries-watched />
+
 		<div style="clear:both" />
 		<heading>TV series I'm watching</heading>
 		<tvseries-watching />
+
+		<div style="clear:both" />
+		<heading>Total</heading>
+		Total wasted time: <tvseries-total-days /> full (24h) days ;)... and it will
+                take me another <tvseries-missing-days /> days to finish what I started :)
 	</content>
 </page>
