@@ -39,7 +39,10 @@
 				<xsl:for-each select="$movies//movie[
 					not(preceding-sibling::movie/title = $first) and
 					not(following-sibling::movie/title = $last) and
-					not(title = $last)]">
+					not(title = $last)]">		<tvsries>
+		
+		</tvsries>
+					
 					<xsl:call-template name="show-movie" />
 				</xsl:for-each>
 			</UL>

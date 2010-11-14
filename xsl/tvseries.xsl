@@ -32,7 +32,9 @@
 			<table>
 				<tr>
 					<td>
-						<img src="{poster}" class="poster" />					
+					    <a href="http://www.imdb.com/title/tt{imdb-id}">
+					    	<img src="images/imdb-posters/{imdb-id}.jpg" class="poster" />
+					    </a>
 					</td>
 					<td class="info">
 						<div>

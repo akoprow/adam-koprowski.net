@@ -20,6 +20,7 @@ UL.tvseries {
 }
 .tvseries IMG.poster {
 	max-width: 100px;
+	border: 1px dotted;
 }
 .tvseries A.title {
 	font-size: 120%;
