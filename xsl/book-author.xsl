@@ -27,7 +27,7 @@
 				<td>			
 					<span class="author-tip">
 						<ul>
-							<xsl:for-each select="$books//book[collections='Your library'][author = $author-dec]">
+							<xsl:for-each select="$books//book[collections='Your library' or collections='Currently reading'][author = $author-dec]">
 								<xsl:sort order="descending" select="contains(tags, 'reading')" />
 								<xsl:sort order="descending" data-type="number" select="finished" />
 								<xsl:call-template name="show-authors-book" />

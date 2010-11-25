@@ -29,6 +29,16 @@
 		<div style="clear: both;" />
 	</xsl:template>
 
+	<xsl:template match="books-by-collection">
+		<UL class="books">
+			<xsl:variable name="selected-collection" select="@collection" />
+			<xsl:for-each select="$books//book[contains(collections, $selected-collection)]">
+				<xsl:call-template name="show-book" />
+			</xsl:for-each>
+		</UL>
+		<div style="clear: both;" />
+	</xsl:template>
+
 	<xsl:template match="books-by-rating">
 		<UL class="books">
 			<xsl:variable name="min" select="number(@min)" />
